@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+            --warning: #F59E0B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        /* --- NAVIGATION --- */
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        /* --- CONTAINER --- */
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        /* --- HEADER SECTION --- */
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        /* --- EXAM INFO BOX --- */
+        .exam-info {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-align: center;
+        }
+        .exam-info h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .exam-stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem; margin-top: 1.5rem;
+        }
+        .stat-item {
+            background: var(--bg-primary); padding: 1rem; border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .stat-item strong { display: block; font-size: 1.5rem; color: var(--accent-gold); }
+        .stat-item span { font-size: 0.85rem; color: var(--text-secondary); }
+
+        /* --- CONTENT CARDS --- */
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+
+        /* --- TABLES --- */
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+
+        /* --- ISLAMIC QUOTE --- */
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        /* --- QUIZ SECTION --- */
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .section-divider {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid var(--accent-gold); border-radius: 10px;
+            padding: 1.5rem; margin: 2.5rem 0; text-align: center;
+        }
+        .section-divider h3 { margin: 0; font-size: 1.4rem; }
+        .section-divider p { color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"], .options input[type="checkbox"] { margin-right: 10px; accent-color: var(--accent-gold); }
+
+        /* --- TRUE/FALSE --- */
+        .tf-options { display: flex; gap: 1rem; margin-top: 0.75rem; }
+        .tf-options label {
+            flex: 1; padding: 0.75rem; text-align: center;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            border: 1px solid transparent; transition: all 0.2s;
+        }
+        .tf-options label:hover { border-color: var(--accent-gold); }
+        .tf-options input[type="radio"] { margin-right: 8px; accent-color: var(--accent-gold); }
+
+        /* --- MATCHING --- */
+        .matching-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+            margin-top: 1rem;
+        }
+        .match-item {
+            background: var(--bg-secondary); padding: 0.75rem 1rem;
+            border-radius: 8px; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .match-item .item-label { font-weight: 600; color: var(--accent-gold); min-width: 30px; }
+        .match-item select {
+            flex: 1; padding: 0.5rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 6px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif;
+        }
+
+        /* --- BUTTONS --- */
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        /* --- RESULT BOX --- */
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.3rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .matching-grid { grid-template-columns: 1fr; }
+            .tf-options { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="13.html">← Pertemuan 13</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="15.html">Pertemuan 15 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>📜 Ujian Tengah Semester (UTS)</h1>
+            <p class="chapter-desc">
+                Evaluasi komprehensif untuk mengukur pemahaman siswa terhadap materi Aritmatika Sosial (Pertemuan 1-5) dan Geometri (Pertemuan 6-13). Ujian ini terdiri dari 4 jenis soal dengan total 40 butir pertanyaan.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- EXAM INFO -->
+        <div class="exam-info">
+            <h3>📋 Informasi Ujian</h3>
+            <p style="color: var(--text-secondary);">Ujian Tengah Semester (UTS) — Matematika Kelas VII Semester 2</p>
+            <div class="exam-stats">
+                <div class="stat-item">
+                    <strong>20</strong>
+                    <span>Pilihan Ganda</span>
+                </div>
+                <div class="stat-item">
+                    <strong>10</strong>
+                    <span>PG Kompleks</span>
+                </div>
+                <div class="stat-item">
+                    <strong>5</strong>
+                    <span>Benar/Salah</span>
+                </div>
+                <div class="stat-item">
+                    <strong>5</strong>
+                    <span>Menjodohkan</span>
+                </div>
+                <div class="stat-item">
+                    <strong>100</strong>
+                    <span>Total Poin</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ISLAMIC QUOTE -->
+        <div class="islamic-quote">
+            <div class="arabic-text">يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ</div>
+            <p class="quote-translation">"Allah akan meninggikan orang-orang yang beriman di antaramu dan orang-orang yang diberi ilmu pengetahuan beberapa derajat."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. Al-Mujadilah [58]: 11</p>
+        </div>
+
+        <!-- UJIAN -->
+        <section id="ujian" class="quiz-section">
+            <h2>📝 Lembar Ujian Tengah Semester</h2>
+            <p class="quiz-desc">
+                Kerjakan semua soal dengan teliti dan jujur. Waktu pengerjaan: 90 menit.
+            </p>
+            
+            <form id="examForm">
+                <!-- IDENTITAS -->
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Ujian</label>
+                            <input type="text" value="Ujian Tengah Semester (UTS)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== BAGIAN A: PILIHAN GANDA ==================== -->
+                <div class="section-divider">
+                    <h3>📋 BAGIAN A: Pilihan Ganda</h3>
+                    <p>20 soal × 3 poin = <strong style="color: var(--accent-gold);">60 poin</strong> | Pilih SATU jawaban yang paling tepat</p>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Seorang pedagang membeli barang seharga Rp200.000 dan menjualnya kembali dengan harga Rp250.000. Besarnya keuntungan yang diperoleh adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg1" value="A"> A. Rp30.000</label>
+                        <label><input type="radio" name="pg1" value="B"> B. Rp40.000</label>
+                        <label><input type="radio" name="pg1" value="C"> C. Rp50.000</label>
+                        <label><input type="radio" name="pg1" value="D"> D. Rp60.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Harga beli suatu barang merupakan...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg2" value="A"> A. Harga yang dibayar konsumen</label>
+                        <label><input type="radio" name="pg2" value="B"> B. Modal awal + biaya operasional</label>
+                        <label><input type="radio" name="pg2" value="C"> C. Harga setelah diskon</label>
+                        <label><input type="radio" name="pg2" value="D"> D. Harga jual − untung</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Sebuah buku dibeli dengan harga Rp50.000 dan dijual kembali dengan harga Rp60.000. Persentase keuntungan yang diperoleh adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg3" value="A"> A. 10%</label>
+                        <label><input type="radio" name="pg3" value="B"> B. 15%</label>
+                        <label><input type="radio" name="pg3" value="C"> C. 20%</label>
+                        <label><input type="radio" name="pg3" value="D"> D. 25%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Seorang pedagang mengalami kerugian 15% dari harga beli Rp400.000. Harga jual barang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg4" value="A"> A. Rp340.000</label>
+                        <label><input type="radio" name="pg4" value="B"> B. Rp360.000</label>
+                        <label><input type="radio" name="pg4" value="C"> C. Rp380.000</label>
+                        <label><input type="radio" name="pg4" value="D"> D. Rp320.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Sebuah toko memberikan diskon 20% untuk sebuah barang yang标价 Rp150.000. Besar diskon yang diterima pembeli adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg5" value="A"> A. Rp20.000</label>
+                        <label><input type="radio" name="pg5" value="B"> B. Rp25.000</label>
+                        <label><input type="radio" name="pg5" value="C"> C. Rp30.000</label>
+                        <label><input type="radio" name="pg5" value="D"> D. Rp35.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Sebuah karung beras memiliki bruto 80 kg dengan tara 5%. Berat bersih (netto) beras tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg6" value="A"> A. 74 kg</label>
+                        <label><input type="radio" name="pg6" value="B"> B. 75 kg</label>
+                        <label><input type="radio" name="pg6" value="C"> C. 76 kg</label>
+                        <label><input type="radio" name="pg6" value="D"> D. 78 kg</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Ayah menabung di bank sebesar Rp5.000.000 dengan bunga tunggal 10% per tahun. Bunga yang diperoleh setelah 6 bulan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg7" value="A"> A. Rp200.000</label>
+                        <label><input type="radio" name="pg7" value="B"> B. Rp250.000</label>
+                        <label><input type="radio" name="pg7" value="C"> C. Rp300.000</label>
+                        <label><input type="radio" name="pg7" value="D"> D. Rp500.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Rumus bunga tunggal dalam satuan bulan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg8" value="A"> A. B = (M × p × t) / 100</label>
+                        <label><input type="radio" name="pg8" value="B"> B. B = (M × p × n) / 1200</label>
+                        <label><input type="radio" name="pg8" value="C"> C. B = (M × p × d) / 36500</label>
+                        <label><input type="radio" name="pg8" value="D"> D. B = (M × p) / 12</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Tarif PPN di Indonesia yang berlaku mulai 1 Januari 2025 adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg9" value="A"> A. 10%</label>
+                        <label><input type="radio" name="pg9" value="B"> B. 11%</label>
+                        <label><input type="radio" name="pg9" value="C"> C. 12%</label>
+                        <label><input type="radio" name="pg9" value="D"> D. 15%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Pajak Penghasilan (PPh) adalah pajak yang dikenakan atas...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg10" value="A"> A. Konsumsi barang</label>
+                        <label><input type="radio" name="pg10" value="B"> B. Penghasilan wajib pajak</label>
+                        <label><input type="radio" name="pg10" value="C"> C. Kepemilikan tanah</label>
+                        <label><input type="radio" name="pg10" value="D"> D. Impor barang</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 11</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Sudut yang besarnya 90° disebut sudut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg11" value="A"> A. Lancip</label>
+                        <label><input type="radio" name="pg11" value="B"> B. Siku-siku</label>
+                        <label><input type="radio" name="pg11" value="C"> C. Tumpul</label>
+                        <label><input type="radio" name="pg11" value="D"> D. Lurus</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 12</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Sudut yang besarnya antara 90° dan 180° disebut sudut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg12" value="A"> A. Lancip</label>
+                        <label><input type="radio" name="pg12" value="B"> B. Siku-siku</label>
+                        <label><input type="radio" name="pg12" value="C"> C. Tumpul</label>
+                        <label><input type="radio" name="pg12" value="D"> D. Refleks</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 13</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Dua sudut yang jumlahnya 180° disebut sudut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg13" value="A"> A. Komplementer</label>
+                        <label><input type="radio" name="pg13" value="B"> B. Suplementer</label>
+                        <label><input type="radio" name="pg13" value="C"> C. Vertikal</label>
+                        <label><input type="radio" name="pg13" value="D"> D. Sehadap</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 14</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Dua sudut yang jumlahnya 90° disebut sudut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg14" value="A"> A. Komplementer</label>
+                        <label><input type="radio" name="pg14" value="B"> B. Suplementer</label>
+                        <label><input type="radio" name="pg14" value="C"> C. Berpelurus</label>
+                        <label><input type="radio" name="pg14" value="D"> D. Bertolak belakang</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 15</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Dua garis yang tidak pernah bertemu meskipun diperpanjang disebut garis...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg15" value="A"> A. Berpotongan</label>
+                        <label><input type="radio" name="pg15" value="B"> B. Sejajar</label>
+                        <label><input type="radio" name="pg15" value="C"> C. Berimpit</label>
+                        <label><input type="radio" name="pg15" value="D"> D. Bersilangan</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 16</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Garis yang memotong dua garis sejajar disebut garis...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg16" value="A"> A. Transversal</label>
+                        <label><input type="radio" name="pg16" value="B"> B. Bagi</label>
+                        <label><input type="radio" name="pg16" value="C"> C. Sumbu</label>
+                        <label><input type="radio" name="pg16" value="D"> D. Lurus</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 17</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Dua bangun datar dikatakan sebangun jika...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg17" value="A"> A. Sisi-sisi bersesuaian sama panjang</label>
+                        <label><input type="radio" name="pg17" value="B"> B. Sudut-sudut bersesuaian sama besar dan sisi bersesuaian sebanding</label>
+                        <label><input type="radio" name="pg17" value="C"> C. Memiliki luas yang sama</label>
+                        <label><input type="radio" name="pg17" value="D"> D. Memiliki keliling yang sama</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 18</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Salah satu syarat dua segitiga sebangun adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg18" value="A"> A. Sisi-sisi bersesuaian sama panjang</label>
+                        <label><input type="radio" name="pg18" value="B"> B. Dua sudut bersesuaian sama besar</label>
+                        <label><input type="radio" name="pg18" value="C"> C. Keliling sama</label>
+                        <label><input type="radio" name="pg18" value="D"> D. Luas sama</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 19</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Dua bangun datar dikatakan kongruen jika...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg19" value="A"> A. Bentuk sama, ukuran berbeda</label>
+                        <label><input type="radio" name="pg19" value="B"> B. Bentuk dan ukuran sama</label>
+                        <label><input type="radio" name="pg19" value="C"> C. Sudut sama, sisi berbeda</label>
+                        <label><input type="radio" name="pg19" value="D"> D. Luas sama</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 20</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(3 POIN)</span><br>Salah satu syarat dua segitiga kongruen adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="pg20" value="A"> A. Dua sudut sama</label>
+                        <label><input type="radio" name="pg20" value="B"> B. Dua sisi sama</label>
+                        <label><input type="radio" name="pg20" value="C"> C. Tiga sisi sama (SSS)</label>
+                        <label><input type="radio" name="pg20" value="D"> D. Keliling sama</label>
+                    </div>
+                </div>
+
+                <!-- ==================== BAGIAN B: PG KOMPLEKS ==================== -->
+                <div class="section-divider">
+                    <h3>📋 BAGIAN B: Pilihan Ganda Kompleks</h3>
+                    <p>10 soal × 2 poin = <strong style="color: var(--accent-gold);">20 poin</strong> | Pilih LEBIH DARI SATU jawaban yang benar (skor parsial)</p>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 21</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Yang termasuk dalam konsep aritmatika sosial adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk21" value="A"> A. Harga beli</label>
+                        <label><input type="checkbox" name="pgk21" value="B"> B. Harga jual</label>
+                        <label><input type="checkbox" name="pgk21" value="C"> C. Untung dan rugi</label>
+                        <label><input type="checkbox" name="pgk21" value="D"> D. Diskon</label>
+                        <label><input type="checkbox" name="pgk21" value="E"> E. Sudut lancip</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 22</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Pernyataan yang BENAR tentang diskon adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk22" value="A"> A. Diskon adalah potongan harga</label>
+                        <label><input type="checkbox" name="pgk22" value="B"> B. Diskon bertingkat 20%+10% sama dengan diskon 30%</label>
+                        <label><input type="checkbox" name="pgk22" value="C"> C. Harga setelah diskon = harga awal − besar diskon</label>
+                        <label><input type="checkbox" name="pgk22" value="D"> D. Diskon dihitung dari harga awal</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 23</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Pernyataan yang BENAR tentang bruto, netto, dan tara adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk23" value="A"> A. Bruto = netto + tara</label>
+                        <label><input type="checkbox" name="pgk23" value="B"> B. Netto = bruto − tara</label>
+                        <label><input type="checkbox" name="pgk23" value="C"> C. Tara adalah berat kemasan</label>
+                        <label><input type="checkbox" name="pgk23" value="D"> D. Tara adalah berat barang</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 24</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Yang BENAR tentang bunga tunggal adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk24" value="A"> A. Dihitung dari modal awal saja</label>
+                        <label><input type="checkbox" name="pgk24" value="B"> B. Besar bunga tetap setiap periode</label>
+                        <label><input type="checkbox" name="pgk24" value="C"> C. Rumus B = (M × p × n) / 1200 untuk bulan</label>
+                        <label><input type="checkbox" name="pgk24" value="D"> D. Bunga ikut menjadi modal periode berikutnya</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 25</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Yang BENAR tentang PPN adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk25" value="A"> A. Tarif 12% mulai 1 Januari 2025</label>
+                        <label><input type="checkbox" name="pgk25" value="B"> B. Dikenakan atas konsumsi barang/jasa</label>
+                        <label><input type="checkbox" name="pgk25" value="C"> C. Dibayar oleh konsumen akhir</label>
+                        <label><input type="checkbox" name="pgk25" value="D"> D. Tarifnya progresif</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 26</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Yang termasuk jenis sudut berdasarkan besarnya adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk26" value="A"> A. Sudut lancip</label>
+                        <label><input type="checkbox" name="pgk26" value="B"> B. Sudut siku-siku</label>
+                        <label><input type="checkbox" name="pgk26" value="C"> C. Sudut tumpul</label>
+                        <label><input type="checkbox" name="pgk26" value="D"> D. Sudut lurus</label>
+                        <label><input type="checkbox" name="pgk26" value="E"> E. Sudut refleks</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 27</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Hubungan antar sudut yang BENAR adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk27" value="A"> A. Sudut berpenyiku jumlahnya 90°</label>
+                        <label><input type="checkbox" name="pgk27" value="B"> B. Sudut berpelurus jumlahnya 180°</label>
+                        <label><input type="checkbox" name="pgk27" value="C"> C. Sudut bertolak belakang sama besar</label>
+                        <label><input type="checkbox" name="pgk27" value="D"> D. Sudut sehadap sama besar</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 28</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Sifat dua garis sejajar yang dipotong garis transversal adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk28" value="A"> A. Sudut sehadap sama besar</label>
+                        <label><input type="checkbox" name="pgk28" value="B"> B. Sudut dalam berseberangan sama besar</label>
+                        <label><input type="checkbox" name="pgk28" value="C"> C. Sudut luar berseberangan sama besar</label>
+                        <label><input type="checkbox" name="pgk28" value="D"> D. Sudut sepihak jumlahnya 180°</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 29</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Syarat dua bangun datar sebangun adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk29" value="A"> A. Sudut-sudut bersesuaian sama besar</label>
+                        <label><input type="checkbox" name="pgk29" value="B"> B. Sisi-sisi bersesuaian sebanding</label>
+                        <label><input type="checkbox" name="pgk29" value="C"> C. Luas sama</label>
+                        <label><input type="checkbox" name="pgk29" value="D"> D. Bentuk sama</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 30</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Yang merupakan syarat dua segitiga kongruen adalah... (pilih semua yang benar)</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="pgk30" value="A"> A. SSS (tiga sisi sama)</label>
+                        <label><input type="checkbox" name="pgk30" value="B"> B. SAS (dua sisi dan sudut apit sama)</label>
+                        <label><input type="checkbox" name="pgk30" value="C"> C. ASA (dua sudut dan sisi apit sama)</label>
+                        <label><input type="checkbox" name="pgk30" value="D"> D. AA (dua sudut sama)</label>
+                    </div>
+                </div>
+
+                <!-- ==================== BAGIAN C: BENAR/SALAH ==================== -->
+                <div class="section-divider">
+                    <h3>✓✗ BAGIAN C: Benar atau Salah</h3>
+                    <p>5 soal × 2 poin = <strong style="color: var(--accent-gold);">10 poin</strong> | Tentukan apakah pernyataan berikut BENAR atau SALAH</p>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 31</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Jika harga jual lebih besar daripada harga beli, maka pedagang mengalami untung.</p>
+                    <div class="tf-options">
+                        <label><input type="radio" name="tf31" value="BENAR"> Benar</label>
+                        <label><input type="radio" name="tf31" value="SALAH"> Salah</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 32</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Diskon bertingkat 20% + 10% sama dengan diskon 30%.</p>
+                    <div class="tf-options">
+                        <label><input type="radio" name="tf32" value="BENAR"> Benar</label>
+                        <label><input type="radio" name="tf32" value="SALAH"> Salah</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 33</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Bunga tunggal dihitung dari modal + bunga yang telah dihasilkan sebelumnya.</p>
+                    <div class="tf-options">
+                        <label><input type="radio" name="tf33" value="BENAR"> Benar</label>
+                        <label><input type="radio" name="tf33" value="SALAH"> Salah</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 34</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Sudut yang besarnya 180° disebut sudut lurus.</p>
+                    <div class="tf-options">
+                        <label><input type="radio" name="tf34" value="BENAR"> Benar</label>
+                        <label><input type="radio" name="tf34" value="SALAH"> Salah</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 35</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN)</span><br>Dua bangun yang kongruen pasti sebangun.</p>
+                    <div class="tf-options">
+                        <label><input type="radio" name="tf35" value="BENAR"> Benar</label>
+                        <label><input type="radio" name="tf35" value="SALAH"> Salah</label>
+                    </div>
+                </div>
+
+                <!-- ==================== BAGIAN D: MENJODOHKAN ==================== -->
+                <div class="section-divider">
+                    <h3>🔗 BAGIAN D: Menjodohkan</h3>
+                    <p>5 soal × 2 poin = <strong style="color: var(--accent-gold);">10 poin</strong> | Cocokkan item di sebelah kiri dengan pasangan yang tepat di sebelah kanan</p>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 36-40</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(2 POIN per pasangan)</span><br>Pasangkan istilah di kolom kiri dengan definisi/konsep yang tepat di kolom kanan!</p>
+                    
+                    <div class="matching-grid">
+                        <div class="match-item">
+                            <span class="item-label">36.</span>
+                            <span>Bruto</span>
+                        </div>
+                        <div class="match-item">
+                            <select name="match36">
+                                <option value="">-- Pilih Pasangan --</option>
+                                <option value="A">A. Berat keseluruhan (barang + kemasan)</option>
+                                <option value="B">B. Berat bersih barang saja</option>
+                                <option value="C">C. Berat kemasan</option>
+                                <option value="D">D. 0° &lt; α &lt; 90°</option>
+                                <option value="E">E. 90° &lt; α &lt; 180°</option>
+                            </select>
+                        </div>
+
+                        <div class="match-item">
+                            <span class="item-label">37.</span>
+                            <span>Netto</span>
+                        </div>
+                        <div class="match-item">
+                            <select name="match37">
+                                <option value="">-- Pilih Pasangan --</option>
+                                <option value="A">A. Berat keseluruhan (barang + kemasan)</option>
+                                <option value="B">B. Berat bersih barang saja</option>
+                                <option value="C">C. Berat kemasan</option>
+                                <option value="D">D. 0° &lt; α &lt; 90°</option>
+                                <option value="E">E. 90° &lt; α &lt; 180°</option>
+                            </select>
+                        </div>
+
+                        <div class="match-item">
+                            <span class="item-label">38.</span>
+                            <span>Tara</span>
+                        </div>
+                        <div class="match-item">
+                            <select name="match38">
+                                <option value="">-- Pilih Pasangan --</option>
+                                <option value="A">A. Berat keseluruhan (barang + kemasan)</option>
+                                <option value="B">B. Berat bersih barang saja</option>
+                                <option value="C">C. Berat kemasan</option>
+                                <option value="D">D. 0° &lt; α &lt; 90°</option>
+                                <option value="E">E. 90° &lt; α &lt; 180°</option>
+                            </select>
+                        </div>
+
+                        <div class="match-item">
+                            <span class="item-label">39.</span>
+                            <span>Sudut lancip</span>
+                        </div>
+                        <div class="match-item">
+                            <select name="match39">
+                                <option value="">-- Pilih Pasangan --</option>
+                                <option value="A">A. Berat keseluruhan (barang + kemasan)</option>
+                                <option value="B">B. Berat bersih barang saja</option>
+                                <option value="C">C. Berat kemasan</option>
+                                <option value="D">D. 0° &lt; α &lt; 90°</option>
+                                <option value="E">E. 90° &lt; α &lt; 180°</option>
+                            </select>
+                        </div>
+
+                        <div class="match-item">
+                            <span class="item-label">40.</span>
+                            <span>Sudut tumpul</span>
+                        </div>
+                        <div class="match-item">
+                            <select name="match40">
+                                <option value="">-- Pilih Pasangan --</option>
+                                <option value="A">A. Berat keseluruhan (barang + kemasan)</option>
+                                <option value="B">B. Berat bersih barang saja</option>
+                                <option value="C">C. Berat kemasan</option>
+                                <option value="D">D. 0° &lt; α &lt; 90°</option>
+                                <option value="E">E. 90° &lt; α &lt; 180°</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeExam()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetExam()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Ujian Tengah Semester</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 60</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>📋 PG Kompleks</span>
+                        <strong id="scorePGK">0 / 20</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✓✗ Benar/Salah</span>
+                        <strong id="scoreTF">0 / 10</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>🔗 Menjodohkan</span>
+                        <strong id="scoreMatch">0 / 10</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Total</span>
+                        <strong id="scoreTotal">0 / 100</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor dihitung otomatis oleh sistem. Untuk verifikasi dan penilaian lebih lanjut, silakan unduh PDF/TXT dan serahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="13.html">← Pertemuan 13</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="15.html">Pertemuan 15: Pengertian Data →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Kunci Jawaban
+        const pgAnswers = {
+            pg1: 'C', pg2: 'B', pg3: 'C', pg4: 'A', pg5: 'C',
+            pg6: 'C', pg7: 'B', pg8: 'B', pg9: 'C', pg10: 'B',
+            pg11: 'B', pg12: 'C', pg13: 'B', pg14: 'A', pg15: 'B',
+            pg16: 'A', pg17: 'B', pg18: 'B', pg19: 'B', pg20: 'C'
+        };
+
+        const pgkAnswers = {
+            pgk21: ['A', 'B', 'C', 'D'],
+            pgk22: ['A', 'C', 'D'],
+            pgk23: ['A', 'B', 'C'],
+            pgk24: ['A', 'B', 'C'],
+            pgk25: ['A', 'B', 'C'],
+            pgk26: ['A', 'B', 'C', 'D', 'E'],
+            pgk27: ['A', 'B', 'C', 'D'],
+            pgk28: ['A', 'B', 'C', 'D'],
+            pgk29: ['A', 'B', 'D'],
+            pgk30: ['A', 'B', 'C']
+        };
+
+        const tfAnswers = {
+            tf31: 'BENAR', tf32: 'SALAH', tf33: 'SALAH', tf34: 'BENAR', tf35: 'BENAR'
+        };
+
+        const matchAnswers = {
+            match36: 'A', match37: 'B', match38: 'C', match39: 'D', match40: 'E'
+        };
+
+        function gradeExam() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            // Hitung PG (3 poin/soal)
+            let pgScore = 0;
+            for (let i = 1; i <= 20; i++) {
+                const selected = document.querySelector(`input[name="pg${i}"]:checked`);
+                if (selected && selected.value === pgAnswers[`pg${i}`]) {
+                    pgScore += 3;
+                }
+            }
+
+            // Hitung PG Kompleks (2 poin/soal, skor parsial)
+            let pgkScore = 0;
+            for (let i = 21; i <= 30; i++) {
+                const selected = document.querySelectorAll(`input[name="pgk${i}"]:checked`);
+                const correct = pgkAnswers[`pgk${i}`];
+                const selectedValues = Array.from(selected).map(s => s.value);
+                
+                // Hitung benar dan salah
+                let correctCount = 0;
+                let wrongCount = 0;
+                selectedValues.forEach(val => {
+                    if (correct.includes(val)) correctCount++;
+                    else wrongCount++;
+                });
+                
+                // Skor: jika ada yang salah, 0. Jika semua benar dan lengkap, 2. Jika kurang, parsial.
+                if (wrongCount === 0) {
+                    pgkScore += (correctCount / correct.length) * 2;
+                }
+            }
+            pgkScore = Math.round(pgkScore * 10) / 10;
+
+            // Hitung Benar/Salah (2 poin/soal)
+            let tfScore = 0;
+            for (let i = 31; i <= 35; i++) {
+                const selected = document.querySelector(`input[name="tf${i}"]:checked`);
+                if (selected && selected.value === tfAnswers[`tf${i}`]) {
+                    tfScore += 2;
+                }
+            }
+
+            // Hitung Menjodohkan (2 poin/pasangan)
+            let matchScore = 0;
+            for (let i = 36; i <= 40; i++) {
+                const selected = document.querySelector(`select[name="match${i}"]`);
+                if (selected && selected.value === matchAnswers[`match${i}`]) {
+                    matchScore += 2;
+                }
+            }
+
+            const totalScore = pgScore + pgkScore + tfScore + matchScore;
+
+            document.getElementById('scorePG').innerText = pgScore + " / 60";
+            document.getElementById('scorePGK').innerText = pgkScore + " / 20";
+            document.getElementById('scoreTF').innerText = tfScore + " / 10";
+            document.getElementById('scoreMatch').innerText = matchScore + " / 10";
+            document.getElementById('scoreTotal').innerText = totalScore.toFixed(1) + " / 100";
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const scoreTotal = document.getElementById('scoreTotal').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJIAN TENGAH SEMESTER (UTS)\n`;
+            txtContent += `   MATEMATIKA KELAS VII SEMESTER 2\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda      : ${document.getElementById('scorePG').innerText}\n`;
+            txtContent += `Skor PG Kompleks        : ${document.getElementById('scorePGK').innerText}\n`;
+            txtContent += `Skor Benar/Salah        : ${document.getElementById('scoreTF').innerText}\n`;
+            txtContent += `Skor Menjodohkan        : ${document.getElementById('scoreMatch').innerText}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `SKOR TOTAL              : ${scoreTotal}\n`;
+            txtContent += `========================================\n`;
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Hasil_UTS_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const scoreTotal = document.getElementById('scoreTotal').innerText;
+            
+            const subject = `Hasil UTS Matematika - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil Ujian Tengah Semester (UTS) Matematika saya:\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Total: ${scoreTotal}\n\nRincian:\n- Pilihan Ganda: ${document.getElementById('scorePG').innerText}\n- PG Kompleks: ${document.getElementById('scorePGK').innerText}\n- Benar/Salah: ${document.getElementById('scoreTF').innerText}\n- Menjodohkan: ${document.getElementById('scoreMatch').innerText}\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetExam() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('examForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 60";
+                document.getElementById('scorePGK').innerText = "0 / 20";
+                document.getElementById('scoreTF').innerText = "0 / 10";
+                document.getElementById('scoreMatch').innerText = "0 / 10";
+                document.getElementById('scoreTotal').innerText = "0 / 100";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

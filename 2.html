@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Untung, Rugi, dan Persentasenya | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        /* --- NAVIGATION --- */
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        /* --- CONTAINER --- */
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        /* --- HEADER SECTION --- */
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        /* --- CONTENT CARDS --- */
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* --- TABLES --- */
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* --- ISLAMIC QUOTE --- */
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        /* --- KEYWORDS --- */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* --- REFERENCES --- */
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        /* --- QUIZ SECTION --- */
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        /* --- BUTTONS --- */
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        /* --- RESULT BOX --- */
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="1.html">← Bab 1</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="3.html">Bab 3 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>📊 Bab Dua: Untung, Rugi, dan Persentasenya</h1>
+            <p class="chapter-desc">
+                Mendalami konsep untung dan rugi dalam perdagangan, serta cara menghitung persentase keuntungan dan kerugian. Materi ini merupakan fondasi penting untuk memahami efisiensi ekonomi dan pengambilan keputusan bisnis yang cerdas.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A -->
+        <section class="content-card">
+            <h3>A. Konsep Dasar Untung dan Rugi</h3>
+            <p>Dalam setiap kegiatan perdagangan, seorang pedagang selalu berharap memperoleh keuntungan. Namun, tidak jarang pula pedagang mengalami kerugian karena berbagai faktor, seperti penurunan harga pasar, barang rusak, atau kurang laku. Oleh karena itu, pemahaman tentang untung dan rugi menjadi sangat penting bagi siapa saja yang terlibat dalam dunia usaha.</p>
+            <p style="margin-top: 1rem;">Secara sederhana, <strong>untung</strong> terjadi ketika pendapatan dari penjualan lebih besar daripada modal yang dikeluarkan. Sebaliknya, <strong>rugi</strong> terjadi ketika pendapatan lebih kecil daripada modal. Jika pendapatan sama dengan modal, maka kondisi tersebut disebut <strong>impas</strong> (<em>break even point</em>).</p>
+            
+            <div class="highlight-box">
+                <strong>📌 DEFINISI PENTING:</strong><br>
+                • <strong>Untung</strong> = Selisih positif antara harga jual dan harga beli (HJ > HB).<br>
+                • <strong>Rugi</strong> = Selisih negatif antara harga jual dan harga beli (HJ < HB).<br>
+                • <strong>Impas</strong> = Harga jual sama dengan harga beli (HJ = HB).
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Kondisi</th>
+                        <th>Kriteria</th>
+                        <th>Rumus</th>
+                        <th>Arti Ekonomi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong style="color: var(--success);">Untung</strong></td>
+                        <td>Harga Jual > Harga Beli</td>
+                        <td>Untung = HJ − HB</td>
+                        <td>Pedagang memperoleh laba</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--error);">Rugi</strong></td>
+                        <td>Harga Jual < Harga Beli</td>
+                        <td>Rugi = HB − HJ</td>
+                        <td>Pedagang mengalami kerugian</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--accent-gold);">Impas</strong></td>
+                        <td>Harga Jual = Harga Beli</td>
+                        <td>Untung/Rugi = 0</td>
+                        <td>Tidak ada laba maupun rugi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- MATERI B -->
+        <section class="content-card">
+            <h3>B. Menghitung Besar Untung dan Rugi</h3>
+            <p>Untuk menentukan apakah seorang pedagang untung atau rugi, langkah pertama adalah membandingkan harga jual (HJ) dengan harga beli (HB). Setelah diketahui kondisinya, barulah dihitung besar keuntungan atau kerugiannya.</p>
+            
+            <div class="highlight-box">
+                <strong>Rumus Dasar:</strong><br>
+                • Jika HJ > HB → <strong>Untung = Harga Jual − Harga Beli</strong><br>
+                • Jika HJ < HB → <strong>Rugi = Harga Beli − Harga Jual</strong>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 1 — Menghitung Untung</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli sebuah baju seharga Rp75.000. Baju tersebut kemudian dijual dengan harga Rp95.000. Berapa besarnya keuntungan?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui: HB = Rp75.000, HJ = Rp95.000<br>
+                Karena HJ > HB, maka pedagang <strong>UNTUNG</strong>.<br>
+                Untung = Rp95.000 − Rp75.000 = <strong>Rp20.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 2 — Menghitung Rugi</h4>
+                <p><strong>Soal:</strong> Ibu membeli 10 kg gula pasir seharga Rp120.000. Karena kurang laku, Ibu menjualnya kembali dengan harga Rp10.000 per kg. Apakah Ibu untung atau rugi? Berapa besarnya?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui: HB = Rp120.000<br>
+                HJ = 10 kg × Rp10.000 = Rp100.000<br>
+                Karena HJ < HB, maka Ibu <strong>RUGI</strong>.<br>
+                Rugi = Rp120.000 − Rp100.000 = <strong>Rp20.000</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI C -->
+        <section class="content-card">
+            <h3>C. Persentase Untung dan Rugi</h3>
+            <p>Persentase untung atau rugi menyatakan besar keuntungan atau kerugian dibandingkan dengan <strong>harga beli</strong> dalam bentuk persen. Persentase ini penting untuk mengetahui tingkat efisiensi usaha seorang pedagang dan untuk membandingkan profitabilitas antar barang dagangan.</p>
+            
+            <div class="highlight-box">
+                <strong>Rumus Persentase:</strong><br>
+                • % Untung = (Untung / Harga Beli) × 100%<br>
+                • % Rugi = (Rugi / Harga Beli) × 100%<br><br>
+                <strong>Rumus Mencari Harga Jual:</strong><br>
+                • HJ (untung) = HB + (% Untung × HB)<br>
+                • HJ (rugi) = HB − (% Rugi × HB)
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 3 — Menghitung Persentase Untung</h4>
+                <p><strong>Soal:</strong> Sebuah buku dibeli dengan harga Rp40.000 dan dijual kembali dengan harga Rp48.000. Tentukan persentase keuntungan!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Hitung besar untung<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Untung = Rp48.000 − Rp40.000 = Rp8.000<br>
+                Langkah 2: Hitung persentase untung<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;% Untung = (Rp8.000 / Rp40.000) × 100% = <strong>20%</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 4 — Menghitung Persentase Rugi</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli sekarung semen seharga Rp60.000. Karena penyimpanannya kurang baik, semen tersebut dijual kembali dengan harga Rp54.000. Berapa persentase kerugiannya?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Hitung besar rugi<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Rugi = Rp60.000 − Rp54.000 = Rp6.000<br>
+                Langkah 2: Hitung persentase rugi<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;% Rugi = (Rp6.000 / Rp60.000) × 100% = <strong>10%</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI D -->
+        <section class="content-card">
+            <h3>D. Mencari Harga Jual dari Persentase</h3>
+            <p>Seringkali dalam praktik perdagangan, seorang pedagang menentukan target persentase keuntungan tertentu. Dari persentase tersebut, ia perlu menghitung berapa harga jual yang harus ditetapkan. Begitu pula saat terjadi kerugian dengan persentase tertentu.</p>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Kasus</th>
+                        <th>Rumus</th>
+                        <th>Contoh Penerapan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mencari HJ saat Untung</strong></td>
+                        <td>HJ = HB + (% Untung × HB)</td>
+                        <td>Pedagang ingin untung 25% dari modal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mencari HJ saat Rugi</strong></td>
+                        <td>HJ = HB − (% Rugi × HB)</td>
+                        <td>Barang rusak dijual dengan rugi 15%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mencari HB dari % Untung</strong></td>
+                        <td>HB = Untung / (% Untung / 100)</td>
+                        <td>Diketahui untung Rp20.000 dengan % 20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mencari HB dari % Rugi</strong></td>
+                        <td>HB = Rugi / (% Rugi / 100)</td>
+                        <td>Diketahui rugi Rp15.000 dengan % 10%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 5 — Mencari Harga Jual dari Persentase Untung</h4>
+                <p><strong>Soal:</strong> Sebuah tas dibeli dengan harga Rp200.000. Pedagang menginginkan keuntungan 25%. Berapa harga jual yang harus ditetapkan?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui: HB = Rp200.000, % Untung = 25%<br>
+                Besar Untung = 25% × Rp200.000 = Rp50.000<br>
+                HJ = Rp200.000 + Rp50.000 = <strong>Rp250.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 6 — Mencari Harga Jual saat Rugi</h4>
+                <p><strong>Soal:</strong> Sebuah HP dibeli dengan harga Rp3.000.000. Karena ada cacat kecil, HP tersebut dijual dengan rugi 10%. Berapa harga jualnya?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui: HB = Rp3.000.000, % Rugi = 10%<br>
+                Besar Rugi = 10% × Rp3.000.000 = Rp300.000<br>
+                HJ = Rp3.000.000 − Rp300.000 = <strong>Rp2.700.000</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI E -->
+        <section class="content-card">
+            <h3>E. Aplikasi dalam Kehidupan Sehari-hari</h3>
+            <p>Konsep untung, rugi, dan persentasenya banyak diterapkan dalam berbagai situasi nyata, baik oleh pedagang kecil maupun perusahaan besar. Berikut beberapa contoh aplikasinya:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Situasi</th>
+                        <th>Penerapan Konsep</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🛒 <strong>Penjualan di Pasar</strong></td>
+                        <td>Pedagang menghitung modal (harga beli + biaya angkut) dan menetapkan harga jual agar mendapat untung minimal 20%.</td>
+                    </tr>
+                    <tr>
+                        <td>🏪 <strong>Diskon Akhir Tahun</strong></td>
+                        <td>Toko memberikan diskon besar yang sebenarnya tetap memberikan untung karena dihitung dari harga beli yang jauh lebih rendah.</td>
+                    </tr>
+                    <tr>
+                        <td>📱 <strong>Jual Beli Online</strong></td>
+                        <td>Penjual online menghitung harga modal, biaya kemasan, ongkir, dan target untung sebelum menetapkan harga di marketplace.</td>
+                    </tr>
+                    <tr>
+                        <td>🚗 <strong>Jual Beli Kendaraan Bekas</strong></td>
+                        <td>Pembeli menghitung penyusutan nilai kendaraan dan menjual kembali dengan memperhitungkan persentase untung/rugi.</td>
+                    </tr>
+                    <tr>
+                        <td>🏦 <strong>Investasi Sederhana</strong></td>
+                        <td>Individu menghitung persentase keuntungan dari investasi saham, emas, atau deposito.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>💡 Studi Kasus: Pedagang Sayur di Pasar</h4>
+                <p><strong>Kasus:</strong> Pak Ahmad membeli 50 kg tomat dari petani seharga Rp5.000 per kg. Ia mengeluarkan biaya transportasi Rp50.000. Di pasar, 5 kg tomat busuk dan tidak bisa dijual. Sisa tomat dijual dengan harga Rp8.000 per kg. Apakah Pak Ahmad untung atau rugi?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Hitung harga beli total<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;HB = (50 kg × Rp5.000) + Rp50.000 = Rp250.000 + Rp50.000 = Rp300.000<br>
+                Langkah 2: Hitung harga jual total<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Tomat yang bisa dijual = 50 kg − 5 kg = 45 kg<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;HJ = 45 kg × Rp8.000 = Rp360.000<br>
+                Langkah 3: Tentukan kondisi<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Karena HJ (Rp360.000) > HB (Rp300.000), maka Pak Ahmad <strong>UNTUNG</strong>.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Untung = Rp360.000 − Rp300.000 = <strong>Rp60.000</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;% Untung = (Rp60.000 / Rp300.000) × 100% = <strong>20%</strong>.</p>
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Untung</span>
+                <span class="keyword-tag">Rugi</span>
+                <span class="keyword-tag">Impas</span>
+                <span class="keyword-tag">Harga Beli</span>
+                <span class="keyword-tag">Harga Jual</span>
+                <span class="keyword-tag">Persentase Untung</span>
+                <span class="keyword-tag">Persentase Rugi</span>
+                <span class="keyword-tag">Break Even Point</span>
+                <span class="keyword-tag">Profitabilitas</span>
+                <span class="keyword-tag">Efisiensi Usaha</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَأْكُلُوا أَمْوَالَكُم بَيْنَكُم بِالْبَاطِلِ إِلَّا أَن تَكُونَ تِجَارَةً عَن تَرَاضٍ مِّنكُمْ</div>
+            <p class="quote-translation">"Wahai orang-orang yang beriman, janganlah kamu saling memakan harta sesamamu dengan jalan yang batil, kecuali dengan jalan perniagaan yang berlaku dengan suka sama suka di antara kamu."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. An-Nisa [4]: 29</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat ini menegaskan prinsip kejujuran dan kerelaan dalam perdagangan, yang menjadi landasan etika dalam mencari untung.
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Aritmatika Sosial).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Untung dan Rugi).</li>
+                <li>Sukino & Wilson. (2018). <em>Matematika untuk SMP Kelas VII</em>. Jakarta: Erlangga.</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. An-Nisa: 29 tentang etika perniagaan).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 2</h2>
+            <p class="quiz-desc">
+                Untung, Rugi, dan Persentasenya | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Konsep untung & rugi, perhitungan besar untung/rugi, persentase untung & rugi, serta mencari harga jual dari persentase.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli sebuah sepatu seharga Rp120.000, kemudian menjualnya kembali dengan harga Rp145.000. Besarnya keuntungan yang diperoleh pedagang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. Rp15.000</label>
+                        <label><input type="radio" name="q1" value="B"> B. Rp25.000</label>
+                        <label><input type="radio" name="q1" value="C"> C. Rp30.000</label>
+                        <label><input type="radio" name="q1" value="D"> D. Rp35.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Ibu membeli 8 kg apel dengan harga Rp160.000. Karena ada sebagian yang busuk, apel tersebut dijual kembali dengan harga Rp18.000 per kg. Kondisi yang dialami Ibu adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. Rugi Rp16.000</label>
+                        <label><input type="radio" name="q2" value="B"> B. Untung Rp16.000</label>
+                        <label><input type="radio" name="q2" value="C"> C. Rugi Rp20.000</label>
+                        <label><input type="radio" name="q2" value="D"> D. Untung Rp20.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Sebuah jam tangan dibeli dengan harga Rp200.000 dan dijual kembali dengan harga Rp250.000. Persentase keuntungan yang diperoleh adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. 20%</label>
+                        <label><input type="radio" name="q3" value="B"> B. 22,5%</label>
+                        <label><input type="radio" name="q3" value="C"> C. 25%</label>
+                        <label><input type="radio" name="q3" value="D"> D. 30%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli sekarung tepung seharga Rp150.000. Karena kemasan rusak, tepung tersebut dijual dengan harga Rp135.000. Persentase kerugian yang dialami adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. 10%</label>
+                        <label><input type="radio" name="q4" value="B"> B. 12%</label>
+                        <label><input type="radio" name="q4" value="C"> C. 15%</label>
+                        <label><input type="radio" name="q4" value="D"> D. 20%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Sebuah barang dibeli dengan harga Rp80.000 dan dijual dengan keuntungan 25%. Harga jual barang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. Rp90.000</label>
+                        <label><input type="radio" name="q5" value="B"> B. Rp95.000</label>
+                        <label><input type="radio" name="q5" value="C"> C. Rp100.000</label>
+                        <label><input type="radio" name="q5" value="D"> D. Rp105.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Sebuah HP dibeli dengan harga Rp3.000.000. Karena ada cacat kecil, HP tersebut dijual dengan rugi 10%. Harga jual HP tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. Rp2.700.000</label>
+                        <label><input type="radio" name="q6" value="B"> B. Rp2.800.000</label>
+                        <label><input type="radio" name="q6" value="C"> C. Rp2.900.000</label>
+                        <label><input type="radio" name="q6" value="D"> D. Rp2.500.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli barang seharga Rp500.000 dan menjualnya kembali seharga Rp500.000. Kondisi yang dialami pedagang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. Untung Rp50.000</label>
+                        <label><input type="radio" name="q7" value="B"> B. Rugi Rp50.000</label>
+                        <label><input type="radio" name="q7" value="C"> C. Impas (tidak untung dan tidak rugi)</label>
+                        <label><input type="radio" name="q7" value="D"> D. Untung 10%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli 100 kg beras seharga Rp600.000. Beras tersebut dijual dengan harga Rp7.500 per kg. Persentase keuntungan yang diperoleh adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. 20%</label>
+                        <label><input type="radio" name="q8" value="B"> B. 25%</label>
+                        <label><input type="radio" name="q8" value="C"> C. 30%</label>
+                        <label><input type="radio" name="q8" value="D"> D. 35%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Sebuah barang dijual dengan harga Rp225.000 dan pedagang mendapat keuntungan 50%. Harga beli barang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. Rp100.000</label>
+                        <label><input type="radio" name="q9" value="B"> B. Rp125.000</label>
+                        <label><input type="radio" name="q9" value="C"> C. Rp150.000</label>
+                        <label><input type="radio" name="q9" value="D"> D. Rp175.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli barang seharga Rp400.000 dan menjualnya dengan harga Rp240.000. Persentase kerugian yang dialami adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. 30%</label>
+                        <label><input type="radio" name="q10" value="B"> B. 35%</label>
+                        <label><input type="radio" name="q10" value="C"> C. 40%</label>
+                        <label><input type="radio" name="q10" value="D"> D. 45%</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara untung, rugi, dan impas dalam perdagangan! Berikan masing-masing satu contoh soal beserta penyelesaiannya!</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Seorang pedagang membeli 20 kg jeruk seharga Rp10.000 per kg. Di perjalanan, 2 kg jeruk busuk dan tidak bisa dijual. Sisa jeruk dijual dengan harga Rp14.000 per kg. Hitunglah: (a) besar untung/rugi, dan (b) persentase untung/rugi!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Sebuah barang dijual dengan harga Rp180.000 dan pedagang mendapat keuntungan 20%. Tentukan: (a) harga beli barang, dan (b) besar keuntungan dalam rupiah!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan cara menghitung persentase untung dan persentase rugi! Tuliskan rumusnya dan berikan masing-masing satu contoh soal beserta penyelesaiannya!</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Seorang pedagang membeli 5 lusin baju dengan harga Rp60.000 per lusin. Ia menjual 3 lusin dengan harga Rp75.000 per lusin dan 2 lusin sisanya dengan harga Rp50.000 per lusin. Hitunglah: (a) total harga beli, (b) total harga jual, (c) besar untung/rugi, dan (d) persentase untung/rugi!</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="1.html">← Bab 1: Aritmatika Sosial</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="3.html">Bab 3: Diskon & Bruto-Netto-Tara →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'B', q2: 'A', q3: 'C', q4: 'A', q5: 'C',
+            q6: 'A', q7: 'C', q8: 'B', q9: 'C', q10: 'C'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 2: UNTUNG, RUGI, DAN PERSENTASENYA\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab2_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 2 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 2 (Untung, Rugi, dan Persentasenya):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>
