@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 11: Kesebangunan (Penerapan) | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="10.html">← Bab 10</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="12.html">Bab 12 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>🌍 Bab Sebelas: Penerapan Kesebangunan</h1>
+            <p class="chapter-desc">
+                Menerapkan konsep kesebangunan dalam berbagai situasi nyata, seperti pengukuran tinggi pohon atau gedung menggunakan bayangan, pengukuran lebar sungai tanpa harus menyeberang, perhitungan skala pada peta dan maket, serta aplikasi dalam fotografi dan desain.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A -->
+        <section class="content-card">
+            <h3>A. Mengapa Kesebangunan Penting dalam Kehidupan?</h3>
+            <p>Kesebangunan bukan hanya konsep teoretis dalam matematika, tetapi memiliki <strong>peran praktis yang sangat penting</strong> dalam kehidupan sehari-hari. Sejak zaman kuno, manusia telah memanfaatkan prinsip kesebangunan untuk mengukur benda-benda yang tidak mungkin diukur secara langsung — seperti tinggi piramida, lebar sungai, atau jarak antar bintang.</p>
+            <p style="margin-top: 1rem;">Filsuf Yunani <strong>Thales dari Miletus</strong> (±624–546 SM) dikenal sebagai orang pertama yang menggunakan prinsip kesebangunan untuk mengukur tinggi piramida Mesir dengan cara membandingkan bayangan piramida dengan bayangan tongkat yang diketahui tingginya. Metode ini dikenal sebagai <strong>"pengukuran tidak langsung"</strong> dan masih digunakan hingga saat ini dalam berbagai bidang.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 PRINSIP DASAR PENGUKURAN TIDAK LANGSUNG:</strong><br><br>
+                1. Identifikasi dua bangun yang <strong>sebangun</strong> dalam situasi nyata.<br>
+                2. Tentukan <strong>sisi-sisi yang bersesuaian</strong> dan ukur sisi yang diketahui.<br>
+                3. Susun <strong>perbandingan (proporsi)</strong> berdasarkan kesebangunan.<br>
+                4. Selesaikan persamaan untuk mencari nilai yang tidak diketahui.
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Bidang Aplikasi</th>
+                        <th>Contoh Penerapan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🌳 <strong>Survei & Pengukuran</strong></td>
+                        <td>Mengukur tinggi pohon, gedung, atau gunung tanpa harus naik ke atasnya.</td>
+                    </tr>
+                    <tr>
+                        <td>🗺️ <strong>Kartografi (Pemetaan)</strong></td>
+                        <td>Membuat peta dengan skala tertentu dari wilayah asli.</td>
+                    </tr>
+                    <tr>
+                        <td>🏗️ <strong>Arsitektur & Konstruksi</strong></td>
+                        <td>Membuat maket bangunan, menghitung dimensi dari gambar kerja.</td>
+                    </tr>
+                    <tr>
+                        <td>📸 <strong>Fotografi & Sinematografi</strong></td>
+                        <td>Memperbesar/memperkecil gambar dengan menjaga proporsi.</td>
+                    </tr>
+                    <tr>
+                        <td>🎨 <strong>Desain Grafis</strong></td>
+                        <td>Skalasi logo, poster, dan elemen visual.</td>
+                    </tr>
+                    <tr>
+                        <td>🔭 <strong>Astronomi</strong></td>
+                        <td>Menghitung jarak bintang menggunakan metode paralaks.</td>
+                    </tr>
+                    <tr>
+                        <td>🎮 <strong>Game & Animasi 3D</strong></td>
+                        <td>Rendering objek dengan berbagai skala dalam game.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- MATERI B -->
+        <section class="content-card">
+            <h3>B. Mengukur Tinggi dengan Bayangan (Metode Thales)</h3>
+            <p>Metode klasik untuk mengukur tinggi suatu benda (pohon, gedung, tiang) adalah dengan memanfaatkan <strong>bayangan</strong> yang terbentuk oleh sinar matahari. Karena sinar matahari datang sejajar, segitiga yang dibentuk oleh benda dan bayangannya akan <strong>sebangun</strong> dengan segitiga yang dibentuk benda pembanding dan bayangannya.</p>
+            
+            <div class="highlight-box">
+                <strong>📐 RUMUS PENGUKURAN DENGAN BAYANGAN:</strong><br><br>
+                (Tinggi Benda 1) / (Tinggi Benda 2) = (Bayangan Benda 1) / (Bayangan Benda 2)<br><br>
+                <strong>Syarat:</strong> Kedua pengukuran harus dilakukan pada <strong>waktu yang sama</strong> agar sudut sinar matahari sama.
+            </div>
+
+            <div class="example-box">
+                <h4>🌳 Contoh Soal 1 — Mengukur Tinggi Pohon</h4>
+                <p><strong>Soal:</strong> Seorang anak yang tingginya 150 cm berdiri di samping sebuah pohon. Pada waktu yang sama, bayangan anak = 100 cm dan bayangan pohon = 800 cm. Berapa tinggi pohon sebenarnya?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Karena sinar matahari sejajar, kedua segitiga sebangun (kriteria AA).<br><br>
+                tinggi anak / tinggi pohon = bayangan anak / bayangan pohon<br>
+                150 / tinggi pohon = 100 / 800<br>
+                150 / tinggi pohon = 1/8<br>
+                tinggi pohon = 150 × 8 = <strong>1200 cm = 12 m</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏢 Contoh Soal 2 — Mengukur Tinggi Gedung</h4>
+                <p><strong>Soal:</strong> Sebuah tongkat sepanjang 2 m ditegakkan di samping gedung. Bayangan tongkat = 1,5 m dan bayangan gedung = 21 m. Berapa tinggi gedung?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                tinggi tongkat / tinggi gedung = bayangan tongkat / bayangan gedung<br>
+                2 / tinggi gedung = 1,5 / 21<br>
+                tinggi gedung = (2 × 21) / 1,5<br>
+                tinggi gedung = 42 / 1,5 = <strong>28 m</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏔️ Contoh Soal 3 — Mengukur Tinggi Monumen</h4>
+                <p><strong>Soal:</strong> Pada pukul 10.00 pagi, seorang siswa dengan tinggi 160 cm memiliki bayangan 120 cm. Pada waktu yang sama, bayangan sebuah monumen = 18 m. Berapa tinggi monumen?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Samakan satuan: 160 cm = 1,6 m, 120 cm = 1,2 m<br>
+                tinggi siswa / tinggi monumen = bayangan siswa / bayangan monumen<br>
+                1,6 / tinggi monumen = 1,2 / 18<br>
+                tinggi monumen = (1,6 × 18) / 1,2<br>
+                tinggi monumen = 28,8 / 1,2 = <strong>24 m</strong></p>
+            </div>
+        </section>
+
+        <!-- MATERI C -->
+        <section class="content-card">
+            <h3>C. Mengukur Lebar Sungai Tanpa Menyeberang</h3>
+            <p>Salah satu aplikasi menarik dari kesebangunan adalah mengukur <strong>lebar sungai</strong> tanpa harus menyeberanginya. Metode ini menggunakan prinsip segitiga sebangun dengan membuat segitiga referensi di tepi sungai.</p>
+            
+            <div class="highlight-box">
+                <strong>📐 METODE PENGUKURAN LEBAR SUNGAI:</strong><br><br>
+                1. Berdiri di tepi sungai (titik A), perhatikan sebuah benda di seberang (titik B, misalnya pohon).<br>
+                2. Berjalanlah tegak lurus menjauhi sungai sejauh jarak tertentu (titik C).<br>
+                3. Lanjutkan berjalan dengan jarak yang sama ke titik D.<br>
+                4. Berbeloklah tegak lurus hingga segaris dengan B dan C (titik E).<br>
+                5. Ukur jarak DE — jarak ini sama dengan lebar sungai AB.
+            </div>
+
+            <div class="example-box">
+                <h4>🌊 Contoh Soal — Mengukur Lebar Sungai</h4>
+                <p><strong>Soal:</strong> Seorang surveyor ingin mengukur lebar sungai. Ia berdiri di titik A (tepi sungai) dan melihat pohon B di seberang. Ia berjalan tegak lurus 20 m ke titik C, lalu melanjutkan 20 m lagi ke titik D. Dari D, ia berjalan tegak lurus hingga mencapai titik E yang segaris dengan B dan C. Jarak DE = 15 m. Berapa lebar sungai AB?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                △ABC dan △EDC sebangun (kriteria AA, sudut bertolak belakang sama).<br><br>
+                AB / ED = AC / DC<br>
+                AB / 15 = 20 / 20<br>
+                AB / 15 = 1<br>
+                AB = <strong>15 m</strong><br><br>
+                Jadi, lebar sungai adalah <strong>15 meter</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🌊 Contoh Soal — Metode Alternatif</h4>
+                <p><strong>Soal:</strong> Seorang anak berdiri 5 m dari tepi sungai. Ia melihat sebuah batu di seberang sungai. Ia berjalan sejajar dengan tepi sungai sejauh 12 m, lalu melihat bahwa batu tersebut segaris dengan posisi awalnya. Jika jarak dari posisi akhir ke tepi sungai adalah 8 m, berapa lebar sungai?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Dengan segitiga sebangun:<br>
+                lebar sungai / 5 = 12 / 8<br>
+                lebar sungai = (5 × 12) / 8 = 60 / 8 = <strong>7,5 m</strong></p>
+            </div>
+        </section>
+
+        <!-- MATERI D -->
+        <section class="content-card">
+            <h3>D. Skala pada Peta, Maket, dan Model</h3>
+            <p><strong>Skala</strong> adalah perbandingan antara ukuran pada gambar/peta/model dengan ukuran sebenarnya. Konsep skala merupakan penerapan langsung dari kesebangunan. Skala ditulis dalam bentuk <strong>1 : n</strong>, yang berarti 1 satuan pada gambar mewakili n satuan pada ukuran sebenarnya.</p>
+            
+            <div class="highlight-box">
+                <strong>📐 RUMUS SKALA:</strong><br><br>
+                Skala = (Ukuran pada Gambar) / (Ukuran Sebenarnya)<br><br>
+                <strong>Contoh:</strong> Skala 1 : 100.000 berarti 1 cm pada peta = 100.000 cm = 1 km di lapangan.<br><br>
+                <strong>Hubungan:</strong><br>
+                • Jarak pada peta = Jarak sebenarnya × Skala<br>
+                • Jarak sebenarnya = Jarak pada peta / Skala
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Skala</th>
+                        <th>Arti</th>
+                        <th>Penggunaan Umum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1 : 1</strong></td>
+                        <td>Ukuran sebenarnya (kongruen)</td>
+                        <td>Gambar teknik 1:1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1 : 50</strong></td>
+                        <td>1 cm = 50 cm = 0,5 m</td>
+                        <td>Denah rumah</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1 : 100</strong></td>
+                        <td>1 cm = 100 cm = 1 m</td>
+                        <td>Maket bangunan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1 : 1.000</strong></td>
+                        <td>1 cm = 10 m</td>
+                        <td>Peta lokasi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1 : 50.000</strong></td>
+                        <td>1 cm = 500 m = 0,5 km</td>
+                        <td>Peta topografi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1 : 100.000</strong></td>
+                        <td>1 cm = 1 km</td>
+                        <td>Peta jalan, atlas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>🗺️ Contoh Soal 1 — Menghitung Jarak Sebenarnya</h4>
+                <p><strong>Soal:</strong> Pada peta berskala 1 : 500.000, jarak antara kota A dan kota B adalah 8 cm. Berapa jarak sebenarnya kedua kota tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Jarak sebenarnya = Jarak pada peta / Skala<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 8 cm / (1/500.000)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 8 × 500.000 cm<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 4.000.000 cm<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 40.000 m = <strong>40 km</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🗺️ Contoh Soal 2 — Menghitung Jarak pada Peta</h4>
+                <p><strong>Soal:</strong> Jarak sebenarnya antara dua kota adalah 75 km. Pada peta berskala 1 : 1.500.000, berapa cm jarak kedua kota tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                75 km = 7.500.000 cm<br>
+                Jarak pada peta = Jarak sebenarnya × Skala<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 7.500.000 × (1/1.500.000)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>5 cm</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏠 Contoh Soal 3 — Maket Rumah</h4>
+                <p><strong>Soal:</strong> Sebuah rumah berukuran 15 m × 10 m akan dibuat maketnya dengan skala 1 : 100. Berapa ukuran maket rumah tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                15 m = 1500 cm, 10 m = 1000 cm<br>
+                Panjang maket = 1500 × (1/100) = <strong>15 cm</strong><br>
+                Lebar maket = 1000 × (1/100) = <strong>10 cm</strong><br>
+                Jadi, ukuran maket = <strong>15 cm × 10 cm</strong></p>
+            </div>
+        </section>
+
+        <!-- MATERI E -->
+        <section class="content-card">
+            <h3>E. Fotografi dan Aspek Rasio</h3>
+            <p>Dalam fotografi dan desain layar, konsep <strong>aspek rasio</strong> (perbandingan lebar dan tinggi) sangat penting. Agar gambar tidak terdistorsi saat diperbesar atau diperkecil, aspek rasio harus tetap dijaga — ini adalah penerapan langsung dari prinsip kesebangunan.</p>
+            
+            <div class="highlight-box">
+                <strong>📐 ASPEK RASIO UMUM:</strong><br><br>
+                • <strong>4 : 3</strong> — Televisi lama, kamera saku<br>
+                • <strong>16 : 9</strong> — Televisi modern, YouTube, film HD<br>
+                • <strong>21 : 9</strong> — Layar ultra-wide, sinema<br>
+                • <strong>1 : 1</strong> — Foto Instagram, profil sosial media<br>
+                • <strong>3 : 2</strong> — Kamera DSLR, foto cetak standar
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek Rasio</th>
+                        <th>Contoh Ukuran (px)</th>
+                        <th>Penggunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>16 : 9</strong></td>
+                        <td>1920 × 1080 (Full HD)</td>
+                        <td>YouTube, Netflix, TV modern</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4 : 3</strong></td>
+                        <td>1024 × 768</td>
+                        <td>Monitor lama, iPad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1 : 1</strong></td>
+                        <td>1080 × 1080</td>
+                        <td>Instagram post</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9 : 16</strong></td>
+                        <td>1080 × 1920</td>
+                        <td>TikTok, Instagram Reels, Stories</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3 : 2</strong></td>
+                        <td>3000 × 2000</td>
+                        <td>Fotografi cetak</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📸 Contoh Soal — Memperbesar Foto</h4>
+                <p><strong>Soal:</strong> Sebuah foto berukuran 10 cm × 15 cm akan dicetak dengan lebar 25 cm. Berapa tinggi foto setelah dicetak agar tetap proporsional?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Karena foto harus tetap sebangun (proporsional):<br>
+                lebar awal / tinggi awal = lebar akhir / tinggi akhir<br>
+                10 / 15 = 25 / tinggi akhir<br>
+                tinggi akhir = (15 × 25) / 10<br>
+                tinggi akhir = 375 / 10 = <strong>37,5 cm</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📺 Contoh Soal — Layar Televisi</h4>
+                <p><strong>Soal:</strong> Sebuah TV memiliki aspek rasio 16 : 9. Jika lebar layar = 120 cm, berapa tinggi layar?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                lebar / tinggi = 16 / 9<br>
+                120 / tinggi = 16 / 9<br>
+                tinggi = (120 × 9) / 16<br>
+                tinggi = 1080 / 16 = <strong>67,5 cm</strong></p>
+            </div>
+        </section>
+
+        <!-- MATERI F -->
+        <section class="content-card">
+            <h3>F. Soal Cerita Aplikasi Kesebangunan</h3>
+            <p>Berikut adalah beberapa soal cerita yang menggabungkan konsep kesebangunan dalam konteks kehidupan nyata:</p>
+
+            <div class="example-box">
+                <h4>🎯 Soal Cerita 1 — Bayangan Piramida</h4>
+                <p><strong>Soal:</strong> Seorang arkeolog ingin mengukur tinggi sebuah piramida. Ia menancapkan tongkat setinggi 2 m di dekat piramida. Bayangan tongkat = 3 m dan bayangan piramida = 90 m. Berapa tinggi piramida?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                tinggi tongkat / tinggi piramida = bayangan tongkat / bayangan piramida<br>
+                2 / tinggi piramida = 3 / 90<br>
+                tinggi piramida = (2 × 90) / 3 = 180 / 3 = <strong>60 m</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎯 Soal Cerita 2 — Bayangan Tiang Bendera</h4>
+                <p><strong>Soal:</strong> Pada pukul 09.00, bayangan seorang anak (tinggi 140 cm) adalah 70 cm. Pada waktu yang sama, bayangan tiang bendera adalah 5 m. Berapa tinggi tiang bendera?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Samakan satuan: 140 cm = 1,4 m, 70 cm = 0,7 m<br>
+                tinggi anak / tinggi tiang = bayangan anak / bayangan tiang<br>
+                1,4 / tinggi tiang = 0,7 / 5<br>
+                tinggi tiang = (1,4 × 5) / 0,7 = 7 / 0,7 = <strong>10 m</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎯 Soal Cerita 3 — Peta dan Perjalanan</h4>
+                <p><strong>Soal:</strong> Pada peta berskala 1 : 2.500.000, jarak antara kota X dan Y = 6 cm. Jika seorang pengendara motor menempuh perjalanan dengan kecepatan rata-rata 50 km/jam, berapa waktu yang dibutuhkan?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Hitung jarak sebenarnya<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Jarak = 6 × 2.500.000 cm = 15.000.000 cm = 150 km<br>
+                Langkah 2: Hitung waktu<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Waktu = Jarak / Kecepatan = 150 / 50 = <strong>3 jam</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎯 Soal Cerita 4 — Desain Poster</h4>
+                <p><strong>Soal:</strong> Sebuah poster berukuran 40 cm × 60 cm akan diperkecil agar muat di halaman A5 (14,8 cm × 21 cm). Apakah poster dapat diperkecil ke ukuran A5 dengan tetap proporsional? Jika tidak, berapa ukuran maksimum yang proporsional?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Aspek rasio poster = 40 : 60 = 2 : 3<br>
+                Aspek rasio A5 = 14,8 : 21 ≈ 2 : 2,84<br>
+                Karena rasionya berbeda, poster <strong>tidak dapat</strong> diperkecil ke A5 secara proporsional.<br><br>
+                Jika lebar maksimum = 14,8 cm:<br>
+                tinggi = 14,8 × (60/40) = 14,8 × 1,5 = <strong>22,2 cm</strong> (melebihi A5)<br>
+                Jika tinggi maksimum = 21 cm:<br>
+                lebar = 21 × (40/60) = 21 × 2/3 = <strong>14 cm</strong><br>
+                Jadi, ukuran maksimum proporsional = <strong>14 cm × 21 cm</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎯 Soal Cerita 5 — Kolam Renang Mini</h4>
+                <p><strong>Soal:</strong> Sebuah kolam renang berukuran 25 m × 10 m × 2 m. Akan dibuat model miniatur dengan skala 1 : 100. Berapa volume air yang dapat ditampung model miniatur tersebut (dalam liter)?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Skala panjang = 1/100<br>
+                Volume skala = (1/100)³ = 1/1.000.000<br>
+                Volume kolam sebenarnya = 25 × 10 × 2 = 500 m³<br>
+                Volume model = 500 / 1.000.000 m³ = 0,0005 m³<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0,0005 × 1000 liter<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>0,5 liter</strong></p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 TIPS MENYELESAIKAN SOAL CERITA KESEBANGUNAN:</strong><br>
+                1. <strong>Baca soal dengan teliti</strong> — identifikasi apa yang diketahui dan ditanya.<br>
+                2. <strong>Gambar sketsa</strong> — visualisasikan situasi dengan segitiga atau bangun sebangun.<br>
+                3. <strong>Samakan satuan</strong> — pastikan semua ukuran dalam satuan yang sama sebelum menghitung.<br>
+                4. <strong>Susun perbandingan</strong> — tulis proporsi berdasarkan kesebangunan.<br>
+                5. <strong>Selesaikan persamaan</strong> — gunakan perkalian silang untuk mencari nilai yang tidak diketahui.<br>
+                6. <strong>Periksa jawaban</strong> — pastikan hasilnya masuk akal dalam konteks soal.
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Pengukuran Tidak Langsung</span>
+                <span class="keyword-tag">Bayangan</span>
+                <span class="keyword-tag">Metode Thales</span>
+                <span class="keyword-tag">Lebar Sungai</span>
+                <span class="keyword-tag">Skala</span>
+                <span class="keyword-tag">Peta</span>
+                <span class="keyword-tag">Maket</span>
+                <span class="keyword-tag">Model</span>
+                <span class="keyword-tag">Aspek Rasio</span>
+                <span class="keyword-tag">Fotografi</span>
+                <span class="keyword-tag">Proporsi</span>
+                <span class="keyword-tag">Soal Cerita</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">أَفَلَمْ يَسِيرُوا فِي الْأَرْضِ فَيَنظُرُوا كَيْفَ كَانَ عَاقِبَةُ الَّذِينَ مِن قَبْلِهِمْ</div>
+            <p class="quote-translation">"Maka apakah mereka tidak berjalan di muka bumi, lalu melihat bagaimana kesudahan orang-orang sebelum mereka (yang memusuhi mereka)?"</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. Muhammad [47]: 10</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat ini mengajak kita untuk berjalan di muka bumi dan memperhatikan ciptaan Allah. Peradaban terdahulu seperti Mesir Kuno telah membangun piramida yang megah dengan memanfaatkan prinsip matematika — termasuk kesebangunan. Memahami dan menerapkan ilmu pengetahuan adalah bagian dari mentadabburi ayat-ayat kauniyah Allah di alam semesta.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                "Tuntutlah ilmu walau sampai ke negeri Cina." — Pepatah Arab (Hadis Maudhu' namun masyhur sebagai hikmah)
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Geometri: Penerapan Kesebangunan).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Aplikasi Kesebangunan dalam Kehidupan Sehari-hari).</li>
+                <li>Posamentier, A. S., & Bannister, K. (2014). <em>Geometry: A Comprehensive Course</em>. Dover Publications. (Bab Applications of Similarity).</li>
+                <li>Heath, T. L. (1921). <em>A History of Greek Mathematics</em>. Oxford University Press. (Kisah Thales mengukur piramida).</li>
+                <li>Badan Informasi Geospasial (BIG). (2023). <em>Panduan Membaca Peta dan Memahami Skala</em>. Cibinong: BIG RI.</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. Muhammad: 10 tentang berjalan di muka bumi dan memperhatikan ciptaan Allah).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 11</h2>
+            <p class="quiz-desc">
+                Penerapan Kesebangunan | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Pengukuran dengan bayangan, pengukuran lebar sungai, skala peta & maket, aspek rasio, dan soal cerita aplikasi.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang anak tinggi 150 cm memiliki bayangan 100 cm. Pada waktu yang sama, bayangan pohon = 800 cm. Tinggi pohon adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. 800 cm</label>
+                        <label><input type="radio" name="q1" value="B"> B. 1000 cm</label>
+                        <label><input type="radio" name="q1" value="C"> C. 1200 cm</label>
+                        <label><input type="radio" name="q1" value="D"> D. 1500 cm</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Skala 1 : 100.000 pada peta berarti...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. 1 cm pada peta = 100 m di lapangan</label>
+                        <label><input type="radio" name="q2" value="B"> B. 1 cm pada peta = 1 km di lapangan</label>
+                        <label><input type="radio" name="q2" value="C"> C. 1 cm pada peta = 10 km di lapangan</label>
+                        <label><input type="radio" name="q2" value="D"> D. 1 cm pada peta = 100 km di lapangan</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Pada peta berskala 1 : 500.000, jarak dua kota = 8 cm. Jarak sebenarnya adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. 4 km</label>
+                        <label><input type="radio" name="q3" value="B"> B. 40 km</label>
+                        <label><input type="radio" name="q3" value="C"> C. 400 km</label>
+                        <label><input type="radio" name="q3" value="D"> D. 4.000 km</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Sebuah foto berukuran 10 cm × 15 cm akan diperbesar dengan lebar 25 cm. Tinggi foto setelah diperbesar adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. 30 cm</label>
+                        <label><input type="radio" name="q4" value="B"> B. 35 cm</label>
+                        <label><input type="radio" name="q4" value="C"> C. 37,5 cm</label>
+                        <label><input type="radio" name="q4" value="D"> D. 40 cm</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Aspek rasio 16 : 9 biasa digunakan pada...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. Televisi lama</label>
+                        <label><input type="radio" name="q5" value="B"> B. Televisi modern dan YouTube</label>
+                        <label><input type="radio" name="q5" value="C"> C. Foto profil Instagram</label>
+                        <label><input type="radio" name="q5" value="D"> D. Peta topografi</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Tongkat 2 m ditegakkan di samping gedung. Bayangan tongkat = 1,5 m dan bayangan gedung = 21 m. Tinggi gedung adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. 14 m</label>
+                        <label><input type="radio" name="q6" value="B"> B. 21 m</label>
+                        <label><input type="radio" name="q6" value="C"> C. 28 m</label>
+                        <label><input type="radio" name="q6" value="D"> D. 35 m</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Rumah berukuran 15 m × 10 m akan dibuat maket dengan skala 1 : 100. Ukuran maket adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. 15 cm × 10 cm</label>
+                        <label><input type="radio" name="q7" value="B"> B. 1,5 cm × 1 cm</label>
+                        <label><input type="radio" name="q7" value="C"> C. 150 cm × 100 cm</label>
+                        <label><input type="radio" name="q7" value="D"> D. 1,5 m × 1 m</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Prinsip yang digunakan untuk mengukur tinggi pohon dengan bayangan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. Kongruensi segitiga</label>
+                        <label><input type="radio" name="q8" value="B"> B. Kesebangunan segitiga</label>
+                        <label><input type="radio" name="q8" value="C"> C. Luas segitiga</label>
+                        <label><input type="radio" name="q8" value="D"> D. Keliling segitiga</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Pada peta berskala 1 : 1.500.000, jarak dua kota = 5 cm. Jarak sebenarnya adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. 7,5 km</label>
+                        <label><input type="radio" name="q9" value="B"> B. 75 km</label>
+                        <label><input type="radio" name="q9" value="C"> C. 750 km</label>
+                        <label><input type="radio" name="q9" value="D"> D. 7.500 km</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Sebuah TV dengan aspek rasio 16 : 9 memiliki lebar 120 cm. Tinggi TV tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. 60 cm</label>
+                        <label><input type="radio" name="q10" value="B"> B. 67,5 cm</label>
+                        <label><input type="radio" name="q10" value="C"> C. 75 cm</label>
+                        <label><input type="radio" name="q10" value="D"> D. 80 cm</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan prinsip pengukuran tinggi pohon menggunakan bayangan! Tuliskan rumusnya dan berikan contoh soal beserta penyelesaiannya! Mengapa pengukuran harus dilakukan pada waktu yang sama?</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Seorang arkeolog ingin mengukur tinggi sebuah piramida. Ia menancapkan tongkat setinggi 2 m. Bayangan tongkat = 3 m dan bayangan piramida = 90 m. Hitunglah tinggi piramida tersebut! Jelaskan prinsip kesebangunan yang digunakan!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Pada peta berskala 1 : 2.500.000, jarak antara kota A dan B = 12 cm. Seorang pengendara mobil menempuh perjalanan dengan kecepatan rata-rata 60 km/jam. Hitunglah: (a) jarak sebenarnya kedua kota, dan (b) waktu tempuh perjalanan!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Sebuah foto berukuran 20 cm × 30 cm akan dicetak dengan lebar 45 cm. Hitunglah: (a) faktor skala perbesaran, (b) tinggi foto setelah dicetak, dan (c) luas foto setelah dicetak! Mengapa foto tetap terlihat proporsional?</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Sebutkan 5 bidang kehidupan yang menerapkan konsep kesebangunan! Jelaskan masing-masing penerapannya secara singkat! Buatlah satu contoh soal cerita aplikasi kesebangunan yang belum ada di materi, lalu selesaikan!</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="10.html">← Bab 10: Kesebangunan (Konsep & Syarat)</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="12.html">Bab 12: Kekongruenan (Konsep & Syarat) →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'C', q2: 'B', q3: 'B', q4: 'C', q5: 'B',
+            q6: 'C', q7: 'A', q8: 'B', q9: 'B', q10: 'B'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 11: PENERAPAN KESEBANGUNAN\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab11_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 11 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 11 (Penerapan Kesebangunan):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

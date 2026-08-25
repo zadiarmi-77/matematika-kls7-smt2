@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Pengertian Aritmatika Sosial, Harga Beli & Harga Jual | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="index.html">← Daftar Isi</a>
+            <a href="2.html">Bab 2 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>💰 Bab Satu: Pengertian Aritmatika Sosial, Harga Beli & Harga Jual</h1>
+            <p class="chapter-desc">
+                Memahami konsep dasar aritmatika sosial sebagai cabang matematika terapan yang berkaitan dengan aktivitas ekonomi dan perdagangan, serta mendalami dua konsep fundamental yaitu harga beli (modal) dan harga jual sebagai fondasi bagi pemahaman konsep aritmatika sosial lebih lanjut.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A: PENGERTIAN ARITMATIKA SOSIAL -->
+        <section class="content-card">
+            <h3>A. Pengertian Aritmatika Sosial</h3>
+            
+            <p><strong>Aritmatika sosial</strong> merupakan cabang matematika terapan yang mempelajari penerapan operasi hitung dasar — meliputi penjumlahan, pengurangan, perkalian, pembagian, dan persentase — dalam kehidupan sehari-hari, khususnya dalam kegiatan ekonomi, perdagangan, perbankan, dan koperasi. Kata <em>"sosial"</em> dalam aritmatika sosial menunjukkan bahwa materi ini sangat dekat dengan aktivitas sosial manusia, terutama dalam hal bermuamalah (bertransaksi) dengan sesama.</p>
+            
+            <p style="margin-top: 1rem;">Secara etimologi, <strong>"aritmatika"</strong> berasal dari bahasa Yunani <em>arithmetika</em> yang berarti "ilmu berhitung", sedangkan <strong>"sosial"</strong> berasal dari bahasa Latin <em>socius</em> yang berarti "kawan" atau "masyarakat". Jadi, aritmatika sosial dapat diartikan sebagai ilmu berhitung yang diterapkan dalam konteks kehidupan sosial masyarakat, terutama dalam aktivitas ekonomi.</p>
+
+            <p style="margin-top: 1rem;">Dalam kehidupan sehari-hari, kita sering menjumpai berbagai aktivitas yang melibatkan aritmatika sosial, seperti: membeli barang di toko, menjual hasil panen di pasar, menabung di bank, meminjam uang di koperasi, membayar pajak, hingga menghitung diskon saat berbelanja. Semua aktivitas tersebut memerlukan pemahaman aritmatika sosial agar kita dapat mengambil keputusan ekonomi yang tepat dan tidak dirugikan.</p>
+
+            <div class="highlight-box">
+                <strong>📌 DEFINISI LENGKAP:</strong><br><br>
+                <strong>Aritmatika Sosial</strong> adalah cabang matematika yang mempelajari penerapan konsep bilangan dan operasi hitung (termasuk persentase) dalam aktivitas ekonomi dan kehidupan sosial masyarakat, seperti jual beli, perdagangan, perbankan, perkoperasian, perpajakan, serta pengelolaan keuangan pribadi.
+            </div>
+
+            <h4 style="margin-top: 2rem;">📜 Sejarah Singkat Aritmatika Sosial</h4>
+            <p style="margin-top: 0.75rem;">Aritmatika sosial telah dikenal manusia sejak zaman peradaban kuno. Bangsa <strong>Babilonia</strong> (±3000 SM) telah menggunakan perhitungan aritmatika untuk mencatat transaksi perdagangan. Bangsa <strong>Mesir Kuno</strong> menggunakan matematika untuk menghitung hasil panen dan pajak. Dalam peradaban Islam, aritmatika sosial berkembang pesat melalui karya-karya ulama seperti <strong>Al-Khawarizmi</strong> (780–850 M) yang menulis kitab <em>Al-Jabr wa al-Muqabala</em>, serta <strong>Ibnu Taimiyah</strong> yang membahas konsep harga wajar dalam perdagangan.</p>
+            <p style="margin-top: 0.75rem;">Di Indonesia, aritmatika sosial diajarkan sebagai bagian dari kurikulum matematika sejak masa kolonial, dengan penekanan pada aplikasi praktis dalam kehidupan bermasyarakat.</p>
+
+            <h4 style="margin-top: 2rem;">🎯 Ruang Lingkup Aritmatika Sosial</h4>
+            <p style="margin-top: 0.75rem;">Aritmatika sosial mencakup berbagai topik yang berkaitan dengan ekonomi dan perdagangan, antara lain:</p>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Topik</th>
+                        <th>Deskripsi Singkat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Harga Beli dan Harga Jual</strong></td>
+                        <td>Modal yang dikeluarkan dan harga yang diterima dari penjualan.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Untung dan Rugi</strong></td>
+                        <td>Selisih antara harga jual dan harga beli.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Persentase Untung/Rugi</strong></td>
+                        <td>Perbandingan untung/rugi dengan harga beli dalam persen.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Diskon (Rabat)</strong></td>
+                        <td>Potongan harga dari harga yang ditetapkan.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Bruto, Netto, Tara</strong></td>
+                        <td>Berat kotor, berat bersih, dan berat kemasan.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Bunga Tunggal</strong></td>
+                        <td>Bunga yang dihitung dari modal awal saja.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Pajak</strong></td>
+                        <td>Iuran wajib kepada negara (PPh, PPN).</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>Pertumbuhan & Peluruhan</strong></td>
+                        <td>Penambahan atau pengurangan nilai dalam kurun waktu.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 1.5rem;"><em>Catatan: Pada pertemuan ini, kita akan fokus mempelajari <strong>Pengertian Aritmatika Sosial</strong> serta dua topik dasar yaitu <strong>Harga Beli</strong> dan <strong>Harga Jual</strong>. Topik-topik lainnya akan dipelajari pada pertemuan-pertemuan berikutnya.</em></p>
+
+            <h4 style="margin-top: 2rem;">✨ Manfaat Mempelajari Aritmatika Sosial</h4>
+            <p style="margin-top: 0.75rem;">Mempelajari aritmatika sosial memiliki banyak manfaat, baik dalam kehidupan sehari-hari maupun untuk masa depan siswa. Berikut adalah beberapa manfaat utama:</p>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Manfaat</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🧠 <strong>Berpikir Logis</strong></td>
+                        <td>Melatih kemampuan berpikir rasional dan kritis dalam mengambil keputusan ekonomi.</td>
+                    </tr>
+                    <tr>
+                        <td>💼 <strong>Kecakapan Finansial</strong></td>
+                        <td>Membekali siswa dengan keterampilan mengelola keuangan secara bijak sejak dini.</td>
+                    </tr>
+                    <tr>
+                        <td>🛒 <strong>Literasi Perdagangan</strong></td>
+                        <td>Memahami mekanisme jual beli, perhitungan harga, dan strategi dagang secara tepat.</td>
+                    </tr>
+                    <tr>
+                        <td>🏦 <strong>Pengetahuan Perbankan</strong></td>
+                        <td>Memahami konsep tabungan, bunga, dan investasi sederhana.</td>
+                    </tr>
+                    <tr>
+                        <td>🛡️ <strong>Menghindari Kerugian</strong></td>
+                        <td>Melindungi diri dari penipuan, perhitungan yang salah, atau transaksi yang merugikan.</td>
+                    </tr>
+                    <tr>
+                        <td>📊 <strong>Kemampuan Analitis</strong></td>
+                        <td>Melatih kemampuan menganalisis data ekonomi dan mengambil keputusan berdasarkan perhitungan.</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 <strong>Kesiapan Karir</strong></td>
+                        <td>Menjadi bekal penting untuk berbagai profesi di bidang bisnis, ekonomi, dan keuangan.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="margin-top: 2rem;">💡 Contoh Penerapan dalam Kehidupan Sehari-hari</h4>
+            <p style="margin-top: 0.75rem;">Aritmatika sosial sangat dekat dengan kehidupan kita sehari-hari. Berikut beberapa contoh nyata penerapannya:</p>
+
+            <div class="example-box">
+                <h4>🏪 Contoh 1 — Berbelanja di Pasar</h4>
+                <p>Ibu membeli 5 kg beras seharga Rp60.000 per kg di pasar. Ia kemudian menjual kembali 2 kg beras tersebut kepada tetangga dengan harga Rp65.000 per kg. Dengan memahami aritmatika sosial, Ibu dapat menghitung berapa modal yang dikeluarkan, berapa harga jual, dan apakah ia mendapat keuntungan.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏬 Contoh 2 — Diskon di Mall</h4>
+                <p>Saat berbelanja di mall, seorang siswa melihat sepatu yang标价 Rp500.000 dengan diskon 30%. Dengan aritmatika sosial, ia dapat menghitung berapa harga sebenarnya setelah diskon dan memutuskan apakah sepatu tersebut layak dibeli.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏦 Contoh 3 — Menabung di Bank</h4>
+                <p>Seorang pelajar menabung Rp1.000.000 di bank dengan bunga 6% per tahun. Dengan aritmatika sosial, ia dapat menghitung berapa bunga yang akan diperoleh setelah satu tahun dan berapa total uang yang akan diterima.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🤝 Contoh 4 — Meminjam di Koperasi</h4>
+                <p>Seorang anggota koperasi meminjam Rp5.000.000 dengan bunga 2% per bulan. Dengan aritmatika sosial, ia dapat menghitung berapa total bunga yang harus dibayar dan berapa cicilan per bulan yang harus disetor.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🌾 Contoh 5 — Petani Menjual Hasil Panen</h4>
+                <p>Seorang petani menjual 100 kg gabah dengan harga Rp5.500 per kg. Ia mengeluarkan biaya transportasi Rp200.000 dan biaya karung Rp50.000. Dengan aritmatika sosial, ia dapat menghitung berapa modal bersihnya dan berapa keuntungan yang diperoleh.</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 REFLEKSI:</strong><br>
+                Aritmatika sosial bukan hanya tentang angka dan rumus, tetapi tentang <strong>kemampuan mengambil keputusan yang bijak</strong> dalam kehidupan ekonomi. Dengan memahami konsep ini, kita dapat menjadi konsumen yang cerdas, pedagang yang jujur, dan pengelola keuangan yang bertanggung jawab.
+            </div>
+        </section>
+
+        <!-- MATERI B: HARGA BELI -->
+        <section class="content-card">
+            <h3>B. Harga Beli (Modal)</h3>
+            
+            <p><strong>Harga beli</strong> atau sering juga disebut <strong>modal</strong> adalah sejumlah uang yang dikeluarkan oleh seorang pedagang atau pembeli untuk memperoleh barang dagangan. Harga beli merupakan <strong>dasar perhitungan</strong> dalam aritmatika sosial karena dari harga beli inilah kita dapat menentukan apakah suatu transaksi menghasilkan keuntungan atau kerugian.</p>
+
+            <p style="margin-top: 1rem;">Penting untuk dipahami bahwa harga beli <strong>bukan hanya</strong> harga barang itu sendiri, tetapi juga mencakup <strong>seluruh biaya yang dikeluarkan</strong> untuk mendapatkan barang tersebut hingga siap dijual. Ini termasuk biaya transportasi, biaya kemasan, biaya penyimpanan, pajak pembelian, dan biaya operasional lainnya.</p>
+
+            <div class="highlight-box">
+                <strong>📌 DEFINISI HARGA BELI:</strong><br><br>
+                <strong>Harga Beli</strong> = Jumlah seluruh uang yang dikeluarkan untuk memperoleh barang dagangan, termasuk harga barang itu sendiri dan semua biaya operasional yang menyertainya.<br><br>
+                <strong>Rumus:</strong><br>
+                Harga Beli = Harga Barang + Biaya Operasional<br><br>
+                <strong>Keterangan:</strong><br>
+                • <strong>Harga Barang</strong> = Harga pokok barang yang dibeli dari supplier/petani/produsen.<br>
+                • <strong>Biaya Operasional</strong> = Semua biaya tambahan seperti transportasi, kemasan, penyimpanan, dll.
+            </div>
+
+            <h4 style="margin-top: 2rem;">📦 Komponen-Komponen Harga Beli</h4>
+            <p style="margin-top: 0.75rem;">Harga beli terdiri dari beberapa komponen yang perlu dipahami dengan baik:</p>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Komponen</th>
+                        <th>Penjelasan</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Harga Pokok Barang</strong></td>
+                        <td>Harga dasar barang yang dibeli dari produsen/supplier.</td>
+                        <td>Harga beras dari petani: Rp10.000/kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Biaya Transportasi</strong></td>
+                        <td>Biaya pengangkutan barang dari tempat pembelian ke tempat penjualan.</td>
+                        <td>Ongkos angkut beras: Rp50.000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Biaya Kemasan</strong></td>
+                        <td>Biaya untuk mengemas barang agar siap dijual.</td>
+                        <td>Harga karung, plastik, kotak: Rp2.000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Biaya Penyimpanan</strong></td>
+                        <td>Biaya untuk menyimpan barang sebelum dijual.</td>
+                        <td>Sewa gudang: Rp100.000/bulan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Biaya Lain-lain</strong></td>
+                        <td>Biaya tambahan seperti pajak, retribusi, dll.</td>
+                        <td>Retribusi pasar: Rp5.000/hari</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="margin-top: 2rem;">🧮 Rumus Lengkap Harga Beli</h4>
+            <div class="highlight-box">
+                <strong>Rumus Umum:</strong><br><br>
+                Harga Beli = Harga Pokok Barang + Biaya Transportasi + Biaya Kemasan + Biaya Penyimpanan + Biaya Lain-lain<br><br>
+                <strong>Atau secara sederhana:</strong><br>
+                Harga Beli = Harga Barang + Total Biaya Operasional
+            </div>
+
+            <h4 style="margin-top: 2rem;">📝 Contoh Soal Harga Beli</h4>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 1 — Harga Beli Sederhana</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli sekarung beras seharga Rp500.000 dari petani. Ia mengeluarkan biaya transportasi Rp20.000 untuk mengangkut beras tersebut ke tokonya. Berapakah harga beli bersih beras tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga beras = Rp500.000<br>
+                • Biaya transportasi = Rp20.000<br><br>
+                Harga Beli = Harga Barang + Biaya Transportasi<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp500.000 + Rp20.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp520.000</strong><br><br>
+                Jadi, harga beli bersih beras tersebut adalah <strong>Rp520.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 2 — Harga Beli dengan Beberapa Komponen Biaya</h4>
+                <p><strong>Soal:</strong> Pak Ahmad membeli 50 kg gula pasir dari agen dengan harga Rp12.000 per kg. Ia mengeluarkan biaya transportasi Rp75.000, biaya karung Rp25.000, dan biaya retribusi pasar Rp10.000. Hitunglah harga beli total gula pasir tersebut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga gula = 50 kg × Rp12.000 = Rp600.000<br>
+                • Biaya transportasi = Rp75.000<br>
+                • Biaya karung = Rp25.000<br>
+                • Biaya retribusi = Rp10.000<br><br>
+                Total Biaya Operasional = Rp75.000 + Rp25.000 + Rp10.000 = Rp110.000<br><br>
+                Harga Beli = Harga Barang + Total Biaya Operasional<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp600.000 + Rp110.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp710.000</strong><br><br>
+                Jadi, harga beli total gula pasir tersebut adalah <strong>Rp710.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 3 — Harga Beli per Unit</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli 1 lusin (12 buah) piring dengan harga Rp96.000. Ia mengeluarkan biaya transportasi Rp12.000. Berapakah harga beli per buah piring?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga 1 lusin piring = Rp96.000<br>
+                • Biaya transportasi = Rp12.000<br>
+                • Jumlah piring = 12 buah<br><br>
+                Harga Beli Total = Rp96.000 + Rp12.000 = Rp108.000<br><br>
+                Harga Beli per Buah = Harga Beli Total / Jumlah Piring<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp108.000 / 12<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp9.000 per buah</strong><br><br>
+                Jadi, harga beli per buah piring adalah <strong>Rp9.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 4 — Harga Beli dengan Biaya Tambahan</h4>
+                <p><strong>Soal:</strong> Ibu membeli 10 kg telur dengan harga Rp25.000 per kg. Di perjalanan, 1 kg telur pecah dan tidak bisa dijual. Jika Ibu mengeluarkan biaya transportasi Rp15.000, berapakah harga beli bersih telur yang masih baik?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga telur = 10 kg × Rp25.000 = Rp250.000<br>
+                • Biaya transportasi = Rp15.000<br>
+                • Telur pecah = 1 kg (tetap dihitung dalam harga beli karena sudah dibeli)<br><br>
+                Harga Beli Total = Rp250.000 + Rp15.000 = Rp265.000<br><br>
+                <em>Catatan: Meskipun 1 kg telur pecah, harga beli tetap dihitung dari total uang yang dikeluarkan. Telur yang pecah tetap menjadi bagian dari modal yang sudah dikeluarkan.</em><br><br>
+                Jadi, harga beli bersih telur tersebut adalah <strong>Rp265.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 5 — Harga Beli dalam Skala Besar</h4>
+                <p><strong>Soal:</strong> Sebuah toko membeli 100 kg beras dari penggilingan dengan harga Rp10.500 per kg. Toko tersebut mengeluarkan biaya transportasi Rp300.000, biaya karung (2 karung × Rp15.000), dan biaya penyimpanan Rp50.000. Hitunglah harga beli total dan harga beli per kg beras!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga beras = 100 kg × Rp10.500 = Rp1.050.000<br>
+                • Biaya transportasi = Rp300.000<br>
+                • Biaya karung = 2 × Rp15.000 = Rp30.000<br>
+                • Biaya penyimpanan = Rp50.000<br><br>
+                Total Biaya Operasional = Rp300.000 + Rp30.000 + Rp50.000 = Rp380.000<br><br>
+                Harga Beli Total = Rp1.050.000 + Rp380.000 = <strong>Rp1.430.000</strong><br><br>
+                Harga Beli per kg = Rp1.430.000 / 100 kg = <strong>Rp14.300 per kg</strong><br><br>
+                Jadi, harga beli total adalah <strong>Rp1.430.000</strong> dan harga beli per kg adalah <strong>Rp14.300</strong>.</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 CATATAN PENTING:</strong><br>
+                • Harga beli <strong>selalu lebih besar</strong> atau <strong>sama dengan</strong> harga barang pokok, karena mencakup biaya operasional.<br>
+                • Semakin besar biaya operasional, semakin besar pula harga beli.<br>
+                • Dalam perhitungan aritmatika sosial, harga beli menjadi <strong>dasar</strong> untuk menghitung untung, rugi, dan persentase.<br>
+                • Jika biaya operasional diabaikan, maka harga beli = harga barang pokok.
+            </div>
+        </section>
+
+        <!-- MATERI C: HARGA JUAL -->
+        <section class="content-card">
+            <h3>C. Harga Jual</h3>
+            
+            <p><strong>Harga jual</strong> adalah sejumlah uang yang diterima oleh pedagang dari pembeli atas barang yang dijual. Harga jual merupakan <strong>pendapatan</strong> yang diperoleh pedagang dari hasil penjualannya. Harga jual biasanya ditetapkan oleh pedagang dengan mempertimbangkan berbagai faktor, termasuk keinginan untuk mendapatkan keuntungan.</p>
+
+            <p style="margin-top: 1rem;">Dalam praktik perdagangan, harga jual sering kali <strong>lebih tinggi</strong> daripada harga beli, karena pedagang ingin mendapatkan keuntungan dari selisih keduanya. Namun, dalam kondisi tertentu, harga jual bisa sama dengan harga beli (impas) atau bahkan lebih rendah (rugi).</p>
+
+            <div class="highlight-box">
+                <strong>📌 DEFINISI HARGA JUAL:</strong><br><br>
+                <strong>Harga Jual</strong> = Jumlah uang yang diterima pedagang dari pembeli atas barang yang dijual.<br><br>
+                <strong>Rumus Dasar:</strong><br>
+                Harga Jual = Harga yang dibayar konsumen<br><br>
+                <strong>Hubungan dengan Harga Beli:</strong><br>
+                • Jika Harga Jual > Harga Beli → Pedagang <strong>UNTUNG</strong><br>
+                • Jika Harga Jual = Harga Beli → Pedagang <strong>IMPAS</strong> (tidak untung, tidak rugi)<br>
+                • Jika Harga Jual < Harga Beli → Pedagang <strong>RUGI</strong>
+            </div>
+
+            <h4 style="margin-top: 2rem;">🎯 Faktor-Faktor yang Mempengaruhi Harga Jual</h4>
+            <p style="margin-top: 0.75rem;">Penetapan harga jual oleh pedagang dipengaruhi oleh berbagai faktor, antara lain:</p>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Faktor</th>
+                        <th>Penjelasan</th>
+                        <th>Pengaruh terhadap Harga Jual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Harga Beli (Modal)</strong></td>
+                        <td>Dasar perhitungan harga jual.</td>
+                        <td>Semakin tinggi harga beli, semakin tinggi harga jual.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Target Keuntungan</strong></td>
+                        <td>Keuntungan yang ingin diperoleh pedagang.</td>
+                        <td>Semakin besar target keuntungan, semakin tinggi harga jual.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Permintaan Pasar</strong></td>
+                        <td>Tingkat keinginan konsumen terhadap barang.</td>
+                        <td>Permintaan tinggi → harga jual bisa dinaikkan.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Penawaran/Persediaan</strong></td>
+                        <td>Ketersediaan barang di pasar.</td>
+                        <td>Barang langka → harga jual cenderung tinggi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Persaingan</strong></td>
+                        <td>Jumlah pedagang sejenis di pasar.</td>
+                        <td>Persaingan ketat → harga jual cenderung kompetitif.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Kualitas Barang</strong></td>
+                        <td>Tingkat kualitas barang yang dijual.</td>
+                        <td>Kualitas tinggi → harga jual lebih tinggi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Lokasi Penjualan</strong></td>
+                        <td>Tempat barang dijual (pasar, mall, online).</td>
+                        <td>Lokasi strategis → harga jual bisa lebih tinggi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>8. Kondisi Ekonomi</strong></td>
+                        <td>Situasi ekonomi masyarakat (inflasi, daya beli).</td>
+                        <td>Inflasi tinggi → harga jual cenderung naik.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="margin-top: 2rem;">🧮 Cara Menentukan Harga Jual</h4>
+            <p style="margin-top: 0.75rem;">Ada beberapa cara yang dapat digunakan pedagang untuk menentukan harga jual:</p>
+
+            <div class="highlight-box">
+                <strong>Metode 1: Menambahkan Keuntungan Tetap</strong><br>
+                Harga Jual = Harga Beli + Keuntungan yang Diinginkan<br><br>
+                <strong>Metode 2: Menggunakan Persentase Keuntungan</strong><br>
+                Harga Jual = Harga Beli + (% Untung × Harga Beli)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Harga Beli × (1 + % Untung)<br><br>
+                <strong>Metode 3: Berdasarkan Harga Pasar</strong><br>
+                Harga Jual = Harga yang Berlaku di Pasar (mengikuti harga kompetitor)
+            </div>
+
+            <h4 style="margin-top: 2rem;">📝 Contoh Soal Harga Jual</h4>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 1 — Harga Jual Sederhana</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli sebuah baju seharga Rp75.000. Ia ingin menjual baju tersebut dengan harga Rp95.000. Berapakah harga jual baju tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Harga jual adalah harga yang ditetapkan pedagang untuk menjual barangnya.<br>
+                Harga Jual = <strong>Rp95.000</strong><br><br>
+                <em>Catatan: Dalam soal ini, harga jual sudah diketahui langsung. Pada pertemuan berikutnya, kita akan mempelajari cara menghitung untung/rugi dari harga beli dan harga jual ini.</em></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 2 — Menentukan Harga Jual dengan Keuntungan</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli sekarung beras dengan harga beli Rp520.000. Ia ingin mendapatkan keuntungan Rp80.000 dari penjualan beras tersebut. Berapakah harga jual yang harus ditetapkan?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga Beli = Rp520.000<br>
+                • Keuntungan yang diinginkan = Rp80.000<br><br>
+                Harga Jual = Harga Beli + Keuntungan<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp520.000 + Rp80.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp600.000</strong><br><br>
+                Jadi, harga jual yang harus ditetapkan adalah <strong>Rp600.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 3 — Harga Jual per Unit</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli 1 lusin (12 buah) piring dengan harga beli total Rp108.000. Ia ingin menjual setiap piring dengan harga Rp12.000. Berapakah harga jual per buah dan harga jual total jika semua piring terjual?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga beli total = Rp108.000<br>
+                • Jumlah piring = 12 buah<br>
+                • Harga jual per piring = Rp12.000<br><br>
+                Harga Jual per Buah = <strong>Rp12.000</strong><br><br>
+                Harga Jual Total (jika semua terjual) = Harga Jual per Buah × Jumlah Piring<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp12.000 × 12<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp144.000</strong><br><br>
+                Jadi, harga jual per buah adalah <strong>Rp12.000</strong> dan harga jual total adalah <strong>Rp144.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 4 — Harga Jual dengan Persentase Keuntungan</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli sepatu dengan harga beli Rp200.000. Ia ingin mendapatkan keuntungan 25% dari harga beli. Berapakah harga jual sepatu tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga Beli = Rp200.000<br>
+                • Persentase keuntungan = 25%<br><br>
+                Cara 1: Hitung keuntungan dulu<br>
+                Keuntungan = 25% × Rp200.000 = Rp50.000<br>
+                Harga Jual = Harga Beli + Keuntungan = Rp200.000 + Rp50.000 = <strong>Rp250.000</strong><br><br>
+                Cara 2: Langsung dengan rumus<br>
+                Harga Jual = Harga Beli × (1 + % Untung)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp200.000 × (1 + 0,25)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp200.000 × 1,25<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp250.000</strong><br><br>
+                Jadi, harga jual sepatu tersebut adalah <strong>Rp250.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 5 — Harga Jual Berdasarkan Harga Pasar</h4>
+                <p><strong>Soal:</strong> Di pasar, harga jual beras rata-rata adalah Rp14.000 per kg. Seorang pedagang memiliki harga beli beras Rp12.500 per kg. Jika ia menjual 50 kg beras mengikuti harga pasar, berapakah harga jual total yang diterimanya?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Harga jual per kg (harga pasar) = Rp14.000<br>
+                • Jumlah beras = 50 kg<br><br>
+                Harga Jual Total = Harga Jual per kg × Jumlah Beras<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp14.000 × 50<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp700.000</strong><br><br>
+                Jadi, harga jual total yang diterima pedagang adalah <strong>Rp700.000</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 6 — Harga Jual Sebagian Barang</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli 20 kg apel dengan harga beli total Rp300.000. Ia menjual 15 kg apel dengan harga Rp18.000 per kg, dan 5 kg sisanya dijual dengan harga Rp15.000 per kg karena kualitasnya menurun. Berapakah harga jual total apel tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui:<br>
+                • Apel kualitas baik: 15 kg × Rp18.000 = Rp270.000<br>
+                • Apel kualitas menurun: 5 kg × Rp15.000 = Rp75.000<br><br>
+                Harga Jual Total = Harga Jual Apel Baik + Harga Jual Apel Menurun<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp270.000 + Rp75.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp345.000</strong><br><br>
+                Jadi, harga jual total apel tersebut adalah <strong>Rp345.000</strong>.</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 CATATAN PENTING:</strong><br>
+                • Harga jual <strong>dapat lebih tinggi, sama, atau lebih rendah</strong> dari harga beli.<br>
+                • Harga jual yang lebih tinggi dari harga beli menunjukkan pedagang mendapat <strong>keuntungan</strong>.<br>
+                • Harga jual yang lebih rendah dari harga beli menunjukkan pedagang mengalami <strong>kerugian</strong>.<br>
+                • Penetapan harga jual yang tepat merupakan <strong>seni dan ilmu</strong> dalam perdagangan — terlalu tinggi bisa membuat pembeli kabur, terlalu rendah bisa membuat pedagang rugi.
+            </div>
+        </section>
+
+        <!-- MATERI D: HUBUNGAN HARGA BELI DAN HARGA JUAL -->
+        <section class="content-card">
+            <h3>D. Hubungan Harga Beli dan Harga Jual</h3>
+            
+            <p>Memahami hubungan antara harga beli dan harga jual merupakan <strong>kunci utama</strong> dalam aritmatika sosial. Kedua konsep ini saling berkaitan dan menjadi dasar untuk menghitung untung, rugi, serta persentase dalam perdagangan.</p>
+
+            <h4 style="margin-top: 1.5rem;">🔄 Perbedaan Mendasar</h4>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Harga Beli</th>
+                        <th>Harga Jual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Definisi</strong></td>
+                        <td>Uang yang dikeluarkan untuk memperoleh barang</td>
+                        <td>Uang yang diterima dari penjualan barang</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pihak</strong></td>
+                        <td>Dibayar oleh pedagang kepada supplier</td>
+                        <td>Dibayar oleh konsumen kepada pedagang</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sifat</strong></td>
+                        <td>Merupakan <strong>pengeluaran/modal</strong></td>
+                        <td>Merupakan <strong>pendapatan</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Komponen</strong></td>
+                        <td>Harga barang + biaya operasional</td>
+                        <td>Harga yang ditetapkan pedagang</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Waktu</strong></td>
+                        <td>Dikeluarkan <strong>sebelum</strong> penjualan</td>
+                        <td>Diterima <strong>saat</strong> penjualan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tujuan</strong></td>
+                        <td>Memperoleh barang untuk dijual</td>
+                        <td>Mendapatkan keuntungan dari penjualan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="margin-top: 2rem;">📊 Hubungan Matematis</h4>
+            <p style="margin-top: 0.75rem;">Hubungan antara harga beli dan harga jual dapat dinyatakan dalam tiga kondisi:</p>
+
+            <div class="highlight-box">
+                <strong>Kondisi 1: Harga Jual > Harga Beli → UNTUNG</strong><br>
+                Pedagang mendapat keuntungan dari selisih harga jual dan harga beli.<br>
+                Contoh: Harga Beli = Rp100.000, Harga Jual = Rp120.000 → Untung Rp20.000<br><br>
+                <strong>Kondisi 2: Harga Jual = Harga Beli → IMPAS</strong><br>
+                Pedagang tidak mendapat keuntungan maupun kerugian.<br>
+                Contoh: Harga Beli = Rp100.000, Harga Jual = Rp100.000 → Impas<br><br>
+                <strong>Kondisi 3: Harga Jual < Harga Beli → RUGI</strong><br>
+                Pedagang mengalami kerugian dari selisih harga beli dan harga jual.<br>
+                Contoh: Harga Beli = Rp100.000, Harga Jual = Rp80.000 → Rugi Rp20.000
+            </div>
+
+            <h4 style="margin-top: 2rem;">📝 Contoh Soal Komprehensif</h4>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 1 — Analisis Hubungan Harga Beli dan Harga Jual</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli 10 kg gula pasir dengan harga Rp12.000 per kg. Ia mengeluarkan biaya transportasi Rp20.000. Jika ia menjual seluruh gula dengan harga Rp14.000 per kg, tentukan: (a) harga beli total, (b) harga jual total, (c) kondisi pedagang (untung/rugi/impas)!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                <strong>(a) Harga Beli Total:</strong><br>
+                Harga gula = 10 kg × Rp12.000 = Rp120.000<br>
+                Biaya transportasi = Rp20.000<br>
+                Harga Beli Total = Rp120.000 + Rp20.000 = <strong>Rp140.000</strong><br><br>
+                <strong>(b) Harga Jual Total:</strong><br>
+                Harga Jual Total = 10 kg × Rp14.000 = <strong>Rp140.000</strong><br><br>
+                <strong>(c) Kondisi Pedagang:</strong><br>
+                Karena Harga Jual (Rp140.000) = Harga Beli (Rp140.000), maka pedagang mengalami <strong>IMPAS</strong> (tidak untung, tidak rugi).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 2 — Menentukan Kondisi dari Hubungan Harga</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli 5 kg telur dengan harga Rp25.000 per kg. Ia mengeluarkan biaya kemasan Rp10.000. Jika ia menjual seluruh telur dengan harga Rp28.000 per kg, tentukan kondisi pedagang!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Harga Beli = (5 kg × Rp25.000) + Rp10.000 = Rp125.000 + Rp10.000 = <strong>Rp135.000</strong><br>
+                Harga Jual = 5 kg × Rp28.000 = <strong>Rp140.000</strong><br><br>
+                Karena Harga Jual (Rp140.000) > Harga Beli (Rp135.000), maka pedagang <strong>UNTUNG</strong>.<br>
+                Besar keuntungan = Rp140.000 − Rp135.000 = <strong>Rp5.000</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 3 — Kasus Harga Jual Lebih Rendah</h4>
+                <p><strong>Soal:</strong> Seorang pedagang membeli 20 kg buah mangga dengan harga beli total Rp300.000. Karena buah mangga cepat busuk, ia menjualnya dengan harga Rp13.000 per kg. Tentukan kondisi pedagang!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Harga Beli = <strong>Rp300.000</strong><br>
+                Harga Jual = 20 kg × Rp13.000 = <strong>Rp260.000</strong><br><br>
+                Karena Harga Jual (Rp260.000) < Harga Beli (Rp300.000), maka pedagang <strong>RUGI</strong>.<br>
+                Besar kerugian = Rp300.000 − Rp260.000 = <strong>Rp40.000</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Soal 4 — Soal Cerita Komprehensif</h4>
+                <p><strong>Soal:</strong> Pak Budi adalah seorang pedagang sayur di pasar. Ia membeli 50 kg tomat dari petani dengan harga Rp6.000 per kg. Ia mengeluarkan biaya transportasi Rp50.000 dan biaya karung Rp25.000. Di pasar, ia menjual 40 kg tomat dengan harga Rp9.000 per kg, dan 10 kg tomat sisanya (yang kurang segar) dijual dengan harga Rp5.000 per kg. Tentukan: (a) harga beli total, (b) harga jual total, (c) kondisi Pak Budi (untung/rugi/impas), dan (d) besar untung/rugi!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                <strong>(a) Harga Beli Total:</strong><br>
+                Harga tomat = 50 kg × Rp6.000 = Rp300.000<br>
+                Biaya transportasi = Rp50.000<br>
+                Biaya karung = Rp25.000<br>
+                Harga Beli Total = Rp300.000 + Rp50.000 + Rp25.000 = <strong>Rp375.000</strong><br><br>
+                <strong>(b) Harga Jual Total:</strong><br>
+                Harga jual tomat segar = 40 kg × Rp9.000 = Rp360.000<br>
+                Harga jual tomat kurang segar = 10 kg × Rp5.000 = Rp50.000<br>
+                Harga Jual Total = Rp360.000 + Rp50.000 = <strong>Rp410.000</strong><br><br>
+                <strong>(c) Kondisi Pak Budi:</strong><br>
+                Karena Harga Jual (Rp410.000) > Harga Beli (Rp375.000), maka Pak Budi <strong>UNTUNG</strong>.<br><br>
+                <strong>(d) Besar Keuntungan:</strong><br>
+                Untung = Harga Jual − Harga Beli<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Rp410.000 − Rp375.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>Rp35.000</strong><br><br>
+                Jadi, Pak Budi mendapat keuntungan sebesar <strong>Rp35.000</strong>.</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 STRATEGI PEDAGANG CERDAS:</strong><br>
+                1. <strong>Hitung harga beli dengan teliti</strong> — jangan lupa memasukkan semua biaya operasional.<br>
+                2. <strong>Tetapkan harga jual yang realistis</strong> — mempertimbangkan harga pasar dan daya beli konsumen.<br>
+                3. <strong>Minimalkan biaya operasional</strong> — semakin efisien, semakin besar potensi keuntungan.<br>
+                4. <strong>Jual barang sebelum rusak</strong> — terutama untuk barang yang cepat busuk seperti sayur, buah, ikan.<br>
+                5. <strong>Catat setiap transaksi</strong> — agar dapat menghitung untung/rugi dengan akurat.
+            </div>
+        </section>
+
+        <!-- MATERI E: PENERAPAN DALAM KEHIDUPAN -->
+        <section class="content-card">
+            <h3>E. Penerapan dalam Kehidupan Sehari-hari</h3>
+            
+            <p>Konsep harga beli dan harga jual sangat dekat dengan kehidupan kita sehari-hari. Berikut beberapa contoh penerapannya dalam berbagai konteks:</p>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Konteks</th>
+                        <th>Penerapan Harga Beli & Harga Jual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🏪 <strong>Warung/Toko Kelontong</strong></td>
+                        <td>Pemilik warung membeli barang dari grosir (harga beli), lalu menjual kembali ke konsumen (harga jual) dengan harga lebih tinggi.</td>
+                    </tr>
+                    <tr>
+                        <td>🌾 <strong>Petani</strong></td>
+                        <td>Petani membeli bibit, pupuk, dan pestisida (harga beli), lalu menjual hasil panen (harga jual) ke pasar atau tengkulak.</td>
+                    </tr>
+                    <tr>
+                        <td>🏭 <strong>Pabrik/Industri</strong></td>
+                        <td>Pabrik membeli bahan baku (harga beli), mengolahnya, lalu menjual produk jadi (harga jual) ke distributor atau konsumen.</td>
+                    </tr>
+                    <tr>
+                        <td>🛒 <strong>Online Shop</strong></td>
+                        <td>Penjual online membeli produk dari supplier (harga beli), lalu menjual ke pembeli (harga jual) dengan memperhitungkan biaya kemasan dan ongkir.</td>
+                    </tr>
+                    <tr>
+                        <td>🏠 <strong>Jual Beli Properti</strong></td>
+                        <td>Pengembang membeli tanah (harga beli), membangun rumah, lalu menjual rumah (harga jual) ke konsumen.</td>
+                    </tr>
+                    <tr>
+                        <td>🚗 <strong>Dealer Kendaraan</strong></td>
+                        <td>Dealer membeli kendaraan dari pabrik (harga beli), lalu menjual ke konsumen (harga jual) dengan tambahan biaya administrasi.</td>
+                    </tr>
+                    <tr>
+                        <td>🍽️ <strong>Restoran/Rumah Makan</strong></td>
+                        <td>Restoran membeli bahan makanan (harga beli), mengolahnya menjadi masakan, lalu menjual ke pelanggan (harga jual).</td>
+                    </tr>
+                    <tr>
+                        <td>📱 <strong>Jual Beli Barang Bekas</strong></td>
+                        <td>Seseorang membeli barang bekas (harga beli), lalu menjualnya kembali (harga jual) dengan harga lebih tinggi.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>💡 Studi Kasus: Warung Sembako Bu Siti</h4>
+                <p><strong>Kasus:</strong> Bu Siti memiliki warung sembako di dekat rumahnya. Setiap minggu, ia membeli beras dari grosir dengan harga Rp11.000 per kg. Ia membeli 100 kg beras dan mengeluarkan biaya transportasi Rp100.000. Di warungnya, ia menjual beras dengan harga Rp13.000 per kg. Hitunglah harga beli total, harga jual total, dan keuntungan yang diperoleh Bu Siti!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                <strong>Harga Beli Total:</strong><br>
+                Harga beras = 100 kg × Rp11.000 = Rp1.100.000<br>
+                Biaya transportasi = Rp100.000<br>
+                Harga Beli Total = Rp1.100.000 + Rp100.000 = <strong>Rp1.200.000</strong><br><br>
+                <strong>Harga Jual Total:</strong><br>
+                Harga Jual Total = 100 kg × Rp13.000 = <strong>Rp1.300.000</strong><br><br>
+                <strong>Keuntungan:</strong><br>
+                Karena Harga Jual (Rp1.300.000) > Harga Beli (Rp1.200.000), maka Bu Siti <strong>UNTUNG</strong>.<br>
+                Untung = Rp1.300.000 − Rp1.200.000 = <strong>Rp100.000 per minggu</strong><br><br>
+                <strong>Analisis:</strong> Dengan keuntungan Rp100.000 per minggu, dalam sebulan (4 minggu) Bu Siti mendapat keuntungan sekitar Rp400.000. Keuntungan ini digunakan untuk biaya operasional warung (listrik, plastik, dll) dan sebagai penghasilan keluarga.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Studi Kasus: Petani Cabai Pak Ahmad</h4>
+                <p><strong>Kasus:</strong> Pak Ahmad menanam cabai di lahannya seluas 1.000 m². Ia mengeluarkan biaya untuk bibit, pupuk, pestisida, dan tenaga kerja sebesar Rp5.000.000 (ini adalah harga beli/modal). Setelah 3 bulan, ia memanen 500 kg cabai. Jika harga jual cabai di pasar adalah Rp15.000 per kg, hitunglah harga jual total dan keuntungan Pak Ahmad!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                <strong>Harga Beli (Modal):</strong> = <strong>Rp5.000.000</strong><br>
+                (sudah termasuk semua biaya: bibit, pupuk, pestisida, tenaga kerja)<br><br>
+                <strong>Harga Jual Total:</strong><br>
+                Harga Jual Total = 500 kg × Rp15.000 = <strong>Rp7.500.000</strong><br><br>
+                <strong>Keuntungan:</strong><br>
+                Karena Harga Jual (Rp7.500.000) > Harga Beli (Rp5.000.000), maka Pak Ahmad <strong>UNTUNG</strong>.<br>
+                Untung = Rp7.500.000 − Rp5.000.000 = <strong>Rp2.500.000</strong><br><br>
+                <strong>Analisis:</strong> Keuntungan Rp2.500.000 dari usaha tani cabai selama 3 bulan menunjukkan bahwa usaha tani cabai cukup menguntungkan, meskipun memiliki risiko tinggi (harga cabai bisa turun drastis, serangan hama, cuaca buruk, dll).</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 REFLEKSI AKHIR:</strong><br>
+                Memahami konsep harga beli dan harga jual merupakan <strong>langkah pertama</strong> dalam menguasai aritmatika sosial. Kedua konsep ini menjadi fondasi bagi pemahaman konsep-konsep selanjutnya seperti untung, rugi, persentase, diskon, bruto-netto-tara, dan bunga tunggal. Tanpa pemahaman yang kuat tentang harga beli dan harga jual, akan sulit bagi kita untuk memahami konsep-konsep aritmatika sosial yang lebih kompleks.
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Aritmatika Sosial</span>
+                <span class="keyword-tag">Harga Beli</span>
+                <span class="keyword-tag">Harga Jual</span>
+                <span class="keyword-tag">Modal</span>
+                <span class="keyword-tag">Biaya Operasional</span>
+                <span class="keyword-tag">Biaya Transportasi</span>
+                <span class="keyword-tag">Biaya Kemasan</span>
+                <span class="keyword-tag">Perdagangan</span>
+                <span class="keyword-tag">Jual Beli</span>
+                <span class="keyword-tag">Transaksi Ekonomi</span>
+                <span class="keyword-tag">Untung</span>
+                <span class="keyword-tag">Rugi</span>
+                <span class="keyword-tag">Impas</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا</div>
+            <p class="quote-translation">"...Allah telah menghalalkan jual beli dan mengharamkan riba."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. Al-Baqarah [2]: 275</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                "Wahai orang-orang yang beriman, apabila kamu bermuamalah tidak secara tunai untuk waktu yang ditentukan, hendaklah kamu menuliskannya."
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. Al-Baqarah [2]: 282</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat-ayat ini menegaskan bahwa Islam mendukung aktivitas jual beli yang jujur dan transparan. Memahami konsep harga beli dan harga jual dengan baik adalah bagian dari menjalankan muamalah sesuai syariat Islam — dengan mencatat transaksi, menghitung secara jujur, dan tidak menzalimi salah satu pihak.
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Aritmatika Sosial).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Pengertian Aritmatika Sosial, Harga Beli, dan Harga Jual).</li>
+                <li>Sukino & Wilson. (2018). <em>Matematika untuk SMP Kelas VII</em>. Jakarta: Erlangga.</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. Al-Baqarah: 275 & 282 tentang jual beli dan pencatatan transaksi).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 1</h2>
+            <p class="quiz-desc">
+                Pengertian Aritmatika Sosial, Harga Beli & Harga Jual | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Pengertian aritmatika sosial, sejarah, manfaat, harga beli, komponen harga beli, harga jual, faktor yang mempengaruhi harga jual, serta hubungan harga beli dan harga jual.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Cabang matematika yang mempelajari penerapan operasi hitung dalam kegiatan ekonomi dan perdagangan disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. Geometri</label>
+                        <label><input type="radio" name="q1" value="B"> B. Aljabar</label>
+                        <label><input type="radio" name="q1" value="C"> C. Aritmatika Sosial</label>
+                        <label><input type="radio" name="q1" value="D"> D. Statistika</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jumlah seluruh uang yang dikeluarkan untuk memperoleh barang dagangan, termasuk biaya operasional, disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. Harga Jual</label>
+                        <label><input type="radio" name="q2" value="B"> B. Harga Beli</label>
+                        <label><input type="radio" name="q2" value="C"> C. Untung</label>
+                        <label><input type="radio" name="q2" value="D"> D. Rugi</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli barang seharga Rp100.000 dan mengeluarkan biaya transportasi Rp15.000. Harga beli bersih barang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. Rp100.000</label>
+                        <label><input type="radio" name="q3" value="B"> B. Rp110.000</label>
+                        <label><input type="radio" name="q3" value="C"> C. Rp115.000</label>
+                        <label><input type="radio" name="q3" value="D"> D. Rp120.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jumlah uang yang diterima pedagang dari pembeli atas barang yang dijual disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. Harga Beli</label>
+                        <label><input type="radio" name="q4" value="B"> B. Harga Jual</label>
+                        <label><input type="radio" name="q4" value="C"> C. Modal</label>
+                        <label><input type="radio" name="q4" value="D"> D. Biaya Operasional</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli 10 kg beras dengan harga Rp10.000 per kg dan mengeluarkan biaya transportasi Rp20.000. Harga beli total beras tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. Rp100.000</label>
+                        <label><input type="radio" name="q5" value="B"> B. Rp110.000</label>
+                        <label><input type="radio" name="q5" value="C"> C. Rp120.000</label>
+                        <label><input type="radio" name="q5" value="D"> D. Rp130.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika harga jual lebih besar daripada harga beli, maka pedagang mengalami...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. Untung</label>
+                        <label><input type="radio" name="q6" value="B"> B. Rugi</label>
+                        <label><input type="radio" name="q6" value="C"> C. Impas</label>
+                        <label><input type="radio" name="q6" value="D"> D. Break Even</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika harga jual sama dengan harga beli, maka pedagang mengalami...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. Untung</label>
+                        <label><input type="radio" name="q7" value="B"> B. Rugi</label>
+                        <label><input type="radio" name="q7" value="C"> C. Impas</label>
+                        <label><input type="radio" name="q7" value="D"> D. Bangkrut</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli barang dengan harga beli Rp200.000 dan menjualnya dengan harga Rp250.000. Kondisi pedagang tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. Untung Rp50.000</label>
+                        <label><input type="radio" name="q8" value="B"> B. Rugi Rp50.000</label>
+                        <label><input type="radio" name="q8" value="C"> C. Impas</label>
+                        <label><input type="radio" name="q8" value="D"> D. Untung Rp250.000</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Yang BUKAN merupakan komponen harga beli adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. Harga pokok barang</label>
+                        <label><input type="radio" name="q9" value="B"> B. Biaya transportasi</label>
+                        <label><input type="radio" name="q9" value="C"> C. Biaya kemasan</label>
+                        <label><input type="radio" name="q9" value="D"> D. Keuntungan yang diinginkan</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Seorang pedagang membeli 1 lusin piring dengan harga Rp108.000 dan biaya transportasi Rp12.000. Harga beli per buah piring adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. Rp9.000</label>
+                        <label><input type="radio" name="q10" value="B"> B. Rp10.000</label>
+                        <label><input type="radio" name="q10" value="C"> C. Rp11.000</label>
+                        <label><input type="radio" name="q10" value="D"> D. Rp12.000</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan pengertian aritmatika sosial! Sebutkan minimal 4 manfaat mempelajari aritmatika sosial! Berikan masing-masing dua contoh penerapan aritmatika sosial dalam kehidupan sehari-hari!</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara harga beli dan harga jual! Sebutkan masing-masing 3 komponen/faktor yang mempengaruhinya! Berikan masing-masing satu contoh perhitungan!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Seorang pedagang membeli 20 kg gula pasir dengan harga Rp12.000 per kg. Ia mengeluarkan biaya transportasi Rp50.000, biaya karung Rp20.000, dan biaya retribusi pasar Rp10.000. Hitunglah: (a) harga pokok barang, (b) total biaya operasional, (c) harga beli total, dan (d) harga beli per kg!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Seorang pedagang membeli 100 kg beras dengan harga beli total Rp1.200.000. Ia menjual 70 kg beras dengan harga Rp14.000 per kg, dan 30 kg sisanya dengan harga Rp13.000 per kg. Hitunglah: (a) harga jual total, (b) kondisi pedagang (untung/rugi/impas), dan (c) besar untung/rugi!</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Buatlah sebuah soal cerita tentang aktivitas jual beli dalam kehidupan sehari-hari yang melibatkan konsep harga beli dan harga jual! Selesaikan soal cerita yang kamu buat dengan lengkap, termasuk menghitung harga beli total, harga jual total, dan menentukan kondisi pedagang (untung/rugi/impas)!</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="2.html">Bab 2: Untung, Rugi, dan Persentasenya →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'C', q2: 'B', q3: 'C', q4: 'B', q5: 'C',
+            q6: 'A', q7: 'C', q8: 'A', q9: 'D', q10: 'B'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 1: PENGERTIAN ARITMATIKA SOSIAL, HARGA BELI & HARGA JUAL\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab1_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 1 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 1 (Pengertian Aritmatika Sosial, Harga Beli & Harga Jual):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

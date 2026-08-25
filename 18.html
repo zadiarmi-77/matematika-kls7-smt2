@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 18: Piktogram & Interpretasi Data | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* --- CHART CONTAINER --- */
+        .chart-container {
+            background: var(--bg-primary); border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0;
+            text-align: center;
+        }
+        .chart-title {
+            font-family: 'Playfair Display', serif; color: var(--accent-gold);
+            font-size: 1.1rem; margin-bottom: 1rem;
+        }
+        .pictogram-row {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 0.75rem 1rem; margin: 0.5rem 0;
+            background: var(--bg-secondary); border-radius: 8px;
+        }
+        .pictogram-label {
+            min-width: 120px; font-weight: 600; color: var(--accent-gold);
+        }
+        .pictogram-symbols {
+            display: flex; gap: 0.25rem; flex-wrap: wrap;
+            font-size: 1.5rem;
+        }
+        .pictogram-value {
+            margin-left: auto; font-weight: 600; color: var(--text-primary);
+        }
+        .pictogram-legend {
+            margin-top: 1rem; padding: 1rem;
+            background: var(--bg-secondary); border-radius: 8px;
+            text-align: center;
+        }
+
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table, .chart-container { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+            .pictogram-row { flex-direction: column; align-items: flex-start; }
+            .pictogram-value { margin-left: 0; margin-top: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="17.html">← Bab 17</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="19.html">UAS →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>🎨 Bab Delapanbelas: Piktogram & Interpretasi Data</h1>
+            <p class="chapter-desc">
+                Memahami cara menyajikan data dalam bentuk piktogram (pictograph), membaca dan menafsirkan informasi dari berbagai jenis diagram (batang, garis, lingkaran, piktogram), serta mengembangkan kemampuan literasi data untuk menganalisis dan menginterpretasi data dalam kehidupan sehari-hari. Materi ini melengkapi seri penyajian data yang telah dipelajari pada pertemuan-pertemuan sebelumnya.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A -->
+        <section class="content-card">
+            <h3>A. Pengertian Piktogram</h3>
+            <p><strong>Piktogram</strong> (atau <em>pictograph</em>) adalah diagram yang menyajikan data menggunakan <strong>gambar atau simbol</strong> yang mewakili sejumlah tertentu data. Setiap gambar/simbol memiliki nilai tertentu yang dijelaskan dalam keterangan (legend).</p>
+            <p style="margin-top: 1rem;">Piktogram merupakan salah satu bentuk visualisasi data tertua yang telah digunakan sejak zaman peradaban kuno (seperti hieroglif Mesir). Dalam statistika modern, piktogram tetap digunakan karena <strong>menarik secara visual</strong> dan <strong>mudah dipahami</strong>, terutama untuk audiens umum dan anak-anak.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 CIRI-CIRI PIKTOGRAM:</strong><br>
+                • Menggunakan <strong>gambar atau simbol</strong> untuk mewakili data.<br>
+                • Setiap simbol memiliki <strong>nilai tertentu</strong> (misal: 1 gambar buku = 5 buku).<br>
+                • Harus memiliki <strong>keterangan (legend)</strong> yang menjelaskan nilai setiap simbol.<br>
+                • Simbol harus <strong>seragam</strong> (ukuran dan bentuk sama).<br>
+                • Cocok untuk data dengan <strong>jumlah besar</strong> yang perlu disederhanakan.<br>
+                • <strong>Menarik secara visual</strong> dan mudah dipahami.
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Piktogram</th>
+                        <th>Diagram Batang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bentuk</strong></td>
+                        <td>Gambar/simbol</td>
+                        <td>Batang persegi panjang</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daya Tarik Visual</strong></td>
+                        <td>Sangat menarik</td>
+                        <td>Kurang menarik</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ketepatan</strong></td>
+                        <td>Kurang tepat (perlu estimasi)</td>
+                        <td>Tepat (ada skala)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kemudahan Membaca</strong></td>
+                        <td>Mudah untuk data sederhana</td>
+                        <td>Mudah untuk perbandingan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penggunaan</strong></td>
+                        <td>Infografis, poster, media</td>
+                        <td>Laporan resmi, analisis</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>💡 Contoh Piktogram dalam Kehidupan</h4>
+                <p>• <strong>Infografis</strong> di media sosial dan berita<br>
+                • <strong>Poster kampanye</strong> (lingkungan, kesehatan)<br>
+                • <strong>Buku anak-anak</strong> untuk mengajarkan konsep data<br>
+                • <strong>Papan informasi</strong> di museum atau taman<br>
+                • <strong>Presentasi</strong> yang ingin menarik perhatian audiens</p>
+            </div>
+        </section>
+
+        <!-- MATERI B -->
+        <section class="content-card">
+            <h3>B. Cara Membuat Piktogram</h3>
+            <p>Untuk membuat piktogram yang baik, ikuti langkah-langkah sistematis berikut:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Langkah</th>
+                        <th>Aktivitas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Siapkan Data</strong></td>
+                        <td>Kumpulkan data dan buat tabel frekuensi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Pilih Simbol</strong></td>
+                        <td>Pilih gambar/simbol yang sesuai dengan data (misal: 📚 untuk buku, 👤 untuk orang).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Tentukan Nilai Simbol</strong></td>
+                        <td>Tentukan berapa nilai yang diwakili oleh satu simbol (misal: 1 📚 = 5 buku).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Hitung Jumlah Simbol</strong></td>
+                        <td>Bagi nilai data dengan nilai simbol untuk setiap kategori.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Gambar Piktogram</strong></td>
+                        <td>Gambar simbol-simbol secara berurutan untuk setiap kategori.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Tambahkan Keterangan</strong></td>
+                        <td>Beri judul, label kategori, dan legend (keterangan nilai simbol).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 TIPS MEMILIH NILAI SIMBOL:</strong><br>
+                • Pilih nilai yang <strong>membagi rata</strong> data (misal: jika data 10, 20, 30, pilih nilai simbol 5 atau 10).<br>
+                • Hindari nilai simbol yang terlalu besar (sulit dibaca) atau terlalu kecil (terlalu banyak simbol).<br>
+                • Jika data tidak habis dibagi, gunakan <strong>simbol pecahan</strong> (misal: ½ simbol untuk nilai setengah).
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">📚 Piktogram: Banyak Buku yang Dibaca Siswa Kelas VII dalam Satu Bulan</div>
+                
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Andi</div>
+                    <div class="pictogram-symbols">📚📚📚📚📚</div>
+                    <div class="pictogram-value">25 buku</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Budi</div>
+                    <div class="pictogram-symbols">📚📚📚</div>
+                    <div class="pictogram-value">15 buku</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Citra</div>
+                    <div class="pictogram-symbols">📚📚📚📚📚📚📚📚</div>
+                    <div class="pictogram-value">40 buku</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Dina</div>
+                    <div class="pictogram-symbols">📚📚📚📚</div>
+                    <div class="pictogram-value">20 buku</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Eka</div>
+                    <div class="pictogram-symbols">📚📚📚📚📚📚</div>
+                    <div class="pictogram-value">30 buku</div>
+                </div>
+                
+                <div class="pictogram-legend">
+                    <strong>Keterangan:</strong> 1 📚 = 5 buku
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 1 — Membuat Piktogram</h4>
+                <p><strong>Soal:</strong> Data berikut adalah banyak apel yang dijual di toko buah selama 4 hari: Senin = 30, Selasa = 45, Rabu = 60, Kamis = 75. Buatlah piktogramnya!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Pilih simbol 🍎 (apel).<br>
+                Langkah 2: Tentukan nilai simbol = 15 apel (karena semua data habis dibagi 15).<br>
+                Langkah 3: Hitung jumlah simbol:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Senin = 30/15 = 2 🍎<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Selasa = 45/15 = 3 🍎<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Rabu = 60/15 = 4 🍎<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Kamis = 75/15 = 5 🍎<br>
+                Langkah 4: Gambar piktogram dengan simbol 🍎 dan beri keterangan "1 🍎 = 15 apel".</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 2 — Piktogram dengan Simbol Pecahan</h4>
+                <p><strong>Soal:</strong> Data penjualan roti: Senin = 25, Selasa = 40, Rabu = 35, Kamis = 50. Buatlah piktogram dengan nilai simbol 10!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Nilai simbol = 10 roti (🍞)<br>
+                • Senin = 25/10 = 2,5 → 2 🍞 + ½ 🍞<br>
+                • Selasa = 40/10 = 4 → 4 🍞<br>
+                • Rabu = 35/10 = 3,5 → 3 🍞 + ½ 🍞<br>
+                • Kamis = 50/10 = 5 → 5 🍞<br>
+                Keterangan: 1 🍞 = 10 roti, ½ 🍞 = 5 roti</p>
+            </div>
+        </section>
+
+        <!-- MATERI C -->
+        <section class="content-card">
+            <h3>C. Cara Membaca dan Menafsirkan Piktogram</h3>
+            <p>Membaca piktogram memerlukan pemahaman tentang <strong>nilai simbol</strong> dan kemampuan <strong>menghitung jumlah simbol</strong> untuk setiap kategori.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 LANGKAH MEMBACA PIKTOGRAM:</strong><br><br>
+                <strong>1. Baca judul</strong> → Untuk mengetahui informasi apa yang disajikan.<br>
+                <strong>2. Periksa keterangan (legend)</strong> → Berapa nilai setiap simbol?<br>
+                <strong>3. Hitung jumlah simbol</strong> → Berapa banyak simbol untuk setiap kategori?<br>
+                <strong>4. Kalikan dengan nilai simbol</strong> → Nilai data = jumlah simbol × nilai simbol.<br>
+                <strong>5. Bandingkan antar kategori</strong> → Kategori mana yang terbesar/terkecil?<br>
+                <strong>6. Tarik kesimpulan</strong> → Informasi penting apa yang dapat disimpulkan?
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">👥 Piktogram: Banyak Siswa yang Berpartisipasi dalam Kegiatan Ekstrakurikuler</div>
+                
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Pramuka</div>
+                    <div class="pictogram-symbols">👤👤👤👤👤👤</div>
+                    <div class="pictogram-value">30 siswa</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">PMR</div>
+                    <div class="pictogram-symbols">👤👤👤👤</div>
+                    <div class="pictogram-value">20 siswa</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Sepak Bola</div>
+                    <div class="pictogram-symbols">👤👤👤👤👤👤👤👤</div>
+                    <div class="pictogram-value">40 siswa</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Seni Tari</div>
+                    <div class="pictogram-symbols">👤👤👤</div>
+                    <div class="pictogram-value">15 siswa</div>
+                </div>
+                <div class="pictogram-row">
+                    <div class="pictogram-label">Robotik</div>
+                    <div class="pictogram-symbols">👤👤</div>
+                    <div class="pictogram-value">10 siswa</div>
+                </div>
+                
+                <div class="pictogram-legend">
+                    <strong>Keterangan:</strong> 1 👤 = 5 siswa
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal — Menafsirkan Piktogram</h4>
+                <p><strong>Soal:</strong> Berdasarkan piktogram di atas, tentukan: (a) ekstrakurikuler dengan peserta terbanyak, (b) ekstrakurikuler dengan peserta paling sedikit, (c) total seluruh peserta, (d) selisih peserta sepak bola dan robotik, (e) rata-rata peserta per ekstrakurikuler!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Peserta terbanyak = <strong>Sepak Bola (40 siswa)</strong>.<br>
+                (b) Peserta paling sedikit = <strong>Robotik (10 siswa)</strong>.<br>
+                (c) Total peserta = 30 + 20 + 40 + 15 + 10 = <strong>115 siswa</strong>.<br>
+                (d) Selisih = 40 − 10 = <strong>30 siswa</strong>.<br>
+                (e) Rata-rata = 115 / 5 = <strong>23 siswa/ekstrakurikuler</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI D -->
+        <section class="content-card">
+            <h3>D. Interpretasi Data dari Berbagai Jenis Diagram</h3>
+            <p><strong>Interpretasi data</strong> adalah proses menganalisis dan menarik kesimpulan dari data yang telah disajikan dalam bentuk diagram. Kemampuan interpretasi data merupakan bagian penting dari <strong>literasi data</strong> (data literacy).</p>
+            
+            <div class="highlight-box">
+                <strong>📌 KETERAMPILAN INTERPRETASI DATA:</strong><br><br>
+                <strong>1. Identifikasi Informasi</strong> → Apa yang disajikan dalam diagram?<br>
+                <strong>2. Analisis Pola/Tren</strong> → Apakah ada pola naik, turun, atau stabil?<br>
+                <strong>3. Perbandingan</strong> → Bandingkan antar kategori atau antar waktu.<br>
+                <strong>4. Perhitungan</strong> → Hitung total, rata-rata, selisih, persentase.<br>
+                <strong>5. Penarikan Kesimpulan</strong> → Apa makna dari data tersebut?<br>
+                <strong>6. Pengambilan Keputusan</strong> → Apa tindakan yang dapat diambil berdasarkan data?
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Diagram</th>
+                        <th>Informasi yang Dapat Diinterpretasi</th>
+                        <th>Contoh Pertanyaan Interpretasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Diagram Batang</strong></td>
+                        <td>Perbandingan antar kategori</td>
+                        <td>Kategori mana yang terbesar? Berapa selisihnya?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Garis</strong></td>
+                        <td>Tren perubahan dari waktu ke waktu</td>
+                        <td>Apakah data naik/turun? Kapan puncaknya?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Lingkaran</strong></td>
+                        <td>Komposisi/proporsi dari keseluruhan</td>
+                        <td>Berapa persen kategori tertentu? Apa yang dominan?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Piktogram</strong></td>
+                        <td>Perbandingan visual antar kategori</td>
+                        <td>Berapa total data? Kategori mana yang paling banyak?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 1 — Interpretasi Diagram Batang</h4>
+                <p><strong>Soal:</strong> Diagram batang menunjukkan penjualan es krim selama 5 hari: Senin = 50, Selasa = 65, Rabu = 45, Kamis = 80, Jumat = 95. Interpretasi data tersebut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Interpretasi:</strong><br>
+                • Penjualan tertinggi terjadi pada hari <strong>Jumat (95 es krim)</strong>.<br>
+                • Penjualan terendah terjadi pada hari <strong>Rabu (45 es krim)</strong>.<br>
+                • Terdapat <strong>tren kenaikan</strong> dari Senin ke Jumat (kecuali penurunan di Rabu).<br>
+                • Total penjualan = 50 + 65 + 45 + 80 + 95 = <strong>335 es krim</strong>.<br>
+                • Rata-rata penjualan = 335 / 5 = <strong>67 es krim/hari</strong>.<br>
+                • <strong>Kesimpulan:</strong> Penjualan es krim cenderung meningkat menjelang akhir minggu, mungkin karena cuaca panas atau permintaan tinggi di akhir pekan.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 2 — Interpretasi Diagram Garis</h4>
+                <p><strong>Soal:</strong> Diagram garis menunjukkan jumlah pengunjung perpustakaan selama 6 bulan: Jan = 120, Feb = 150, Mar = 130, Apr = 180, Mei = 200, Jun = 220. Interpretasi data tersebut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Interpretasi:</strong><br>
+                • Pengunjung terbanyak pada bulan <strong>Juni (220 orang)</strong>.<br>
+                • Pengunjung paling sedikit pada bulan <strong>Januari (120 orang)</strong>.<br>
+                • Terdapat <strong>tren kenaikan secara umum</strong> dari Januari ke Juni.<br>
+                • Penurunan terjadi pada bulan <strong>Maret (130 orang)</strong>, mungkin karena ujian.<br>
+                • Peningkatan dari Januari ke Juni = 220 − 120 = <strong>100 orang (83,33%)</strong>.<br>
+                • <strong>Kesimpulan:</strong> Minat baca siswa meningkat seiring berjalannya waktu, perlu dipertahankan dan ditingkatkan.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 3 — Interpretasi Diagram Lingkaran</h4>
+                <p><strong>Soal:</strong> Diagram lingkaran menunjukkan anggaran keluarga Rp4.000.000: Makanan 40%, Transportasi 20%, Pendidikan 25%, Tabungan 10%, Lainnya 5%. Interpretasi data tersebut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Interpretasi:</strong><br>
+                • Pengeluaran terbesar untuk <strong>makanan (40% = Rp1.600.000)</strong>.<br>
+                • Pengeluaran terkecil untuk <strong>lainnya (5% = Rp200.000)</strong>.<br>
+                • <strong>Kebutuhan pokok</strong> (makanan + transportasi) = 60% = Rp2.400.000.<br>
+                • <strong>Tabungan</strong> hanya 10% = Rp400.000 — mungkin perlu ditingkatkan.<br>
+                • <strong>Kesimpulan:</strong> Keluarga mengalokasikan sebagian besar anggaran untuk kebutuhan pokok. Persentase tabungan relatif kecil, perlu evaluasi untuk meningkatkan tabungan demi masa depan.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 4 — Interpretasi Piktogram</h4>
+                <p><strong>Soal:</strong> Piktogram menunjukkan banyak siswa yang menggunakan transportasi ke sekolah: 🚲 (sepeda) = 12 siswa, 🚶 (jalan kaki) = 8 siswa, 🚗 (antar orang tua) = 20 siswa, 🚌 (angkot) = 5 siswa. Interpretasi data tersebut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Interpretasi:</strong><br>
+                • Transportasi paling banyak digunakan: <strong>Antar orang tua (20 siswa)</strong>.<br>
+                • Transportasi paling sedikit: <strong>Angkot (5 siswa)</strong>.<br>
+                • Total siswa = 12 + 8 + 20 + 5 = <strong>45 siswa</strong>.<br>
+                • Siswa yang menggunakan <strong>kendaraan pribadi</strong> (antar orang tua) = 20/45 = 44,44%.<br>
+                • Siswa yang menggunakan <strong>transportasi ramah lingkungan</strong> (sepeda + jalan kaki) = 20/45 = 44,44%.<br>
+                • <strong>Kesimpulan:</strong> Sebagian besar siswa diantar orang tua, yang dapat menyebabkan kemacetan. Perlu kampanye untuk menggunakan transportasi umum atau bersepeda.</p>
+            </div>
+        </section>
+
+        <!-- MATERI E -->
+        <section class="content-card">
+            <h3>E. Perbandingan Keempat Jenis Diagram</h3>
+            <p>Setiap jenis diagram memiliki kelebihan dan kekurangan masing-masing. Pemilihan jenis diagram yang tepat bergantung pada <strong>jenis data</strong>, <strong>tujuan penyajian</strong>, dan <strong>audiens</strong>.</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Diagram Batang</th>
+                        <th>Diagram Garis</th>
+                        <th>Diagram Lingkaran</th>
+                        <th>Piktogram</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fungsi Utama</strong></td>
+                        <td>Membandingkan kategori</td>
+                        <td>Menunjukkan tren waktu</td>
+                        <td>Menunjukkan komposisi</td>
+                        <td>Menyajikan data visual menarik</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jenis Data</strong></td>
+                        <td>Kategorikal</td>
+                        <td>Kontinu (waktu)</td>
+                        <td>Bagian dari keseluruhan</td>
+                        <td>Kategorikal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bentuk</strong></td>
+                        <td>Batang</td>
+                        <td>Titik & garis</td>
+                        <td>Juring lingkaran</td>
+                        <td>Gambar/simbol</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daya Tarik</strong></td>
+                        <td>Sedang</td>
+                        <td>Sedang</td>
+                        <td>Sedang</td>
+                        <td>Sangat tinggi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ketepatan</strong></td>
+                        <td>Tepat</td>
+                        <td>Tepat</td>
+                        <td>Tepat</td>
+                        <td>Kurang tepat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kemudahan Dibaca</strong></td>
+                        <td>Mudah</td>
+                        <td>Mudah</td>
+                        <td>Sedang</td>
+                        <td>Mudah (untuk data sederhana)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kelebihan</strong></td>
+                        <td>Mudah membandingkan</td>
+                        <td>Mudah melihat tren</td>
+                        <td>Mudah melihat proporsi</td>
+                        <td>Menarik visual</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kekurangan</strong></td>
+                        <td>Kurang untuk tren</td>
+                        <td>Kurang untuk kategori</td>
+                        <td>Sulit jika kategori banyak</td>
+                        <td>Kurang akurat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contoh Penggunaan</strong></td>
+                        <td>Penjualan per produk</td>
+                        <td>Suhu harian</td>
+                        <td>Anggaran rumah tangga</td>
+                        <td>Infografis, poster</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 PANDUAN MEMILIH JENIS DIAGRAM:</strong><br><br>
+                ✓ Gunakan <strong>diagram batang</strong> jika ingin <strong>membandingkan</strong> nilai antar kategori.<br>
+                ✓ Gunakan <strong>diagram garis</strong> jika ingin menunjukkan <strong>perubahan dari waktu ke waktu</strong>.<br>
+                ✓ Gunakan <strong>diagram lingkaran</strong> jika ingin menunjukkan <strong>komposisi/proporsi</strong> dari keseluruhan.<br>
+                ✓ Gunakan <strong>piktogram</strong> jika ingin menyajikan data secara <strong>visual menarik</strong> untuk audiens umum.<br><br>
+                <strong>⚠️ Pertimbangan:</strong><br>
+                • Untuk <strong>laporan resmi/akademis</strong> → gunakan diagram batang, garis, atau lingkaran.<br>
+                • Untuk <strong>presentasi/media</strong> → piktogram bisa lebih menarik.<br>
+                • Untuk <strong>data yang kompleks</strong> → hindari piktogram (kurang akurat).
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal — Memilih Jenis Diagram</h4>
+                <p><strong>Soal:</strong> Tentukan jenis diagram yang paling tepat untuk data berikut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Perbandingan nilai ulangan 5 mata pelajaran → <strong>Diagram Batang</strong><br>
+                (b) Perkembangan tinggi badan anak setiap tahun → <strong>Diagram Garis</strong><br>
+                (c) Komposisi pengeluaran rumah tangga → <strong>Diagram Lingkaran</strong><br>
+                (d) Jumlah siswa yang menyukai buah-buahan (untuk poster kampanye sehat) → <strong>Piktogram</strong><br>
+                (e) Suhu udara setiap jam selama 24 jam → <strong>Diagram Garis</strong><br>
+                (f) Persentase suara dalam pemilihan ketua OSIS → <strong>Diagram Lingkaran</strong><br>
+                (g) Banyak buku yang dipinjam per kategori (untuk infografis perpustakaan) → <strong>Piktogram</strong></p>
+            </div>
+        </section>
+
+        <!-- MATERI F -->
+        <section class="content-card">
+            <h3>F. Aplikasi dan Literasi Data dalam Kehidupan</h3>
+            <p>Kemampuan membaca, menyajikan, dan menginterpretasi data merupakan bagian dari <strong>literasi data</strong> (data literacy) — keterampilan penting di abad 21. Literasi data membantu kita membuat keputusan yang tepat berdasarkan informasi yang valid.</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Bidang</th>
+                        <th>Penerapan Literasi Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🏛️ <strong>Pemerintahan</strong></td>
+                        <td>Analisis data untuk kebijakan publik, evaluasi program, transparansi anggaran.</td>
+                    </tr>
+                    <tr>
+                        <td>💼 <strong>Bisnis</strong></td>
+                        <td>Analisis pasar, evaluasi kinerja, prediksi penjualan, pengambilan keputusan strategis.</td>
+                    </tr>
+                    <tr>
+                        <td>🏥 <strong>Kesehatan</strong></td>
+                        <td>Analisis data pasien, penelitian medis, evaluasi efektivitas pengobatan.</td>
+                    </tr>
+                    <tr>
+                        <td>🎓 <strong>Pendidikan</strong></td>
+                        <td>Evaluasi prestasi siswa, analisis kurikulum, perencanaan pendidikan.</td>
+                    </tr>
+                    <tr>
+                        <td>📱 <strong>Media Sosial</strong></td>
+                        <td>Analisis engagement, evaluasi konten, strategi pemasaran digital.</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 <strong>Lingkungan</strong></td>
+                        <td>Monitoring perubahan iklim, evaluasi dampak lingkungan, konservasi.</td>
+                    </tr>
+                    <tr>
+                        <td>🏠 <strong>Rumah Tangga</strong></td>
+                        <td>Pengelolaan anggaran, evaluasi pengeluaran, perencanaan keuangan.</td>
+                    </tr>
+                    <tr>
+                        <td>📰 <strong>Jurnalistik</strong></td>
+                        <td>Data journalism, infografis berita, verifikasi informasi.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 KETERAMPILAN LITERASI DATA:</strong><br><br>
+                <strong>1. Mengumpulkan Data</strong> → Menggunakan metode yang tepat (observasi, wawancara, angket).<br>
+                <strong>2. Mengolah Data</strong> → Mengorganisasi, menghitung, dan menganalisis data.<br>
+                <strong>3. Menyajikan Data</strong> → Memilih jenis diagram yang tepat dan membuat visualisasi yang jelas.<br>
+                <strong>4. Menginterpretasi Data</strong> → Menarik kesimpulan yang valid dari data.<br>
+                <strong>5. Mengkomunikasikan Data</strong> → Menyampaikan informasi data kepada orang lain dengan jelas.<br>
+                <strong>6. Mengambil Keputusan</strong> → Menggunakan data sebagai dasar pengambilan keputusan.
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 FAKTA MENARIK:</strong><br>
+                • <strong>Florence Nightingale</strong> (1820–1910) dianggap sebagai pelopor visualisasi data modern. Ia menggunakan diagram lingkaran (coxcomb chart) untuk menunjukkan penyebab kematian tentara dalam Perang Krimea, yang berhasil meyakinkan pemerintah Inggris untuk memperbaiki sanitasi rumah sakit.<br>
+                • Di era digital, setiap hari manusia menghasilkan sekitar <strong>2,5 quintillion bytes data</strong> — setara dengan 2,5 juta GB!<br>
+                • <strong>Data Science</strong> menjadi salah satu profesi paling diminati di abad 21.<br>
+                • Dalam Islam, prinsip <strong>tabayyun</strong> (verifikasi) dan <strong>qadar</strong> (ukuran/proporsi) sangat sejalan dengan prinsip literasi data — kita diperintahkan untuk memastikan kebenaran informasi dan memahami proporsi dengan tepat.
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Proyek Akhir — Analisis Data Komprehensif</h4>
+                <p><strong>Tugas:</strong> Lakukan survei mini di kelasmu tentang "Jam tidur siswa kelas VII per malam". Kumpulkan data dari 20 siswa, lalu sajikan dalam 4 jenis diagram (batang, garis, lingkaran, piktogram). Interpretasi masing-masing diagram dan tarik kesimpulan!</p>
+                <p style="margin-top: 0.75rem;"><strong>Langkah-langkah:</strong><br>
+                1. <strong>Kumpulkan data</strong> → catat jam tidur 20 siswa.<br>
+                2. <strong>Kelompokkan data</strong> → < 6 jam, 6-7 jam, 7-8 jam, 8-9 jam, > 9 jam.<br>
+                3. <strong>Buat tabel frekuensi</strong>.<br>
+                4. <strong>Buat 4 diagram</strong> (batang, garis, lingkaran, piktogram).<br>
+                5. <strong>Interpretasi setiap diagram</strong> → apa yang dapat disimpulkan?<br>
+                6. <strong>Bandingkan keempat diagram</strong> → mana yang paling efektif?<br>
+                7. <strong>Tarik kesimpulan</strong> → apakah siswa cukup tidur? Apa rekomendasinya?</p>
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Piktogram</span>
+                <span class="keyword-tag">Pictograph</span>
+                <span class="keyword-tag">Simbol</span>
+                <span class="keyword-tag">Legend</span>
+                <span class="keyword-tag">Interpretasi Data</span>
+                <span class="keyword-tag">Literasi Data</span>
+                <span class="keyword-tag">Visualisasi Data</span>
+                <span class="keyword-tag">Analisis Data</span>
+                <span class="keyword-tag">Diagram Batang</span>
+                <span class="keyword-tag">Diagram Garis</span>
+                <span class="keyword-tag">Diagram Lingkaran</span>
+                <span class="keyword-tag">Infografis</span>
+                <span class="keyword-tag">Florence Nightingale</span>
+                <span class="keyword-tag">Data Science</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا وَإِذَا حَكَمْتُم بَيْنَ النَّاسِ أَن تَحْكُمُوا بِالْعَدْلِ</div>
+            <p class="quote-translation">"Sesungguhnya Allah menyuruh kamu menyampaikan amanat kepada yang berhak menerimanya, dan (menyuruh kamu) apabila menetapkan hukum di antara manusia supaya kamu menetapkan dengan adil."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. An-Nisa [4]: 58</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat ini mengajarkan prinsip <strong>keadilan dan kejujuran</strong> — nilai yang juga menjadi inti dari literasi data. Seorang Muslim diperintahkan untuk menyajikan data dengan <strong>jujur</strong>, tidak memanipulasi informasi, dan mengambil keputusan berdasarkan data yang <strong>valid dan akurat</strong>. Inilah etika data dalam Islam.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                "Cukuplah seseorang dikatakan pendusta jika ia menyebarkan setiap berita yang ia dengar tanpa verifikasi." — HR. Muslim
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Statistika: Piktogram dan Interpretasi Data).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Piktogram dan Perbandingan Jenis Diagram).</li>
+                <li>Badan Pusat Statistik (BPS). (2023). <em>Visualisasi Data untuk Pemula</em>. Jakarta: BPS RI.</li>
+                <li>Tufte, E. R. (2001). <em>The Visual Display of Quantitative Information</em>. Graphics Press. (Prinsip visualisasi data modern).</li>
+                <li>Cairo, A. (2016). <em>The Truthful Art: Data, Charts, and Maps for Communication</em>. New Riders. (Seni komunikasi data).</li>
+                <li>Small, Christopher. (1998). <em>The Statue Within: A Biography of Florence Nightingale</em>. (Peran Nightingale dalam visualisasi data kesehatan).</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. An-Nisa: 58 tentang keadilan dan kejujuran).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 18</h2>
+            <p class="quiz-desc">
+                Piktogram & Interpretasi Data | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Pengertian piktogram, cara membuat piktogram, cara membaca piktogram, interpretasi data dari berbagai diagram, perbandingan jenis diagram, dan literasi data.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram yang menyajikan data menggunakan gambar atau simbol disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. Diagram batang</label>
+                        <label><input type="radio" name="q1" value="B"> B. Diagram garis</label>
+                        <label><input type="radio" name="q1" value="C"> C. Piktogram</label>
+                        <label><input type="radio" name="q1" value="D"> D. Diagram lingkaran</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Dalam piktogram, keterangan yang menjelaskan nilai setiap simbol disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. Judul</label>
+                        <label><input type="radio" name="q2" value="B"> B. Label</label>
+                        <label><input type="radio" name="q2" value="C"> C. Legend (keterangan)</label>
+                        <label><input type="radio" name="q2" value="D"> D. Skala</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika 1 simbol 🍎 = 8 apel, dan ada 5 simbol 🍎, maka banyak apel adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. 13 apel</label>
+                        <label><input type="radio" name="q3" value="B"> B. 30 apel</label>
+                        <label><input type="radio" name="q3" value="C"> C. 40 apel</label>
+                        <label><input type="radio" name="q3" value="D"> D. 50 apel</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram yang paling tepat untuk menunjukkan tren perubahan dari waktu ke waktu adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. Diagram batang</label>
+                        <label><input type="radio" name="q4" value="B"> B. Diagram garis</label>
+                        <label><input type="radio" name="q4" value="C"> C. Diagram lingkaran</label>
+                        <label><input type="radio" name="q4" value="D"> D. Piktogram</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram yang paling tepat untuk menunjukkan komposisi/proporsi dari keseluruhan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. Diagram batang</label>
+                        <label><input type="radio" name="q5" value="B"> B. Diagram garis</label>
+                        <label><input type="radio" name="q5" value="C"> C. Diagram lingkaran</label>
+                        <label><input type="radio" name="q5" value="D"> D. Piktogram</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Kelebihan piktogram dibandingkan diagram lain adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. Lebih akurat</label>
+                        <label><input type="radio" name="q6" value="B"> B. Lebih menarik secara visual</label>
+                        <label><input type="radio" name="q6" value="C"> C. Lebih mudah dibuat</label>
+                        <label><input type="radio" name="q6" value="D"> D. Lebih tepat untuk data kompleks</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Proses menganalisis dan menarik kesimpulan dari data yang telah disajikan disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. Pengumpulan data</label>
+                        <label><input type="radio" name="q7" value="B"> B. Penyajian data</label>
+                        <label><input type="radio" name="q7" value="C"> C. Interpretasi data</label>
+                        <label><input type="radio" name="q7" value="D"> D. Pengolahan data</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Kemampuan membaca, menyajikan, dan menginterpretasi data disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. Literasi digital</label>
+                        <label><input type="radio" name="q8" value="B"> B. Literasi data</label>
+                        <label><input type="radio" name="q8" value="C"> C. Literasi media</label>
+                        <label><input type="radio" name="q8" value="D"> D. Literasi informasi</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Tokoh yang dianggap pelopor visualisasi data modern dan menggunakan diagram coxcomb adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. William Playfair</label>
+                        <label><input type="radio" name="q9" value="B"> B. Florence Nightingale</label>
+                        <label><input type="radio" name="q9" value="C"> C. Euclides</label>
+                        <label><input type="radio" name="q9" value="D"> D. Pythagoras</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika piktogram menunjukkan data 30, 45, 60, 75, maka nilai simbol yang paling tepat adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. 5</label>
+                        <label><input type="radio" name="q10" value="B"> B. 10</label>
+                        <label><input type="radio" name="q10" value="C"> C. 15</label>
+                        <label><input type="radio" name="q10" value="D"> D. 20</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan pengertian piktogram! Sebutkan 4 ciri-ciri piktogram! Tuliskan 6 langkah membuat piktogram! Berikan masing-masing satu contoh penggunaan piktogram dalam kehidupan sehari-hari!</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Data berikut adalah banyak buah yang dijual di toko: Apel = 40, Jeruk = 60, Mangga = 80, Pisang = 100. Buatlah piktogram dengan nilai simbol 20! Tentukan: (a) jumlah simbol untuk setiap buah, (b) total buah yang dijual, (c) buah yang paling banyak dijual, (d) selisih buah terbanyak dan paling sedikit!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara interpretasi data dari diagram batang, diagram garis, diagram lingkaran, dan piktogram! Tuliskan dalam bentuk tabel minimal 4 aspek perbedaan! Berikan masing-masing satu contoh pertanyaan interpretasi untuk setiap jenis diagram!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara diagram batang, diagram garis, diagram lingkaran, dan piktogram! Tuliskan dalam bentuk tabel minimal 6 aspek perbedaan! Berikan masing-masing dua contoh data yang tepat disajikan dengan setiap jenis diagram! Kapan sebaiknya menggunakan piktogram dan kapan sebaiknya menghindarinya?</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Sebutkan 6 keterampilan literasi data! Jelaskan masing-masing secara singkat! Rancanglah sebuah proyek survei mini di kelasmu tentang "Jumlah jam tidur siswa per malam". Kumpulkan data dari 10 teman, sajikan dalam 2 jenis diagram yang berbeda (pilih dari batang, garis, lingkaran, atau piktogram), interpretasi masing-masing diagram, dan tarik kesimpulan! Apakah siswa di kelasmu cukup tidur? Apa rekomendasimu?</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="17.html">← Bab 17: Diagram Lingkaran</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="19.html">Ujian Akhir Semester (UAS) →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'C', q2: 'C', q3: 'C', q4: 'B', q5: 'C',
+            q6: 'B', q7: 'C', q8: 'B', q9: 'B', q10: 'C'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 18: PIKTOGRAM & INTERPRETASI DATA\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab18_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 18 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 18 (Piktogram & Interpretasi Data):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

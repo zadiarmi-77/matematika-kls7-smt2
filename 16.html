@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 16: Diagram Batang & Diagram Garis | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* --- CHART CONTAINER --- */
+        .chart-container {
+            background: var(--bg-primary); border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0;
+            text-align: center;
+        }
+        .chart-container svg { max-width: 100%; height: auto; }
+        .chart-title {
+            font-family: 'Playfair Display', serif; color: var(--accent-gold);
+            font-size: 1.1rem; margin-bottom: 1rem;
+        }
+
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table, .chart-container { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="15.html">← Bab 15</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="17.html">Bab 17 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>📊 Bab Enambelas: Diagram Batang & Diagram Garis</h1>
+            <p class="chapter-desc">
+                Memahami cara menyajikan data dalam bentuk diagram batang (bar chart) dan diagram garis (line chart), cara membaca dan menafsirkan informasi dari diagram, serta memilih jenis diagram yang tepat sesuai dengan karakteristik data. Materi ini merupakan fondasi untuk mempelajari diagram lingkaran dan piktogram pada pertemuan berikutnya.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A -->
+        <section class="content-card">
+            <h3>A. Pengertian Penyajian Data</h3>
+            <p><strong>Penyajian data</strong> adalah proses menampilkan data yang telah dikumpulkan dan diolah dalam bentuk yang lebih mudah dipahami, seperti tabel, diagram, atau grafik. Tujuan penyajian data adalah agar informasi yang terkandung dalam data dapat <strong>dibaca dengan cepat</strong>, <strong>dipahami dengan mudah</strong>, dan <strong>digunakan untuk mengambil keputusan</strong>.</p>
+            <p style="margin-top: 1rem;">Data yang disajikan dengan baik akan membantu pembaca melihat <strong>pola</strong>, <strong>perbandingan</strong>, <strong>tren</strong>, dan <strong>hubungan</strong> antar variabel. Dalam statistika, ada beberapa jenis diagram yang umum digunakan: <strong>diagram batang</strong>, <strong>diagram garis</strong>, <strong>diagram lingkaran</strong>, dan <strong>piktogram</strong>.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 TUJUAN PENYAJIAN DATA:</strong><br>
+                • Memudahkan pembaca memahami informasi secara cepat.<br>
+                • Menunjukkan pola, tren, atau hubungan dalam data.<br>
+                • Membandingkan antar kategori atau antar waktu.<br>
+                • Menarik perhatian dan memudahkan komunikasi data.<br>
+                • Menjadi dasar pengambilan keputusan.
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Penyajian</th>
+                        <th>Bentuk</th>
+                        <th>Kegunaan Utama</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tabel</strong></td>
+                        <td>Baris dan kolom</td>
+                        <td>Menyajikan data numerik secara rinci</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Batang</strong></td>
+                        <td>Batang persegi panjang</td>
+                        <td>Membandingkan antar kategori</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Garis</strong></td>
+                        <td>Garis yang menghubungkan titik</td>
+                        <td>Menunjukkan tren/perubahan waktu</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Lingkaran</strong></td>
+                        <td>Lingkaran dengan juring</td>
+                        <td>Menunjukkan bagian dari keseluruhan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Piktogram</strong></td>
+                        <td>Simbol/gambar</td>
+                        <td>Menyajikan data dengan gambar menarik</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- MATERI B -->
+        <section class="content-card">
+            <h3>B. Diagram Batang (Bar Chart)</h3>
+            <p><strong>Diagram batang</strong> (atau <em>bar chart</em>) adalah diagram yang menyajikan data dalam bentuk <strong>batang-batang persegi panjang</strong> yang tingginya sebanding dengan nilai data. Batang-batang ini digambar tegak atau mendatar dengan jarak yang sama di antara mereka.</p>
+            <p style="margin-top: 1rem;">Diagram batang sangat efektif untuk <strong>membandingkan data antar kategori</strong> yang berbeda, seperti perbandingan jumlah siswa per kelas, penjualan per bulan, atau nilai ujian per mata pelajaran.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 CIRI-CIRI DIAGRAM BATANG:</strong><br>
+                • Terdiri dari <strong>batang-batang persegi panjang</strong> yang tegak atau mendatar.<br>
+                • <strong>Tinggi/panjang batang</strong> menunjukkan nilai data.<br>
+                • <strong>Lebar batang sama</strong> dan <strong>jarak antar batang sama</strong>.<br>
+                • Sumbu horizontal (X) berisi <strong>kategori</strong>.<br>
+                • Sumbu vertikal (Y) berisi <strong>nilai/frekuensi</strong>.<br>
+                • Harus memiliki <strong>judul</strong>, <strong>label sumbu</strong>, dan <strong>skala</strong>.
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">📊 Diagram Batang: Nilai Ulangan Matematika Kelas VII-A</div>
+                <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Grid lines -->
+                    <line x1="60" y1="50" x2="480" y2="50" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="100" x2="480" y2="100" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="150" x2="480" y2="150" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="200" x2="480" y2="200" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="250" x2="480" y2="250" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    
+                    <!-- Axes -->
+                    <line x1="60" y1="50" x2="60" y2="280" stroke="#D4AF37" stroke-width="2"/>
+                    <line x1="60" y1="280" x2="480" y2="280" stroke="#D4AF37" stroke-width="2"/>
+                    
+                    <!-- Y-axis labels -->
+                    <text x="50" y="285" fill="#94A3B8" font-size="11" text-anchor="end">0</text>
+                    <text x="50" y="255" fill="#94A3B8" font-size="11" text-anchor="end">2</text>
+                    <text x="50" y="205" fill="#94A3B8" font-size="11" text-anchor="end">4</text>
+                    <text x="50" y="155" fill="#94A3B8" font-size="11" text-anchor="end">6</text>
+                    <text x="50" y="105" fill="#94A3B8" font-size="11" text-anchor="end">8</text>
+                    <text x="50" y="55" fill="#94A3B8" font-size="11" text-anchor="end">10</text>
+                    
+                    <!-- Bars -->
+                    <rect x="90" y="175" width="50" height="105" fill="#D4AF37" opacity="0.9"/>
+                    <rect x="160" y="125" width="50" height="155" fill="#D4AF37" opacity="0.9"/>
+                    <rect x="230" y="75" width="50" height="205" fill="#D4AF37" opacity="0.9"/>
+                    <rect x="300" y="150" width="50" height="130" fill="#D4AF37" opacity="0.9"/>
+                    <rect x="370" y="200" width="50" height="80" fill="#D4AF37" opacity="0.9"/>
+                    
+                    <!-- Bar values -->
+                    <text x="115" y="168" fill="#F8FAFC" font-size="12" text-anchor="middle" font-weight="600">7</text>
+                    <text x="185" y="118" fill="#F8FAFC" font-size="12" text-anchor="middle" font-weight="600">10</text>
+                    <text x="255" y="68" fill="#F8FAFC" font-size="12" text-anchor="middle" font-weight="600">13</text>
+                    <text x="325" y="143" fill="#F8FAFC" font-size="12" text-anchor="middle" font-weight="600">8</text>
+                    <text x="395" y="193" fill="#F8FAFC" font-size="12" text-anchor="middle" font-weight="600">5</text>
+                    
+                    <!-- X-axis labels -->
+                    <text x="115" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">60-70</text>
+                    <text x="185" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">71-80</text>
+                    <text x="255" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">81-90</text>
+                    <text x="325" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">91-100</text>
+                    <text x="395" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">50-59</text>
+                    
+                    <!-- Axis titles -->
+                    <text x="270" y="318" fill="#D4AF37" font-size="12" text-anchor="middle" font-weight="600">Rentang Nilai</text>
+                    <text x="20" y="165" fill="#D4AF37" font-size="12" text-anchor="middle" font-weight="600" transform="rotate(-90 20 165)">Banyak Siswa</text>
+                </svg>
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Langkah</th>
+                        <th>Aktivitas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Siapkan Data</strong></td>
+                        <td>Kumpulkan data dan buat tabel frekuensi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Tentukan Sumbu</strong></td>
+                        <td>Sumbu X (horizontal) = kategori; Sumbu Y (vertikal) = nilai/frekuensi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Tentukan Skala</strong></td>
+                        <td>Pilih skala yang sesuai agar diagram mudah dibaca.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Gambar Batang</strong></td>
+                        <td>Gambar batang dengan lebar sama dan jarak sama.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Beri Judul & Label</strong></td>
+                        <td>Tambahkan judul diagram, label sumbu, dan nilai pada setiap batang.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 1 — Membuat Diagram Batang</h4>
+                <p><strong>Soal:</strong> Data berikut adalah banyak buku yang dibaca siswa kelas VII dalam satu bulan: Andi = 5, Budi = 8, Citra = 12, Dina = 7, Eka = 10. Buatlah diagram batangnya!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Buat tabel data:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;| Nama | Andi | Budi | Citra | Dina | Eka |<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;| Buku | 5 | 8 | 12 | 7 | 10 |<br>
+                Langkah 2: Tentukan sumbu X = nama siswa, sumbu Y = banyak buku.<br>
+                Langkah 3: Skala Y = 0, 2, 4, 6, 8, 10, 12, 14.<br>
+                Langkah 4: Gambar 5 batang dengan tinggi sesuai data.<br>
+                Langkah 5: Beri judul "Banyak Buku yang Dibaca Siswa Kelas VII".</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 2 — Membaca Diagram Batang</h4>
+                <p><strong>Soal:</strong> Berdasarkan diagram batang di atas (Nilai Ulangan Matematika), tentukan: (a) berapa banyak siswa yang mendapat nilai 81-90? (b) rentang nilai mana yang paling banyak siswanya? (c) berapa total siswa dalam kelas tersebut?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Siswa dengan nilai 81-90 = <strong>13 siswa</strong> (tinggi batang = 13).<br>
+                (b) Rentang nilai yang paling banyak = <strong>81-90</strong> (13 siswa).<br>
+                (c) Total siswa = 7 + 10 + 13 + 8 + 5 = <strong>43 siswa</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI C -->
+        <section class="content-card">
+            <h3>C. Diagram Garis (Line Chart)</h3>
+            <p><strong>Diagram garis</strong> (atau <em>line chart</em>) adalah diagram yang menyajikan data dalam bentuk <strong>titik-titik yang dihubungkan oleh garis</strong>. Diagram ini biasanya digunakan untuk menunjukkan <strong>perubahan data secara terus-menerus dari waktu ke waktu</strong> (tren).</p>
+            <p style="margin-top: 1rem;">Diagram garis sangat efektif untuk menampilkan data yang bersifat <strong>kontinu</strong> dan berhubungan dengan <strong>waktu</strong>, seperti perkembangan suhu, pertumbuhan tinggi badan, fluktuasi harga, atau perubahan jumlah penduduk.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 CIRI-CIRI DIAGRAM GARIS:</strong><br>
+                • Terdiri dari <strong>titik-titik data</strong> yang dihubungkan <strong>garis lurus</strong>.<br>
+                • Sumbu horizontal (X) biasanya berisi <strong>waktu</strong> (hari, bulan, tahun).<br>
+                • Sumbu vertikal (Y) berisi <strong>nilai data</strong>.<br>
+                • Menunjukkan <strong>tren</strong> (naik, turun, atau stabil).<br>
+                • Cocok untuk data <strong>kontinu</strong> dan <strong>berkala</strong>.
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">📈 Diagram Garis: Suhu Udara di Agam Selama 7 Hari</div>
+                <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Grid lines -->
+                    <line x1="60" y1="50" x2="480" y2="50" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="100" x2="480" y2="100" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="150" x2="480" y2="150" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="200" x2="480" y2="200" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <line x1="60" y1="250" x2="480" y2="250" stroke="#94A3B8" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    
+                    <!-- Axes -->
+                    <line x1="60" y1="50" x2="60" y2="280" stroke="#D4AF37" stroke-width="2"/>
+                    <line x1="60" y1="280" x2="480" y2="280" stroke="#D4AF37" stroke-width="2"/>
+                    
+                    <!-- Y-axis labels (suhu 20-32°C) -->
+                    <text x="50" y="285" fill="#94A3B8" font-size="11" text-anchor="end">20</text>
+                    <text x="50" y="235" fill="#94A3B8" font-size="11" text-anchor="end">22</text>
+                    <text x="50" y="185" fill="#94A3B8" font-size="11" text-anchor="end">24</text>
+                    <text x="50" y="135" fill="#94A3B8" font-size="11" text-anchor="end">26</text>
+                    <text x="50" y="85" fill="#94A3B8" font-size="11" text-anchor="end">28</text>
+                    <text x="50" y="55" fill="#94A3B8" font-size="11" text-anchor="end">30</text>
+                    
+                    <!-- Line and points (data: Sen 24, Sel 26, Rab 25, Kam 28, Jum 27, Sab 29, Min 30) -->
+                    <polyline points="90,185 150,135 210,160 270,85 330,110 390,60 450,35" 
+                              fill="none" stroke="#D4AF37" stroke-width="3"/>
+                    
+                    <!-- Points -->
+                    <circle cx="90" cy="185" r="5" fill="#D4AF37"/>
+                    <circle cx="150" cy="135" r="5" fill="#D4AF37"/>
+                    <circle cx="210" cy="160" r="5" fill="#D4AF37"/>
+                    <circle cx="270" cy="85" r="5" fill="#D4AF37"/>
+                    <circle cx="330" cy="110" r="5" fill="#D4AF37"/>
+                    <circle cx="390" cy="60" r="5" fill="#D4AF37"/>
+                    <circle cx="450" cy="35" r="5" fill="#D4AF37"/>
+                    
+                    <!-- Point values -->
+                    <text x="90" y="175" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">24°</text>
+                    <text x="150" y="125" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">26°</text>
+                    <text x="210" y="150" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">25°</text>
+                    <text x="270" y="75" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">28°</text>
+                    <text x="330" y="100" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">27°</text>
+                    <text x="390" y="50" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">29°</text>
+                    <text x="450" y="25" fill="#F8FAFC" font-size="11" text-anchor="middle" font-weight="600">30°</text>
+                    
+                    <!-- X-axis labels -->
+                    <text x="90" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Sen</text>
+                    <text x="150" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Sel</text>
+                    <text x="210" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Rab</text>
+                    <text x="270" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Kam</text>
+                    <text x="330" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Jum</text>
+                    <text x="390" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Sab</text>
+                    <text x="450" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Min</text>
+                    
+                    <!-- Axis titles -->
+                    <text x="270" y="318" fill="#D4AF37" font-size="12" text-anchor="middle" font-weight="600">Hari</text>
+                    <text x="20" y="165" fill="#D4AF37" font-size="12" text-anchor="middle" font-weight="600" transform="rotate(-90 20 165)">Suhu (°C)</text>
+                </svg>
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Langkah</th>
+                        <th>Aktivitas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Siapkan Data</strong></td>
+                        <td>Kumpulkan data yang berkaitan dengan waktu.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Tentukan Sumbu</strong></td>
+                        <td>Sumbu X = waktu; Sumbu Y = nilai data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Tentukan Skala</strong></td>
+                        <td>Pilih skala yang sesuai dengan rentang data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Plot Titik</strong></td>
+                        <td>Tandai setiap titik data pada koordinat yang sesuai.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Hubungkan Titik</strong></td>
+                        <td>Hubungkan titik-titik dengan garis lurus secara berurutan.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Beri Judul & Label</strong></td>
+                        <td>Tambahkan judul, label sumbu, dan nilai pada setiap titik.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📈 Contoh Soal 1 — Membuat Diagram Garis</h4>
+                <p><strong>Soal:</strong> Data tinggi badan Budi dari usia 10 sampai 14 tahun: 10 tahun = 135 cm, 11 tahun = 140 cm, 12 tahun = 148 cm, 13 tahun = 155 cm, 14 tahun = 162 cm. Buatlah diagram garisnya!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Sumbu X = usia (10, 11, 12, 13, 14 tahun).<br>
+                Langkah 2: Sumbu Y = tinggi badan (skala 130-165 cm).<br>
+                Langkah 3: Plot titik (10, 135), (11, 140), (12, 148), (13, 155), (14, 162).<br>
+                Langkah 4: Hubungkan titik-titik dengan garis lurus.<br>
+                <strong>Interpretasi:</strong> Terlihat tren kenaikan tinggi badan yang stabil setiap tahunnya.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📈 Contoh Soal 2 — Membaca Diagram Garis</h4>
+                <p><strong>Soal:</strong> Berdasarkan diagram garis suhu udara di atas, tentukan: (a) suhu tertinggi dan terendah, (b) hari apa suhu tertinggi terjadi, (c) tren suhu selama seminggu!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Suhu tertinggi = <strong>30°C</strong> (hari Minggu), suhu terendah = <strong>24°C</strong> (hari Senin).<br>
+                (b) Suhu tertinggi terjadi pada hari <strong>Minggu</strong>.<br>
+                (c) Tren suhu: <strong>naik secara umum</strong> dari Senin ke Minggu, dengan sedikit penurunan pada hari Rabu dan Jumat.</p>
+            </div>
+        </section>
+
+        <!-- MATERI D -->
+        <section class="content-card">
+            <h3>D. Perbedaan Diagram Batang dan Diagram Garis</h3>
+            <p>Meskipun keduanya menggunakan sumbu X dan Y, diagram batang dan diagram garis memiliki <strong>tujuan dan karakteristik yang berbeda</strong>. Pemilihan jenis diagram yang tepat sangat penting agar data dapat disajikan dengan efektif.</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Diagram Batang</th>
+                        <th>Diagram Garis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bentuk</strong></td>
+                        <td>Batang persegi panjang</td>
+                        <td>Titik yang dihubungkan garis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fungsi Utama</strong></td>
+                        <td>Membandingkan antar kategori</td>
+                        <td>Menunjukkan tren/perubahan waktu</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jenis Data</strong></td>
+                        <td>Data kategorikal (diskrit)</td>
+                        <td>Data kontinu (berkala)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sumbu X</strong></td>
+                        <td>Kategori (nama, kelas, jenis)</td>
+                        <td>Waktu (hari, bulan, tahun)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interpretasi</strong></td>
+                        <td>Perbandingan nilai</td>
+                        <td>Pola naik/turun/stabil</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contoh Penggunaan</strong></td>
+                        <td>Jumlah siswa per kelas, penjualan per produk</td>
+                        <td>Suhu harian, pertumbuhan, harga saham</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kelebihan</strong></td>
+                        <td>Mudah membandingkan nilai</td>
+                        <td>Mudah melihat tren</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kekurangan</strong></td>
+                        <td>Kurang baik untuk tren</td>
+                        <td>Kurang baik untuk perbandingan kategori</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 KAPAN MENGGUNAKAN DIAGRAM BATANG?</strong><br>
+                • Ketika ingin <strong>membandingkan</strong> nilai antar kategori yang berbeda.<br>
+                • Ketika data bersifat <strong>kategorikal</strong> (bukan waktu).<br>
+                • Ketika jumlah kategori tidak terlalu banyak (5-15 kategori).<br><br>
+                <strong>💡 KAPAN MENGGUNAKAN DIAGRAM GARIS?</strong><br>
+                • Ketika ingin menunjukkan <strong>perubahan dari waktu ke waktu</strong>.<br>
+                • Ketika data bersifat <strong>kontinu</strong> dan berurutan.<br>
+                • Ketika ingin melihat <strong>tren</strong> (naik, turun, atau stabil).
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal — Memilih Jenis Diagram</h4>
+                <p><strong>Soal:</strong> Tentukan jenis diagram yang paling tepat untuk menyajikan data berikut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Jumlah siswa per kelas di sekolah → <strong>Diagram Batang</strong> (kategorikal, perbandingan).<br>
+                (b) Suhu udara setiap jam selama 24 jam → <strong>Diagram Garis</strong> (kontinu, tren waktu).<br>
+                (c) Penjualan toko setiap bulan selama setahun → <strong>Diagram Garis</strong> (tren waktu).<br>
+                (d) Mata pelajaran favorit siswa → <strong>Diagram Batang</strong> (kategorikal).<br>
+                (e) Pertumbuhan tinggi badan anak setiap tahun → <strong>Diagram Garis</strong> (tren waktu).<br>
+                (f) Banyak mobil yang lewat di jalan tol per jam → <strong>Diagram Garis</strong> (tren waktu).</p>
+            </div>
+        </section>
+
+        <!-- MATERI E -->
+        <section class="content-card">
+            <h3>E. Cara Membaca dan Menafsirkan Diagram</h3>
+            <p>Kemampuan membaca dan menafsirkan diagram adalah <strong>literasi data</strong> yang sangat penting di era modern. Berikut adalah langkah-langkah sistematis untuk membaca diagram:</p>
+            
+            <div class="highlight-box">
+                <strong>📌 LANGKAH MEMBACA DIAGRAM:</strong><br><br>
+                <strong>1. Baca Judul Diagram</strong> → Untuk mengetahui informasi apa yang disajikan.<br>
+                <strong>2. Periksa Label Sumbu</strong> → Sumbu X dan Y menunjukkan apa?<br>
+                <strong>3. Periksa Skala</strong> → Berapa nilai setiap interval?<br>
+                <strong>4. Identifikasi Pola/Tren</strong> → Apakah ada kenaikan, penurunan, atau pola tertentu?<br>
+                <strong>5. Bandingkan Nilai</strong> → Nilai tertinggi, terendah, atau perbandingan antar kategori.<br>
+                <strong>6. Tarik Kesimpulan</strong> → Apa informasi penting yang dapat disimpulkan?
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 1 — Menafsirkan Diagram Batang</h4>
+                <p><strong>Soal:</strong> Diagram batang menunjukkan penjualan buku di toko "Pustaka Ilmu" selama 5 hari: Senin = 15, Selasa = 20, Rabu = 12, Kamis = 25, Jumat = 30. Tentukan: (a) hari dengan penjualan tertinggi, (b) hari dengan penjualan terendah, (c) rata-rata penjualan per hari, (d) selisih penjualan tertinggi dan terendah!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Penjualan tertinggi = <strong>Jumat (30 buku)</strong>.<br>
+                (b) Penjualan terendah = <strong>Rabu (12 buku)</strong>.<br>
+                (c) Rata-rata = (15 + 20 + 12 + 25 + 30) / 5 = 102 / 5 = <strong>20,4 buku/hari</strong>.<br>
+                (d) Selisih = 30 − 12 = <strong>18 buku</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📈 Contoh Soal 2 — Menafsirkan Diagram Garis</h4>
+                <p><strong>Soal:</strong> Diagram garis menunjukkan jumlah pengunjung perpustakaan selama 6 bulan: Januari = 120, Februari = 150, Maret = 130, April = 180, Mei = 200, Juni = 220. Tentukan: (a) bulan dengan pengunjung terbanyak, (b) tren pengunjung, (c) peningkatan dari Januari ke Juni, (d) persentase peningkatan!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Pengunjung terbanyak = <strong>Juni (220 orang)</strong>.<br>
+                (b) Tren: <strong>naik secara umum</strong> dari Januari ke Juni, dengan sedikit penurunan di Maret.<br>
+                (c) Peningkatan = 220 − 120 = <strong>100 orang</strong>.<br>
+                (d) Persentase peningkatan = (100 / 120) × 100% = <strong>83,33%</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 3 — Soal Cerita</h4>
+                <p><strong>Soal:</strong> Diagram batang menunjukkan nilai ulangan Matematika 30 siswa: nilai 60 ada 3 siswa, 70 ada 8 siswa, 80 ada 12 siswa, 90 ada 5 siswa, 100 ada 2 siswa. Tentukan: (a) nilai yang paling banyak diperoleh siswa, (b) berapa siswa yang mendapat nilai ≥ 80, (c) berapa persen siswa yang lulus jika KKM = 75!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Nilai paling banyak = <strong>80 (12 siswa)</strong>.<br>
+                (b) Siswa dengan nilai ≥ 80 = 12 + 5 + 2 = <strong>19 siswa</strong>.<br>
+                (c) Siswa lulus (nilai ≥ 75) = 12 + 5 + 2 = 19 siswa.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Persentase = (19 / 30) × 100% = <strong>63,33%</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI F -->
+        <section class="content-card">
+            <h3>F. Aplikasi dalam Kehidupan Sehari-hari</h3>
+            <p>Diagram batang dan diagram garis banyak digunakan dalam berbagai bidang untuk menyajikan informasi secara visual:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Bidang</th>
+                        <th>Penerapan Diagram Batang</th>
+                        <th>Penerapan Diagram Garis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>📈 <strong>Ekonomi</strong></td>
+                        <td>Perbandingan PDB antar negara</td>
+                        <td>Perkembangan inflasi, kurs mata uang</td>
+                    </tr>
+                    <tr>
+                        <td>🏥 <strong>Kesehatan</strong></td>
+                        <td>Jumlah kasus penyakit per daerah</td>
+                        <td>Tren penyebaran pandemi</td>
+                    </tr>
+                    <tr>
+                        <td>🎓 <strong>Pendidikan</strong></td>
+                        <td>Rata-rata nilai per mata pelajaran</td>
+                        <td>Perkembangan prestasi siswa</td>
+                    </tr>
+                    <tr>
+                        <td>🌦️ <strong>Cuaca</strong></td>
+                        <td>Curah hujan per bulan</td>
+                        <td>Perubahan suhu harian</td>
+                    </tr>
+                    <tr>
+                        <td>📊 <strong>Statistik</strong></td>
+                        <td>Sensus penduduk per provinsi</td>
+                        <td>Pertumbuhan penduduk</td>
+                    </tr>
+                    <tr>
+                        <td>💼 <strong>Bisnis</strong></td>
+                        <td>Penjualan per produk</td>
+                        <td>Tren penjualan bulanan</td>
+                    </tr>
+                    <tr>
+                        <td>⚽ <strong>Olahraga</strong></td>
+                        <td>Jumlah gol per pemain</td>
+                        <td>Perkembangan performa atlet</td>
+                    </tr>
+                    <tr>
+                        <td>📱 <strong>Media Sosial</strong></td>
+                        <td>Jumlah followers per platform</td>
+                        <td>Pertumbuhan engagement</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 FAKTA MENARIK:</strong><br>
+                • <strong>William Playfair</strong> (1759–1823), seorang insinyur Skotlandia, dianggap sebagai penemu diagram batang dan diagram garis modern pada tahun 1786.<br>
+                • Diagram batang pertama kali digunakan untuk menampilkan <strong>impor-ekspor Skotlandia</strong>.<br>
+                • Diagram garis pertama kali digunakan untuk menampilkan <strong>pergerakan harga saham</strong>.<br>
+                • Di era digital, tools seperti <strong>Excel, Google Sheets, Canva</strong>, dan <strong>Tableau</strong> memudahkan pembuatan diagram secara otomatis.<br>
+                • Dalam jurnalisme data (<em>data journalism</em>), diagram batang dan garis adalah dua jenis visualisasi yang paling sering digunakan.
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Proyek — Analisis Data Sederhana</h4>
+                <p><strong>Tugas:</strong> Kumpulkan data tinggi badan 10 teman sekelas, lalu sajikan dalam bentuk diagram batang dan diagram garis!</p>
+                <p style="margin-top: 0.75rem;"><strong>Langkah-langkah:</strong><br>
+                1. <strong>Kumpulkan data</strong> → ukur tinggi badan 10 teman.<br>
+                2. <strong>Buat tabel</strong> → susun data dalam tabel.<br>
+                3. <strong>Diagram batang</strong> → sumbu X = nama siswa, sumbu Y = tinggi badan.<br>
+                4. <strong>Diagram garis</strong> → sumbu X = urutan siswa, sumbu Y = tinggi badan.<br>
+                5. <strong>Analisis</strong> → siapa yang tertinggi/terendah? Berapa rata-ratanya? Bagaimana trennya?</p>
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Penyajian Data</span>
+                <span class="keyword-tag">Diagram</span>
+                <span class="keyword-tag">Grafik</span>
+                <span class="keyword-tag">Diagram Batang</span>
+                <span class="keyword-tag">Bar Chart</span>
+                <span class="keyword-tag">Diagram Garis</span>
+                <span class="keyword-tag">Line Chart</span>
+                <span class="keyword-tag">Sumbu X</span>
+                <span class="keyword-tag">Sumbu Y</span>
+                <span class="keyword-tag">Skala</span>
+                <span class="keyword-tag">Tren</span>
+                <span class="keyword-tag">Kategori</span>
+                <span class="keyword-tag">Frekuensi</span>
+                <span class="keyword-tag">Literasi Data</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا ضَرَبْتُمْ فِي سَبِيلِ اللَّهِ فَتَبَيَّنُوا</div>
+            <p class="quote-translation">"Wahai orang-orang yang beriman, apabila kamu berpergian di jalan Allah (untuk berjihad), maka telitilah (verifikasi dengan cermat)..."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. An-Nisa [4]: 94</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat ini menekankan pentingnya <strong>ketelitian dan verifikasi</strong> — prinsip yang juga menjadi inti dari penyajian data. Data yang disajikan harus <strong>akurat</strong>, <strong>jelas</strong>, dan <strong>tidak menyesatkan</strong>. Seorang Muslim diperintahkan untuk menyajikan informasi dengan jujur dan teliti, tidak memanipulasi data untuk kepentingan pribadi.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                "Sesungguhnya Allah mencintai orang yang jika melakukan suatu pekerjaan, dilakukan dengan itqan (tepat, terarah, jelas dan tuntas)." — HR. Thabrani
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Statistika: Penyajian Data).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Diagram Batang dan Diagram Garis).</li>
+                <li>Badan Pusat Statistik (BPS). (2023). <em>Visualisasi Data untuk Pemula</em>. Jakarta: BPS RI.</li>
+                <li>Playfair, W. (1786). <em>The Commercial and Political Atlas</em>. London. (Karya pertama tentang diagram batang dan garis).</li>
+                <li>Tufte, E. R. (2001). <em>The Visual Display of Quantitative Information</em>. Graphics Press. (Prinsip visualisasi data modern).</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. An-Nisa: 94 tentang ketelitian dan verifikasi).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 16</h2>
+            <p class="quiz-desc">
+                Diagram Batang & Diagram Garis | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Pengertian penyajian data, diagram batang, diagram garis, perbedaan keduanya, cara membaca diagram, dan aplikasi kehidupan.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram yang menyajikan data dalam bentuk batang-batang persegi panjang disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. Diagram garis</label>
+                        <label><input type="radio" name="q1" value="B"> B. Diagram batang</label>
+                        <label><input type="radio" name="q1" value="C"> C. Diagram lingkaran</label>
+                        <label><input type="radio" name="q1" value="D"> D. Piktogram</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram garis paling tepat digunakan untuk menyajikan data yang...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. Berupa kategori berbeda</label>
+                        <label><input type="radio" name="q2" value="B"> B. Berubah dari waktu ke waktu</label>
+                        <label><input type="radio" name="q2" value="C"> C. Merupakan bagian dari keseluruhan</label>
+                        <label><input type="radio" name="q2" value="D"> D. Berupa gambar atau simbol</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Pada diagram batang, sumbu horizontal (X) biasanya berisi...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. Nilai/frekuensi</label>
+                        <label><input type="radio" name="q3" value="B"> B. Kategori data</label>
+                        <label><input type="radio" name="q3" value="C"> C. Waktu</label>
+                        <label><input type="radio" name="q3" value="D"> D. Persentase</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Data berikut yang paling tepat disajikan dengan diagram garis adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. Jumlah siswa per kelas</label>
+                        <label><input type="radio" name="q4" value="B"> B. Mata pelajaran favorit siswa</label>
+                        <label><input type="radio" name="q4" value="C"> C. Suhu udara setiap jam selama 24 jam</label>
+                        <label><input type="radio" name="q4" value="D"> D. Warna kesukaan siswa</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Penemu diagram batang dan diagram garis modern adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. Euclides</label>
+                        <label><input type="radio" name="q5" value="B"> B. William Playfair</label>
+                        <label><input type="radio" name="q5" value="C"> C. Pythagoras</label>
+                        <label><input type="radio" name="q5" value="D"> D. Archimedes</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika diagram batang menunjukkan penjualan buku: Senin = 10, Selasa = 15, Rabu = 20, Kamis = 25, Jumat = 30, maka rata-rata penjualan per hari adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. 15 buku</label>
+                        <label><input type="radio" name="q6" value="B"> B. 20 buku</label>
+                        <label><input type="radio" name="q6" value="C"> C. 25 buku</label>
+                        <label><input type="radio" name="q6" value="D"> D. 30 buku</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram garis yang menunjukkan tren naik dari waktu ke waktu berarti...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. Data menurun</label>
+                        <label><input type="radio" name="q7" value="B"> B. Data stabil</label>
+                        <label><input type="radio" name="q7" value="C"> C. Data meningkat</label>
+                        <label><input type="radio" name="q7" value="D"> D. Data berfluktuasi</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Langkah pertama dalam membaca diagram adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. Memeriksa skala</label>
+                        <label><input type="radio" name="q8" value="B"> B. Membaca judul diagram</label>
+                        <label><input type="radio" name="q8" value="C"> C. Menghitung jumlah batang</label>
+                        <label><input type="radio" name="q8" value="D"> D. Menentukan tren</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Data pertumbuhan tinggi badan anak setiap tahun paling tepat disajikan dengan...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. Diagram batang</label>
+                        <label><input type="radio" name="q9" value="B"> B. Diagram garis</label>
+                        <label><input type="radio" name="q9" value="C"> C. Diagram lingkaran</label>
+                        <label><input type="radio" name="q9" value="D"> D. Piktogram</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Pada diagram garis suhu udara, jika titik-titik dihubungkan dengan garis yang menurun, artinya...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. Suhu meningkat</label>
+                        <label><input type="radio" name="q10" value="B"> B. Suhu menurun</label>
+                        <label><input type="radio" name="q10" value="C"> C. Suhu stabil</label>
+                        <label><input type="radio" name="q10" value="D"> D. Suhu tidak berubah</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan pengertian penyajian data! Sebutkan 4 tujuan penyajian data! Sebutkan 4 jenis diagram yang umum digunakan dalam statistika beserta kegunaan masing-masing!</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara diagram batang dan diagram garis! Tuliskan minimal 5 perbedaan dalam bentuk tabel! Berikan masing-masing dua contoh data yang tepat disajikan dengan diagram batang dan diagram garis!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Data berikut adalah banyak siswa yang meminjam buku di perpustakaan selama 5 hari: Senin = 12, Selasa = 18, Rabu = 15, Kamis = 22, Jumat = 25. Tentukan: (a) hari dengan peminjam terbanyak, (b) hari dengan peminjam paling sedikit, (c) rata-rata peminjam per hari, (d) selisih peminjam terbanyak dan paling sedikit, (e) total peminjam selama 5 hari!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Data berikut adalah nilai ulangan Matematika 20 siswa: 60 (2 siswa), 70 (5 siswa), 80 (8 siswa), 90 (4 siswa), 100 (1 siswa). Tentukan: (a) nilai yang paling banyak diperoleh siswa, (b) berapa siswa yang mendapat nilai ≥ 80, (c) berapa persen siswa yang mendapat nilai < 70, (d) berapa rata-rata nilai kelas!</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Sebutkan 5 bidang kehidupan yang menggunakan diagram batang atau diagram garis! Jelaskan masing-masing penerapannya secara singkat! Buatlah satu contoh data sederhana (minimal 5 data), lalu tentukan jenis diagram yang paling tepat untuk menyajikannya dan jelaskan alasannya!</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="15.html">← Bab 15: Pengertian Data & Pengumpulan Data</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="17.html">Bab 17: Diagram Lingkaran →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'B', q2: 'B', q3: 'B', q4: 'C', q5: 'B',
+            q6: 'B', q7: 'C', q8: 'B', q9: 'B', q10: 'B'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 16: DIAGRAM BATANG & DIAGRAM GARIS\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab16_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 16 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 16 (Diagram Batang & Diagram Garis):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

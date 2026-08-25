@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 17: Diagram Lingkaran | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* --- CHART CONTAINER --- */
+        .chart-container {
+            background: var(--bg-primary); border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0;
+            text-align: center;
+        }
+        .chart-container svg { max-width: 100%; height: auto; }
+        .chart-title {
+            font-family: 'Playfair Display', serif; color: var(--accent-gold);
+            font-size: 1.1rem; margin-bottom: 1rem;
+        }
+        .chart-legend {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 1rem; margin-top: 1rem;
+        }
+        .legend-item {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.9rem; color: var(--text-secondary);
+        }
+        .legend-color {
+            width: 16px; height: 16px; border-radius: 3px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table, .chart-container { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+            .chart-legend { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="16.html">← Bab 16</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="18.html">Bab 18 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>🥧 Bab Tujuhbelas: Diagram Lingkaran</h1>
+            <p class="chapter-desc">
+                Memahami cara menyajikan data dalam bentuk diagram lingkaran (pie chart), menghitung besar sudut juring dan persentase, serta membaca dan menafsirkan informasi dari diagram lingkaran. Materi ini melengkapi pemahaman tentang penyajian data setelah mempelajari diagram batang dan diagram garis pada pertemuan sebelumnya.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A -->
+        <section class="content-card">
+            <h3>A. Pengertian Diagram Lingkaran</h3>
+            <p><strong>Diagram lingkaran</strong> (atau <em>pie chart</em>) adalah diagram yang menyajikan data dalam bentuk <strong>juring-juring lingkaran</strong> yang besarnya sebanding dengan nilai data yang diwakilinya. Seluruh lingkaran mewakili <strong>100% data</strong> atau <strong>360°</strong>, sedangkan setiap juring mewakili sebagian dari keseluruhan.</p>
+            <p style="margin-top: 1rem;">Diagram lingkaran sangat efektif untuk menunjukkan <strong>komposisi</strong> atau <strong>proporsi</strong> dari suatu keseluruhan. Diagram ini pertama kali diperkenalkan oleh <strong>William Playfair</strong> pada tahun 1801 dalam karyanya yang berjudul <em>Statistical Breviary</em>.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 CIRI-CIRI DIAGRAM LINGKARAN:</strong><br>
+                • Berbentuk <strong>lingkaran penuh</strong> yang dibagi menjadi beberapa <strong>juring</strong>.<br>
+                • <strong>Total sudut</strong> semua juring = <strong>360°</strong>.<br>
+                • <strong>Total persentase</strong> semua juring = <strong>100%</strong>.<br>
+                • Besar setiap juring sebanding dengan nilai data.<br>
+                • Cocok untuk menunjukkan <strong>bagian dari keseluruhan</strong> (komposisi).
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Diagram Lingkaran</th>
+                        <th>Ciri-ciri</th>
+                        <th>Kegunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Diagram Lingkaran Biasa (Pie Chart)</strong></td>
+                        <td>Lingkaran penuh dengan juring-juring</td>
+                        <td>Menunjukkan proporsi data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Batang 3D</strong></td>
+                        <td>Lingkaran dengan efek tiga dimensi</td>
+                        <td>Tampilan lebih menarik (namun kurang akurat)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagram Donat (Donut Chart)</strong></td>
+                        <td>Lingkaran dengan lubang di tengah</td>
+                        <td>Menampilkan data + informasi tambahan di tengah</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>💡 Kapan Menggunakan Diagram Lingkaran?</h4>
+                <p>• Ketika ingin menunjukkan <strong>komposisi</strong> atau <strong>proporsi</strong> dari keseluruhan.<br>
+                • Ketika data berupa <strong>persentase</strong> atau bagian dari total.<br>
+                • Ketika jumlah kategori <strong>tidak terlalu banyak</strong> (idealnya 3-7 kategori).<br>
+                • <strong>Contoh:</strong> Komposisi anggaran rumah tangga, persentase suara pemilu, distribusi penduduk berdasarkan agama, hobi siswa.</p>
+            </div>
+        </section>
+
+        <!-- MATERI B -->
+        <section class="content-card">
+            <h3>B. Rumus-Rumus dalam Diagram Lingkaran</h3>
+            <p>Untuk membuat dan membaca diagram lingkaran, kita perlu memahami hubungan antara <strong>frekuensi (banyak data)</strong>, <strong>persentase</strong>, dan <strong>besar sudut juring</strong>.</p>
+            
+            <div class="highlight-box">
+                <strong>📐 RUMUS-RUMUS PENTING:</strong><br><br>
+                <strong>1. Persentase:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Persentase = (Frekuensi / Total Frekuensi) × 100%<br><br>
+                <strong>2. Besar Sudut Juring:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sudut Juring = (Frekuensi / Total Frekuensi) × 360°<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Atau: Sudut Juring = Persentase × 360° / 100° = Persentase × 3,6°<br><br>
+                <strong>3. Hubungan Persentase dan Sudut:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1% = 3,6°<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;10% = 36°<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;25% = 90°<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;50% = 180°<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;100% = 360°
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Persentase</th>
+                        <th>Besar Sudut</th>
+                        <th>Visualisasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>10%</strong></td>
+                        <td>36°</td>
+                        <td>Sepersepuluh lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><strong>25%</strong></td>
+                        <td>90°</td>
+                        <td>Seperempat lingkaran (sudut siku-siku)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>33,33%</strong></td>
+                        <td>120°</td>
+                        <td>Sepertiga lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50%</strong></td>
+                        <td>180°</td>
+                        <td>Setengah lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><strong>75%</strong></td>
+                        <td>270°</td>
+                        <td>Tiga perempat lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><strong>100%</strong></td>
+                        <td>360°</td>
+                        <td>Lingkaran penuh</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 1 — Menghitung Persentase dan Sudut</h4>
+                <p><strong>Soal:</strong> Dari 40 siswa kelas VII, hobi mereka adalah: Olahraga = 16 siswa, Membaca = 8 siswa, Musik = 10 siswa, Melukis = 6 siswa. Hitunglah persentase dan besar sudut juring untuk setiap hobi!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Total siswa = 40<br><br>
+                <strong>Olahraga:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Persentase = (16/40) × 100% = <strong>40%</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sudut = 40% × 360° = <strong>144°</strong><br><br>
+                <strong>Membaca:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Persentase = (8/40) × 100% = <strong>20%</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sudut = 20% × 360° = <strong>72°</strong><br><br>
+                <strong>Musik:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Persentase = (10/40) × 100% = <strong>25%</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sudut = 25% × 360° = <strong>90°</strong><br><br>
+                <strong>Melukis:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Persentase = (6/40) × 100% = <strong>15%</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sudut = 15% × 360° = <strong>54°</strong><br><br>
+                <strong>Cek:</strong> 40% + 20% + 25% + 15% = 100% ✓<br>
+                <strong>Cek:</strong> 144° + 72° + 90° + 54° = 360° ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal 2 — Mencari Frekuensi dari Persentase</h4>
+                <p><strong>Soal:</strong> Diagram lingkaran menunjukkan mata pelajaran favorit 60 siswa. Matematika = 30%, IPA = 25%, Bahasa Indonesia = 20%, IPS = 15%, Seni = 10%. Berapa banyak siswa yang menyukai setiap mata pelajaran?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Total siswa = 60<br>
+                • Matematika = 30% × 60 = <strong>18 siswa</strong><br>
+                • IPA = 25% × 60 = <strong>15 siswa</strong><br>
+                • Bahasa Indonesia = 20% × 60 = <strong>12 siswa</strong><br>
+                • IPS = 15% × 60 = <strong>9 siswa</strong><br>
+                • Seni = 10% × 60 = <strong>6 siswa</strong><br>
+                <strong>Cek:</strong> 18 + 15 + 12 + 9 + 6 = 60 ✓</p>
+            </div>
+        </section>
+
+        <!-- MATERI C -->
+        <section class="content-card">
+            <h3>C. Cara Membuat Diagram Lingkaran</h3>
+            <p>Untuk membuat diagram lingkaran yang baik, ikuti langkah-langkah sistematis berikut:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Langkah</th>
+                        <th>Aktivitas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Siapkan Data</strong></td>
+                        <td>Kumpulkan data dan buat tabel frekuensi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Hitung Total</strong></td>
+                        <td>Jumlahkan semua frekuensi untuk mendapatkan total data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Hitung Persentase</strong></td>
+                        <td>Hitung persentase setiap kategori: (frekuensi/total) × 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Hitung Sudut</strong></td>
+                        <td>Hitung besar sudut setiap juring: persentase × 3,6°.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Gambar Lingkaran</strong></td>
+                        <td>Gambar lingkaran dengan jangka, bagi menjadi juring-juring sesuai sudut.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Beri Warna & Label</strong></td>
+                        <td>Beri warna berbeda untuk setiap juring, tambahkan label dan persentase.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Beri Judul</strong></td>
+                        <td>Tambahkan judul diagram yang jelas dan informatif.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <div class="chart-title">🥧 Diagram Lingkaran: Hobi Siswa Kelas VII-A (40 siswa)</div>
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Lingkaran luar (border) -->
+                    <circle cx="250" cy="200" r="150" fill="none" stroke="#94A3B8" stroke-width="1" opacity="0.3"/>
+                    
+                    <!-- Juring 1: Olahraga 40% = 144° (dari 0° ke 144°, warna emas) -->
+                    <path d="M 250 200 L 250 50 A 150 150 0 0 1 388.2 246.4 Z" 
+                          fill="#D4AF37" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Juring 2: Membaca 20% = 72° (dari 144° ke 216°, warna biru) -->
+                    <path d="M 250 200 L 388.2 246.4 A 150 150 0 0 1 161.8 288.1 Z" 
+                          fill="#3B82F6" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Juring 3: Musik 25% = 90° (dari 216° ke 306°, warna hijau) -->
+                    <path d="M 250 200 L 161.8 288.1 A 150 150 0 0 1 161.8 111.9 Z" 
+                          fill="#10B981" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Juring 4: Melukis 15% = 54° (dari 306° ke 360°, warna merah) -->
+                    <path d="M 250 200 L 161.8 111.9 A 150 150 0 0 1 250 50 Z" 
+                          fill="#EF4444" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Label persentase di tengah setiap juring -->
+                    <text x="310" y="140" fill="#0F172A" font-size="14" font-weight="700" text-anchor="middle">40%</text>
+                    <text x="300" y="280" fill="#F8FAFC" font-size="14" font-weight="700" text-anchor="middle">20%</text>
+                    <text x="180" y="210" fill="#F8FAFC" font-size="14" font-weight="700" text-anchor="middle">25%</text>
+                    <text x="200" y="130" fill="#F8FAFC" font-size="14" font-weight="700" text-anchor="middle">15%</text>
+                </svg>
+                
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #D4AF37;"></div>
+                        <span>Olahraga (40%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #3B82F6;"></div>
+                        <span>Membaca (20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #10B981;"></div>
+                        <span>Musik (25%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #EF4444;"></div>
+                        <span>Melukis (15%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal — Membuat Diagram Lingkaran</h4>
+                <p><strong>Soal:</strong> Data cara transportasi 50 siswa ke sekolah: Jalan kaki = 10, Sepeda = 15, Antar orang tua = 20, Angkot = 5. Buatlah diagram lingkaran!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Total = 50 siswa<br><br>
+                <strong>Langkah 1: Hitung persentase</strong><br>
+                • Jalan kaki = (10/50) × 100% = 20%<br>
+                • Sepeda = (15/50) × 100% = 30%<br>
+                • Antar orang tua = (20/50) × 100% = 40%<br>
+                • Angkot = (5/50) × 100% = 10%<br>
+                Cek: 20% + 30% + 40% + 10% = 100% ✓<br><br>
+                <strong>Langkah 2: Hitung sudut</strong><br>
+                • Jalan kaki = 20% × 360° = 72°<br>
+                • Sepeda = 30% × 360° = 108°<br>
+                • Antar orang tua = 40% × 360° = 144°<br>
+                • Angkot = 10% × 360° = 36°<br>
+                Cek: 72° + 108° + 144° + 36° = 360° ✓<br><br>
+                <strong>Langkah 3:</strong> Gambar lingkaran, bagi menjadi 4 juring sesuai sudut, beri warna berbeda dan label.</p>
+            </div>
+        </section>
+
+        <!-- MATERI D -->
+        <section class="content-card">
+            <h3>D. Cara Membaca dan Menafsirkan Diagram Lingkaran</h3>
+            <p>Membaca diagram lingkaran memerlukan pemahaman tentang hubungan antara <strong>luas juring</strong>, <strong>sudut</strong>, <strong>persentase</strong>, dan <strong>frekuensi</strong>.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 LANGKAH MEMBACA DIAGRAM LINGKARAN:</strong><br><br>
+                <strong>1. Baca judul</strong> → Untuk mengetahui informasi apa yang disajikan.<br>
+                <strong>2. Periksa total data</strong> → Berapa jumlah keseluruhan?<br>
+                <strong>3. Identifikasi juring terbesar & terkecil</strong> → Kategori mana yang paling dominan/minoritas?<br>
+                <strong>4. Hitung nilai</strong> → Gunakan rumus: nilai = persentase × total / 100<br>
+                <strong>5. Bandingkan antar kategori</strong> → Selisih, perbandingan, dll.<br>
+                <strong>6. Tarik kesimpulan</strong> → Informasi penting apa yang dapat disimpulkan?
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">🥧 Diagram Lingkaran: Anggaran Rumah Tangga Bulanan (Rp5.000.000)</div>
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="250" cy="200" r="150" fill="none" stroke="#94A3B8" stroke-width="1" opacity="0.3"/>
+                    
+                    <!-- Makanan 40% = 144° -->
+                    <path d="M 250 200 L 250 50 A 150 150 0 0 1 388.2 246.4 Z" 
+                          fill="#D4AF37" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Transportasi 20% = 72° -->
+                    <path d="M 250 200 L 388.2 246.4 A 150 150 0 0 1 161.8 288.1 Z" 
+                          fill="#8B5CF6" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Pendidikan 25% = 90° -->
+                    <path d="M 250 200 L 161.8 288.1 A 150 150 0 0 1 161.8 111.9 Z" 
+                          fill="#3B82F6" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Tabungan 10% = 36° -->
+                    <path d="M 250 200 L 161.8 111.9 A 150 150 0 0 1 205.9 57.1 Z" 
+                          fill="#10B981" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Lainnya 5% = 18° -->
+                    <path d="M 250 200 L 205.9 57.1 A 150 150 0 0 1 250 50 Z" 
+                          fill="#EF4444" stroke="#0F172A" stroke-width="2"/>
+                    
+                    <!-- Label -->
+                    <text x="310" y="140" fill="#0F172A" font-size="13" font-weight="700" text-anchor="middle">40%</text>
+                    <text x="300" y="280" fill="#F8FAFC" font-size="13" font-weight="700" text-anchor="middle">20%</text>
+                    <text x="180" y="210" fill="#F8FAFC" font-size="13" font-weight="700" text-anchor="middle">25%</text>
+                    <text x="180" y="100" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">10%</text>
+                    <text x="225" y="70" fill="#F8FAFC" font-size="10" font-weight="700" text-anchor="middle">5%</text>
+                </svg>
+                
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #D4AF37;"></div>
+                        <span>Makanan (40%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #8B5CF6;"></div>
+                        <span>Transportasi (20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #3B82F6;"></div>
+                        <span>Pendidikan (25%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #10B981;"></div>
+                        <span>Tabungan (10%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #EF4444;"></div>
+                        <span>Lainnya (5%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal — Menafsirkan Diagram Lingkaran</h4>
+                <p><strong>Soal:</strong> Berdasarkan diagram lingkaran anggaran rumah tangga di atas (total Rp5.000.000), tentukan: (a) kategori pengeluaran terbesar, (b) nominal untuk pendidikan, (c) selisih nominal makanan dan tabungan, (d) persentase untuk kebutuhan pokok (makanan + transportasi)!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Kategori terbesar = <strong>Makanan (40%)</strong>.<br>
+                (b) Nominal pendidikan = 25% × Rp5.000.000 = <strong>Rp1.250.000</strong>.<br>
+                (c) Makanan = 40% × Rp5.000.000 = Rp2.000.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Tabungan = 10% × Rp5.000.000 = Rp500.000<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Selisih = Rp2.000.000 − Rp500.000 = <strong>Rp1.500.000</strong>.<br>
+                (d) Kebutuhan pokok = 40% + 20% = <strong>60%</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Nominal = 60% × Rp5.000.000 = <strong>Rp3.000.000</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MATERI E -->
+        <section class="content-card">
+            <h3>E. Perbandingan Diagram Lingkaran dengan Diagram Lain</h3>
+            <p>Setiap jenis diagram memiliki kelebihan dan kekurangan masing-masing. Pemilihan jenis diagram yang tepat bergantung pada <strong>jenis data</strong> dan <strong>tujuan penyajian</strong>.</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Diagram Batang</th>
+                        <th>Diagram Garis</th>
+                        <th>Diagram Lingkaran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fungsi Utama</strong></td>
+                        <td>Membandingkan kategori</td>
+                        <td>Menunjukkan tren waktu</td>
+                        <td>Menunjukkan komposisi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jenis Data</strong></td>
+                        <td>Kategorikal</td>
+                        <td>Kontinu (waktu)</td>
+                        <td>Bagian dari keseluruhan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bentuk</strong></td>
+                        <td>Batang persegi panjang</td>
+                        <td>Titik & garis</td>
+                        <td>Juring lingkaran</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>Tidak harus sama</td>
+                        <td>Tidak harus sama</td>
+                        <td>Selalu 100% / 360°</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kelebihan</strong></td>
+                        <td>Mudah membandingkan</td>
+                        <td>Mudah melihat tren</td>
+                        <td>Mudah melihat proporsi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kekurangan</strong></td>
+                        <td>Kurang baik untuk tren</td>
+                        <td>Kurang baik untuk kategori</td>
+                        <td>Sulit jika kategori banyak</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contoh Penggunaan</strong></td>
+                        <td>Penjualan per produk</td>
+                        <td>Suhu harian</td>
+                        <td>Anggaran rumah tangga</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 KAPAN MENGGUNAKAN DIAGRAM LINGKARAN?</strong><br>
+                ✓ Ketika ingin menunjukkan <strong>proporsi</strong> atau <strong>komposisi</strong>.<br>
+                ✓ Ketika data berupa <strong>persentase</strong> dari keseluruhan.<br>
+                ✓ Ketika jumlah kategori <strong>sedikit</strong> (3-7 kategori).<br>
+                ✓ Ketika ingin menekankan <strong>bagian dari keseluruhan</strong>.<br><br>
+                <strong>⚠️ JANGAN gunakan diagram lingkaran ketika:</strong><br>
+                ✗ Jumlah kategori terlalu banyak (> 7).<br>
+                ✗ Ingin membandingkan nilai secara tepat (gunakan diagram batang).<br>
+                ✗ Data tidak merupakan bagian dari keseluruhan.<br>
+                ✗ Ingin menunjukkan perubahan dari waktu ke waktu (gunakan diagram garis).
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Soal — Memilih Jenis Diagram</h4>
+                <p><strong>Soal:</strong> Tentukan jenis diagram yang paling tepat untuk data berikut!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                (a) Komposisi pengeluaran rumah tangga → <strong>Diagram Lingkaran</strong> (proporsi dari keseluruhan).<br>
+                (b) Perbandingan nilai ulangan 5 mata pelajaran → <strong>Diagram Batang</strong> (perbandingan kategori).<br>
+                (c) Perkembangan tinggi badan dari tahun ke tahun → <strong>Diagram Garis</strong> (tren waktu).<br>
+                (d) Persentase suara dalam pemilihan ketua OSIS → <strong>Diagram Lingkaran</strong> (proporsi).<br>
+                (e) Jumlah pengunjung perpustakaan per bulan → <strong>Diagram Garis</strong> (tren waktu).<br>
+                (f) Distribusi agama siswa di sekolah → <strong>Diagram Lingkaran</strong> (komposisi).</p>
+            </div>
+        </section>
+
+        <!-- MATERI F -->
+        <section class="content-card">
+            <h3>F. Aplikasi dalam Kehidupan Sehari-hari</h3>
+            <p>Diagram lingkaran banyak digunakan dalam berbagai bidang untuk menyajikan informasi tentang komposisi atau proporsi:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Bidang</th>
+                        <th>Penerapan Diagram Lingkaran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🏛️ <strong>Pemerintahan</strong></td>
+                        <td>Komposisi APBN, distribusi penduduk, persentase suara pemilu.</td>
+                    </tr>
+                    <tr>
+                        <td>💼 <strong>Bisnis</strong></td>
+                        <td>Pangsa pasar (market share), komposisi pendapatan, alokasi anggaran.</td>
+                    </tr>
+                    <tr>
+                        <td>🏥 <strong>Kesehatan</strong></td>
+                        <td>Distribusi jenis penyakit, komposisi gizi makanan, golongan darah penduduk.</td>
+                    </tr>
+                    <tr>
+                        <td>🎓 <strong>Pendidikan</strong></td>
+                        <td>Distribusi nilai siswa, komposisi jurusan, persentase kelulusan.</td>
+                    </tr>
+                    <tr>
+                        <td>📊 <strong>Media & Jurnalistik</strong></td>
+                        <td>Hasil survei, polling, infografis berita.</td>
+                    </tr>
+                    <tr>
+                        <td>🏠 <strong>Rumah Tangga</strong></td>
+                        <td>Komposisi pengeluaran bulanan, alokasi anggaran keluarga.</td>
+                    </tr>
+                    <tr>
+                        <td>📱 <strong>Media Sosial</strong></td>
+                        <td>Demografi pengguna (usia, gender, lokasi).</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 <strong>Lingkungan</strong></td>
+                        <td>Komposisi gas atmosfer, penggunaan lahan, sumber energi.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 FAKTA MENARIK:</strong><br>
+                • <strong>William Playfair</strong> (1759–1823) memperkenalkan diagram lingkaran pada tahun 1801.<br>
+                • <strong>Florence Nightingale</strong> (1820–1910), perawat terkenal, menggunakan diagram lingkaran (yang ia sebut "coxcomb chart") untuk menunjukkan penyebab kematian tentara dalam Perang Krimea — visualisasi ini berhasil meyakinkan pemerintah Inggris untuk memperbaiki sanitasi rumah sakit.<br>
+                • Diagram lingkaran sering dikritik karena <strong>sulit membandingkan ukuran juring</strong> secara visual — banyak ahli statistik menyarankan penggunaan <strong>diagram batang</strong> sebagai alternatif yang lebih akurat.<br>
+                • Dalam Islam, konsep <strong>pembagian yang adil</strong> (seperti dalam waris, zakat, dan fai) sangat sejalan dengan prinsip diagram lingkaran — setiap bagian mendapat porsi sesuai haknya.
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Contoh Proyek — Analisis Anggaran Pribadi</h4>
+                <p><strong>Tugas:</strong> Catat pengeluaranmu selama 1 minggu, lalu sajikan dalam bentuk diagram lingkaran!</p>
+                <p style="margin-top: 0.75rem;"><strong>Langkah-langkah:</strong><br>
+                1. <strong>Catat pengeluaran</strong> → makanan, transportasi, alat tulis, jajan, dll.<br>
+                2. <strong>Jumlahkan total</strong> pengeluaran selama 1 minggu.<br>
+                3. <strong>Hitung persentase</strong> setiap kategori.<br>
+                4. <strong>Hitung sudut</strong> setiap juring.<br>
+                5. <strong>Gambar diagram lingkaran</strong> dengan jangka dan busur derajat.<br>
+                6. <strong>Analisis:</strong> Kategori apa yang paling besar? Apakah sudah bijak?<br>
+                7. <strong>Buat rekomendasi:</strong> Bagaimana cara mengatur anggaran yang lebih baik?</p>
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Diagram Lingkaran</span>
+                <span class="keyword-tag">Pie Chart</span>
+                <span class="keyword-tag">Donut Chart</span>
+                <span class="keyword-tag">Juring</span>
+                <span class="keyword-tag">Sudut Juring</span>
+                <span class="keyword-tag">Persentase</span>
+                <span class="keyword-tag">360°</span>
+                <span class="keyword-tag">100%</span>
+                <span class="keyword-tag">Komposisi</span>
+                <span class="keyword-tag">Proporsi</span>
+                <span class="keyword-tag">Frekuensi</span>
+                <span class="keyword-tag">William Playfair</span>
+                <span class="keyword-tag">Florence Nightingale</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">خَلَقَ الْإِنسَانَ مِن نُّطْفَةٍ فَإِذَا هُوَ خَصِيمٌ مُّبِينٌ • وَالْأَنْعَامَ خَلَقَهَا ۗ لَكُمْ فِيهَا دِفْءٌ وَمَنَافِعُ وَمِنْهَا تَأْكُلُونَ</div>
+            <p class="quote-translation">"Dan segala sesuatu Kami ciptakan dengan berukur (dengan proporsi dan keseimbangan yang tepat)."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. Al-Qamar [54]: 49</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat ini mengingatkan kita bahwa segala ciptaan Allah dibuat dengan <strong>proporsi dan keseimbangan yang sempurna</strong> — prinsip yang sama dengan diagram lingkaran, di mana setiap bagian mendapat porsi sesuai haknya. Dalam Islam, konsep <strong>qadar</strong> (ukuran/proporsi) sangat penting — baik dalam pembagian waris, zakat, maupun alokasi sumber daya.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                "Sesungguhnya Kami menciptakan segala sesuatu menurut ukuran." — QS. Al-Qamar [54]: 49
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Statistika: Diagram Lingkaran).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Diagram Lingkaran dan Perbandingan Jenis Diagram).</li>
+                <li>Badan Pusat Statistik (BPS). (2023). <em>Visualisasi Data untuk Pemula</em>. Jakarta: BPS RI.</li>
+                <li>Playfair, W. (1801). <em>Statistical Breviary</em>. London. (Karya pertama yang memperkenalkan diagram lingkaran).</li>
+                <li>Tufte, E. R. (2001). <em>The Visual Display of Quantitative Information</em>. Graphics Press. (Prinsip visualisasi data modern).</li>
+                <li>Small, Christopher. (1998). <em>The Statue Within: A Biography of Florence Nightingale</em>. (Peran Nightingale dalam visualisasi data kesehatan).</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. Al-Qamar: 49 tentang penciptaan dengan ukuran).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 17</h2>
+            <p class="quiz-desc">
+                Diagram Lingkaran | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Pengertian diagram lingkaran, rumus persentase & sudut, cara membuat diagram, cara membaca & menafsirkan, perbandingan dengan diagram lain, serta aplikasi kehidupan.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram yang menyajikan data dalam bentuk juring-juring lingkaran disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. Diagram batang</label>
+                        <label><input type="radio" name="q1" value="B"> B. Diagram garis</label>
+                        <label><input type="radio" name="q1" value="C"> C. Diagram lingkaran</label>
+                        <label><input type="radio" name="q1" value="D"> D. Piktogram</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Total besar sudut semua juring dalam diagram lingkaran adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. 90°</label>
+                        <label><input type="radio" name="q2" value="B"> B. 180°</label>
+                        <label><input type="radio" name="q2" value="C"> C. 270°</label>
+                        <label><input type="radio" name="q2" value="D"> D. 360°</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika suatu kategori memiliki persentase 25%, maka besar sudut juringnya adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. 25°</label>
+                        <label><input type="radio" name="q3" value="B"> B. 45°</label>
+                        <label><input type="radio" name="q3" value="C"> C. 90°</label>
+                        <label><input type="radio" name="q3" value="D"> D. 180°</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Dari 80 siswa, 20 siswa menyukai basket. Persentase siswa yang menyukai basket adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. 15%</label>
+                        <label><input type="radio" name="q4" value="B"> B. 20%</label>
+                        <label><input type="radio" name="q4" value="C"> C. 25%</label>
+                        <label><input type="radio" name="q4" value="D"> D. 30%</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram lingkaran paling tepat digunakan untuk menyajikan data yang...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. Berubah dari waktu ke waktu</label>
+                        <label><input type="radio" name="q5" value="B"> B. Merupakan bagian dari keseluruhan</label>
+                        <label><input type="radio" name="q5" value="C"> C. Berupa kategori yang banyak</label>
+                        <label><input type="radio" name="q5" value="D"> D. Membandingkan nilai antar kategori</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika diagram lingkaran menunjukkan 100 siswa dan juring "Matematika" memiliki sudut 72°, maka banyak siswa yang menyukai Matematika adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. 10 siswa</label>
+                        <label><input type="radio" name="q6" value="B"> B. 15 siswa</label>
+                        <label><input type="radio" name="q6" value="C"> C. 20 siswa</label>
+                        <label><input type="radio" name="q6" value="D"> D. 25 siswa</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Penemu diagram lingkaran adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. Euclides</label>
+                        <label><input type="radio" name="q7" value="B"> B. William Playfair</label>
+                        <label><input type="radio" name="q7" value="C"> C. Florence Nightingale</label>
+                        <label><input type="radio" name="q7" value="D"> D. Pythagoras</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika persentase suatu kategori adalah 15%, maka besar sudut juringnya adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. 15°</label>
+                        <label><input type="radio" name="q8" value="B"> B. 36°</label>
+                        <label><input type="radio" name="q8" value="C"> C. 54°</label>
+                        <label><input type="radio" name="q8" value="D"> D. 72°</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Diagram lingkaran dengan lubang di tengah disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. Pie chart</label>
+                        <label><input type="radio" name="q9" value="B"> B. Bar chart</label>
+                        <label><input type="radio" name="q9" value="C"> C. Donut chart</label>
+                        <label><input type="radio" name="q9" value="D"> D. Line chart</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Dari 60 siswa, 30% menyukai IPA. Banyak siswa yang menyukai IPA adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. 12 siswa</label>
+                        <label><input type="radio" name="q10" value="B"> B. 15 siswa</label>
+                        <label><input type="radio" name="q10" value="C"> C. 18 siswa</label>
+                        <label><input type="radio" name="q10" value="D"> D. 20 siswa</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan pengertian diagram lingkaran! Sebutkan 3 jenis diagram lingkaran! Tuliskan rumus untuk menghitung persentase dan besar sudut juring! Berikan masing-masing satu contoh penggunaan diagram lingkaran dalam kehidupan sehari-hari!</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Data berikut adalah mata pelajaran favorit 50 siswa: Matematika = 15, IPA = 10, Bahasa Indonesia = 12, IPS = 8, Seni = 5. Hitunglah: (a) persentase setiap mata pelajaran, (b) besar sudut juring setiap mata pelajaran, (c) verifikasi bahwa total persentase = 100% dan total sudut = 360°!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Diagram lingkaran menunjukkan anggaran bulanan keluarga sebesar Rp6.000.000 dengan rincian: Makanan = 40%, Transportasi = 15%, Pendidikan = 25%, Tabungan = 10%, Listrik & Air = 7%, Lainnya = 3%. Hitunglah: (a) nominal setiap kategori, (b) total untuk kebutuhan pokok (makanan + transportasi + listrik & air), (c) selisih antara pendidikan dan tabungan!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara diagram batang, diagram garis, dan diagram lingkaran! Tuliskan dalam bentuk tabel minimal 5 aspek perbedaan! Berikan masing-masing dua contoh data yang tepat disajikan dengan setiap jenis diagram!</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Sebutkan 5 bidang kehidupan yang menggunakan diagram lingkaran! Jelaskan masing-masing penerapannya secara singkat! Rancanglah sebuah proyek survei mini di kelasmu tentang "Sumber pendapatan orang tua siswa kelas VII" (misal: PNS, wiraswasta, petani, pedagang, buruh, dll). Tuliskan: (a) tujuan survei, (b) cara pengumpulan data, (c) contoh data fiktif untuk 40 siswa, (d) hitung persentase dan sudut juring setiap kategori, (e) jelaskan cara membuat diagram lingkaran dari data tersebut!</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="16.html">← Bab 16: Diagram Batang & Diagram Garis</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="18.html">Bab 18: Piktogram & Interpretasi Data →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'C', q2: 'D', q3: 'C', q4: 'C', q5: 'B',
+            q6: 'C', q7: 'B', q8: 'C', q9: 'C', q10: 'C'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 17: DIAGRAM LINGKARAN\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab17_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 17 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 17 (Diagram Lingkaran):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

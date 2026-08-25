@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 12: Kekongruenan (Konsep & Syarat) | Matematika Kelas VII Semester 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #263345;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+
+        .top-nav {
+            position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .chapter-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .chapter-header h1 {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .chapter-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 1.5rem; font-style: italic; }
+        .author-badge {
+            display: inline-block; background: var(--bg-card); padding: 0.5rem 1.5rem;
+            border-radius: 50px; border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem; color: var(--accent-gold); font-weight: 600;
+        }
+
+        .content-card {
+            background: var(--bg-card); border-radius: 12px; padding: 2.5rem;
+            margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+        }
+        .highlight-box strong { color: var(--accent-gold); }
+        
+        .example-box {
+            background: var(--bg-primary); border-radius: 8px; padding: 1.5rem;
+            margin-top: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .example-box h4 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        .luxury-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--bg-primary); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th, .luxury-table td {
+            padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1rem;
+        }
+        .luxury-table td { color: var(--text-secondary); font-size: 0.95rem; }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .islamic-quote {
+            text-align: center; padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { color: var(--text-secondary); font-style: italic; font-size: 1.1rem; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--accent-gold);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .references { font-size: 0.9rem; color: var(--text-secondary); }
+        .references ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+        .references li { margin-bottom: 0.5rem; }
+
+        .quiz-section {
+            background: var(--bg-card); border-radius: 16px; padding: 2.5rem;
+            margin-top: 4rem; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .quiz-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .quiz-desc { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+        .form-group label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.85rem; background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;
+            color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .question-box { background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+        .q-text { margin-bottom: 1rem; font-weight: 500; }
+        .options label {
+            display: block; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            background: var(--bg-secondary); border-radius: 8px; cursor: pointer;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .options label:hover { border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05); }
+        .options input[type="radio"] { margin-right: 10px; accent-color: var(--accent-gold); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .quiz-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn {
+            padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; border: none; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--text-secondary); }
+        .btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .result-box {
+            margin-top: 2.5rem; padding: 2rem; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); border-radius: 12px; text-align: center; display: none;
+        }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .score-item { background: var(--bg-primary); padding: 1rem; border-radius: 8px; }
+        .score-item span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .score-item strong { font-size: 1.5rem; color: var(--accent-gold); }
+        .score-item.highlight strong { color: var(--success); font-size: 2rem; }
+        .note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic; }
+
+        footer { text-align: center; padding: 3rem 1.5rem; margin-top: 4rem; border-top: 1px solid rgba(212, 175, 55, 0.1); color: var(--text-secondary); font-size: 0.9rem; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .quiz-actions, .no-print { display: none !important; }
+            .content-card, .quiz-section, .question-box, .luxury-table { border: 1px solid #ccc; box-shadow: none; background: white; color: black; page-break-inside: avoid; }
+            h1, h2, h3, .keyword-tag, .arabic-text { color: #000 !important; -webkit-text-fill-color: #000; }
+            .luxury-table th { background: #eee !important; color: #000 !important; }
+            .result-box { display: block !important; border: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+        }
+        @media (max-width: 600px) {
+            .chapter-header h1 { font-size: 2rem; }
+            .quiz-actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .luxury-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-gold);">Matematika Kelas VII</div>
+        <div class="nav-links no-print">
+            <a href="11.html">← Bab 11</a>
+            <a href="index.html">Daftar Isi</a>
+            <a href="13.html">Bab 13 →</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>🔷 Bab Duabelas: Kekongruenan (Konsep & Syarat)</h1>
+            <p class="chapter-desc">
+                Memahami konsep kekongruenan pada bangun datar, syarat dua bangun kongruen, syarat dua segitiga kongruen (SSS, SAS, ASA, AAS), serta sifat-sifat kekongruenan. Materi ini menjadi dasar penting untuk mempelajari penerapan kekongruenan dalam pembuktian geometri pada pertemuan berikutnya.
+            </p>
+            <div class="author-badge">Zadiarmi, S.Si | MTsN 10 Agam</div>
+        </header>
+
+        <!-- MATERI A -->
+        <section class="content-card">
+            <h3>A. Pengertian Kekongruenan</h3>
+            <p>Dua bangun datar dikatakan <strong>kongruen</strong> (congruent) apabila memiliki <strong>bentuk dan ukuran yang sama persis</strong>. Dengan kata lain, kedua bangun tersebut identik — jika salah satu bangun ditumpangkan pada bangun lainnya, keduanya akan saling berimpit sempurna. Konsep kekongruenan sangat penting dalam geometri, arsitektur, dan manufaktur.</p>
+            <p style="margin-top: 1rem;">Dalam matematika, kekongruenan dilambangkan dengan simbol <strong>"≅"</strong>. Misalnya, bangun ABCD kongruen dengan bangun PQRS ditulis <strong>ABCD ≅ PQRS</strong>. Perhatikan bahwa <strong>semua bangun kongruen pasti sebangun</strong> (dengan faktor skala k = 1), tetapi tidak semua bangun sebangun pasti kongruen.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 DEFINISI PENTING:</strong><br>
+                • <strong>Kekongruenan (Congruence)</strong> = Dua bangun yang bentuk dan ukurannya sama persis.<br>
+                • <strong>Notasi</strong> = Simbol "≅" (contoh: △ABC ≅ △PQR).<br>
+                • <strong>Faktor Skala</strong> = Selalu k = 1 (ukuran sama persis).<br>
+                • <strong>Kongruen → Sebangun</strong> = Setiap bangun kongruen pasti sebangun, tetapi sebaliknya belum tentu.
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Kekongruenan (≅)</th>
+                        <th>Kesebangunan (∼)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bentuk</strong></td>
+                        <td>Sama</td>
+                        <td>Sama</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ukuran</strong></td>
+                        <td>Sama persis</td>
+                        <td>Dapat berbeda (perbandingan tetap)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sudut-sudut</strong></td>
+                        <td>Sama besar</td>
+                        <td>Sama besar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sisi-sisi</strong></td>
+                        <td>Sama panjang</td>
+                        <td>Sebanding</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Faktor Skala</strong></td>
+                        <td>k = 1</td>
+                        <td>k ≠ 1 (boleh sembarang)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Simbol</strong></td>
+                        <td>≅</td>
+                        <td>∼</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>💡 Contoh Kekongruenan dalam Kehidupan</h4>
+                <p>• Dua lembar kertas A4 dari satu pak (ukuran sama persis)<br>
+                • Cincin kembar yang dibuat dari cetakan yang sama<br>
+                • Ubin lantai yang identik (ukuran dan bentuk sama)<br>
+                • Dua buah koin dengan nominal yang sama<br>
+                • Cetakan kue yang menghasilkan bentuk identik<br>
+                • Komponen mesin yang diproduksi massal (spare parts)</p>
+            </div>
+        </section>
+
+        <!-- MATERI B -->
+        <section class="content-card">
+            <h3>B. Syarat Dua Bangun Datar Kongruen</h3>
+            <p>Tidak semua bangun datar yang terlihat mirip dapat dikatakan kongruen. Ada <strong>dua syarat mutlak</strong> yang harus dipenuhi agar dua bangun datar dapat dikatakan kongruen:</p>
+            
+            <div class="highlight-box">
+                <strong>📌 DUA SYARAT KEKONGRUENAN BANGUN DATAR:</strong><br><br>
+                <strong>1. Sudut-sudut yang bersesuaian sama besar.</strong><br>
+                Setiap sudut pada bangun pertama harus sama besar dengan sudut yang bersesuaian pada bangun kedua.<br><br>
+                <strong>2. Sisi-sisi yang bersesuaian sama panjang.</strong><br>
+                Jika sisi-sisi bangun pertama adalah a₁, a₂, a₃, ... dan sisi-sisi bangun kedua adalah b₁, b₂, b₃, ..., maka:<br>
+                a₁ = b₁, a₂ = b₂, a₃ = b₃, ...
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Syarat</th>
+                        <th>Penjelasan</th>
+                        <th>Cara Memeriksa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Sudut Bersesuaian Sama Besar</strong></td>
+                        <td>∠A = ∠P, ∠B = ∠Q, ∠C = ∠R, dst.</td>
+                        <td>Ukur setiap sudut dan bandingkan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Sisi Bersesuaian Sama Panjang</strong></td>
+                        <td>AB = PQ, BC = QR, CD = RS, ...</td>
+                        <td>Ukur setiap sisi dan bandingkan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal 1 — Memeriksa Kekongruenan</h4>
+                <p><strong>Soal:</strong> Persegi P memiliki sisi 5 cm. Persegi Q memiliki sisi 5 cm. Apakah kedua persegi tersebut kongruen?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Periksa sudut — semua sudut persegi = 90°, jadi sudut bersesuaian <strong>sama besar</strong>. ✓<br>
+                Langkah 2: Periksa sisi — sisi P = 5 cm, sisi Q = 5 cm, jadi sisi bersesuaian <strong>sama panjang</strong>. ✓<br>
+                <strong>Kesimpulan:</strong> Persegi P ≅ Persegi Q (kongruen).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal 2 — Bukan Kongruen</h4>
+                <p><strong>Soal:</strong> Persegi panjang A berukuran 6 cm × 4 cm. Persegi panjang B berukuran 6 cm × 5 cm. Apakah keduanya kongruen?</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Langkah 1: Sudut bersesuaian sama besar (90°). ✓<br>
+                Langkah 2: Periksa sisi:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Panjang: 6 cm = 6 cm ✓<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Lebar: 4 cm ≠ 5 cm ✗<br>
+                Karena ada sisi yang <strong>tidak sama panjang</strong>, maka:<br>
+                <strong>Kesimpulan:</strong> Persegi panjang A dan B <strong>TIDAK kongruen</strong> (meskipun sebangun? TIDAK, karena perbandingan sisi berbeda).</p>
+            </div>
+        </section>
+
+        <!-- MATERI C -->
+        <section class="content-card">
+            <h3>C. Syarat Dua Segitiga Kongruen</h3>
+            <p>Untuk segitiga, syarat kekongruenan dapat disederhanakan menjadi <strong>empat kriteria</strong> yang lebih praktis. Jika salah satu kriteria terpenuhi, maka dua segitiga tersebut pasti kongruen.</p>
+            
+            <div class="highlight-box">
+                <strong>📌 EMPAT KRITERIA KEKONGRUENAN SEGITIGA:</strong><br><br>
+                <strong>1. Kriteria SSS (Side-Side-Side) — Sisi-Sisi-Sisi:</strong><br>
+                Jika <strong>ketiga sisi</strong> yang bersesuaian sama panjang, maka kedua segitiga kongruen.<br><br>
+                <strong>2. Kriteria SAS (Side-Angle-Side) — Sisi-Sudut-Sisi:</strong><br>
+                Jika <strong>dua sisi bersesuaian sama panjang</strong> dan <strong>sudut apitnya sama besar</strong>, maka kedua segitiga kongruen.<br><br>
+                <strong>3. Kriteria ASA (Angle-Side-Angle) — Sudut-Sisi-Sudut:</strong><br>
+                Jika <strong>dua sudut bersesuaian sama besar</strong> dan <strong>sisi apitnya sama panjang</strong>, maka kedua segitiga kongruen.<br><br>
+                <strong>4. Kriteria AAS (Angle-Angle-Side) — Sudut-Sudut-Sisi:</strong><br>
+                Jika <strong>dua sudut bersesuaian sama besar</strong> dan <strong>satu sisi yang tidak diapit sama panjang</strong>, maka kedua segitiga kongruen.
+            </div>
+
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Kriteria</th>
+                        <th>Syarat</th>
+                        <th>Contoh Penerapan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SSS (Sisi-Sisi-Sisi)</strong></td>
+                        <td>Tiga sisi bersesuaian sama panjang</td>
+                        <td>AB = PQ, BC = QR, AC = PR → △ABC ≅ △PQR</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SAS (Sisi-Sudut-Sisi)</strong></td>
+                        <td>Dua sisi sama + sudut apit sama</td>
+                        <td>AB = PQ, AC = PR, ∠A = ∠P → △ABC ≅ △PQR</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ASA (Sudut-Sisi-Sudut)</strong></td>
+                        <td>Dua sudut sama + sisi apit sama</td>
+                        <td>∠A = ∠P, ∠B = ∠Q, AB = PQ → △ABC ≅ △PQR</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AAS (Sudut-Sudut-Sisi)</strong></td>
+                        <td>Dua sudut sama + satu sisi sama</td>
+                        <td>∠A = ∠P, ∠B = ∠Q, BC = QR → △ABC ≅ △PQR</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>⚠️ PERHATIAN:</strong><br>
+                • <strong>SSA (Sisi-Sisi-Sudut) BUKAN kriteria kekongruenan!</strong> Dua sisi sama dan satu sudut yang <em>bukan</em> apit tidak menjamin kekongruenan.<br>
+                • <strong>AAA (Sudut-Sudut-Sudut) BUKAN kriteria kekongruenan!</strong> Tiga sudut sama hanya menjamin kesebangunan, bukan kekongruenan.
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal 1 — Kriteria SSS</h4>
+                <p><strong>Soal:</strong> △ABC memiliki AB = 5 cm, BC = 7 cm, AC = 8 cm. △PQR memiliki PQ = 5 cm, QR = 7 cm, PR = 8 cm. Buktikan bahwa △ABC ≅ △PQR!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Periksa sisi-sisi bersesuaian:<br>
+                AB = PQ = 5 cm ✓<br>
+                BC = QR = 7 cm ✓<br>
+                AC = PR = 8 cm ✓<br>
+                Karena ketiga sisi bersesuaian sama panjang, maka berdasarkan <strong>kriteria SSS</strong>:<br>
+                <strong>△ABC ≅ △PQR</strong> ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal 2 — Kriteria SAS</h4>
+                <p><strong>Soal:</strong> △ABC memiliki AB = 6 cm, AC = 9 cm, dan ∠A = 60°. △PQR memiliki PQ = 6 cm, PR = 9 cm, dan ∠P = 60°. Buktikan bahwa keduanya kongruen!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Periksa sisi dan sudut apit:<br>
+                AB = PQ = 6 cm ✓<br>
+                AC = PR = 9 cm ✓<br>
+                ∠A = ∠P = 60° (sudut apit antara AB & AC, serta PQ & PR) ✓<br>
+                Karena dua sisi sama dan sudut apit sama, maka berdasarkan <strong>kriteria SAS</strong>:<br>
+                <strong>△ABC ≅ △PQR</strong> ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal 3 — Kriteria ASA</h4>
+                <p><strong>Soal:</strong> △ABC memiliki ∠A = 45°, ∠B = 75°, dan AB = 10 cm. △PQR memiliki ∠P = 45°, ∠Q = 75°, dan PQ = 10 cm. Buktikan bahwa keduanya kongruen!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Periksa sudut dan sisi apit:<br>
+                ∠A = ∠P = 45° ✓<br>
+                ∠B = ∠Q = 75° ✓<br>
+                AB = PQ = 10 cm (sisi di antara ∠A & ∠B, serta ∠P & ∠Q) ✓<br>
+                Karena dua sudut sama dan sisi apit sama, maka berdasarkan <strong>kriteria ASA</strong>:<br>
+                <strong>△ABC ≅ △PQR</strong> ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal 4 — Kriteria AAS</h4>
+                <p><strong>Soal:</strong> △ABC memiliki ∠A = 50°, ∠B = 60°, dan BC = 8 cm. △PQR memiliki ∠P = 50°, ∠Q = 60°, dan QR = 8 cm. Buktikan bahwa keduanya kongruen!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Periksa sudut dan sisi:<br>
+                ∠A = ∠P = 50° ✓<br>
+                ∠B = ∠Q = 60° ✓<br>
+                BC = QR = 8 cm (sisi yang <em>tidak</em> diapit oleh ∠A & ∠B) ✓<br>
+                Karena dua sudut sama dan satu sisi sama, maka berdasarkan <strong>kriteria AAS</strong>:<br>
+                <strong>△ABC ≅ △PQR</strong> ✓</p>
+            </div>
+        </section>
+
+        <!-- MATERI D -->
+        <section class="content-card">
+            <h3>D. Sifat-Sifat Kekongruenan</h3>
+            <p>Kekongruenan memiliki beberapa sifat penting yang sering digunakan dalam pembuktian geometri:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Sifat</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Refleksif</strong></td>
+                        <td>Setiap bangun kongruen dengan dirinya sendiri (A ≅ A).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Simetris</strong></td>
+                        <td>Jika A ≅ B, maka B ≅ A.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Transitif</strong></td>
+                        <td>Jika A ≅ B dan B ≅ C, maka A ≅ C.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Sisi Sama</strong></td>
+                        <td>Sisi-sisi yang bersesuaian sama panjang.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Sudut Sama</strong></td>
+                        <td>Sudut-sudut yang bersesuaian sama besar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Luas Sama</strong></td>
+                        <td>Dua bangun kongruen memiliki luas yang sama.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Keliling Sama</strong></td>
+                        <td>Dua bangun kongruen memiliki keliling yang sama.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 HUBUNGAN KEKONGRUENAN DAN KESEBANGUNAN:</strong><br><br>
+                • Jika △ABC ≅ △PQR, maka △ABC ∼ △PQR dengan faktor skala k = 1.<br>
+                • Jika △ABC ∼ △PQR dengan k = 1, maka △ABC ≅ △PQR.<br>
+                • <strong>Kongruen = Sebangun + Ukuran Sama</strong>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Soal — Sifat Transitif</h4>
+                <p><strong>Soal:</strong> Diketahui △ABC ≅ △PQR dan △PQR ≅ △XYZ. Buktikan bahwa △ABC ≅ △XYZ!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Berdasarkan <strong>sifat transitif</strong> kekongruenan:<br>
+                Jika A ≅ B dan B ≅ C, maka A ≅ C.<br>
+                Karena △ABC ≅ △PQR dan △PQR ≅ △XYZ, maka:<br>
+                <strong>△ABC ≅ △XYZ</strong> ✓</p>
+            </div>
+        </section>
+
+        <!-- MATERI E -->
+        <section class="content-card">
+            <h3>E. Pembuktian Kekongruenan Segitiga</h3>
+            <p>Dalam geometri, pembuktian kekongruenan segitiga sering digunakan untuk membuktikan sifat-sifat bangun lain. Berikut adalah contoh pembuktian yang melibatkan kekongruenan:</p>
+
+            <div class="example-box">
+                <h4>📐 Contoh Pembuktian 1 — Garis Bagi</h4>
+                <p><strong>Soal:</strong> Pada △ABC, garis AD adalah garis bagi ∠A. Buktikan bahwa △ABD dan △ACD tidak selalu kongruen!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Diketahui: AD membagi ∠A menjadi dua sudut sama besar (∠BAD = ∠CAD).<br>
+                Periksa syarat kekongruenan:<br>
+                • AD = AD (sisi bersama) ✓<br>
+                • ∠BAD = ∠CAD ✓<br>
+                • AB ≠ AC (belum tentu sama)<br>
+                Karena hanya memenuhi SAS jika AB = AC (segitiga sama kaki), maka secara umum △ABD dan △ACD <strong>tidak kongruen</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Pembuktian 2 — Segitiga Sama Kaki</h4>
+                <p><strong>Soal:</strong> Pada △ABC dengan AB = AC (segitiga sama kaki), garis AD adalah garis tinggi dari A ke BC. Buktikan bahwa BD = DC!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Perhatikan △ABD dan △ACD:<br>
+                • AB = AC (diketahui) ✓<br>
+                • AD = AD (sisi bersama) ✓<br>
+                • ∠ADB = ∠ADC = 90° (AD garis tinggi) ✓<br>
+                Berdasarkan <strong>kriteria SSS</strong> (atau RHS - Right angle, Hypotenuse, Side):<br>
+                △ABD ≅ △ACD<br>
+                Karena kongruen, maka sisi-sisi bersesuaian sama panjang:<br>
+                <strong>BD = DC</strong> ✓ (terbukti)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📐 Contoh Pembuktian 3 — Diagonal Persegi</h4>
+                <p><strong>Soal:</strong> Buktikan bahwa diagonal persegi membagi persegi menjadi dua segitiga kongruen!</p>
+                <p style="margin-top: 0.75rem;"><strong>Penyelesaian:</strong><br>
+                Misalkan persegi ABCD dengan diagonal AC.<br>
+                Perhatikan △ABC dan △ACD:<br>
+                • AB = CD (sisi persegi) ✓<br>
+                • BC = AD (sisi persegi) ✓<br>
+                • AC = AC (sisi bersama/diagonal) ✓<br>
+                Berdasarkan <strong>kriteria SSS</strong>:<br>
+                <strong>△ABC ≅ △ACD</strong> ✓ (terbukti)</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 STRATEGI PEMBUKTIAN KEKONGRUENAN:</strong><br>
+                1. <strong>Identifikasi informasi yang diketahui</strong> — sisi sama, sudut sama, dll.<br>
+                2. <strong>Tentukan dua segitiga</strong> yang akan dibuktikan kongruen.<br>
+                3. <strong>Pilih kriteria</strong> yang sesuai (SSS, SAS, ASA, atau AAS).<br>
+                4. <strong>Tulis pembuktian</strong> secara sistematis dengan menyebutkan alasan setiap langkah.<br>
+                5. <strong>Gunakan hasil kekongruenan</strong> untuk membuktikan sifat lain yang diminta.
+            </div>
+        </section>
+
+        <!-- MATERI F -->
+        <section class="content-card">
+            <h3>F. Aplikasi Kekongruenan dalam Kehidupan</h3>
+            <p>Konsep kekongruenan banyak diterapkan dalam berbagai bidang kehidupan, terutama yang membutuhkan presisi dan keseragaman:</p>
+            
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Bidang</th>
+                        <th>Penerapan Konsep Kekongruenan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🏭 <strong>Manufaktur</strong></td>
+                        <td>Produksi massal komponen mesin, suku cadang, dan produk yang harus identik.</td>
+                    </tr>
+                    <tr>
+                        <td>🏗️ <strong>Konstruksi</strong></td>
+                        <td>Pembuatan cetakan beton, ubin, dan elemen bangunan yang seragam.</td>
+                    </tr>
+                    <tr>
+                        <td>💍 <strong>Perhiasan</strong></td>
+                        <td>Pembuatan cincin kembar, anting-anting pasangan yang identik.</td>
+                    </tr>
+                    <tr>
+                        <td>🎨 <strong>Seni & Kerajinan</strong></td>
+                        <td>Pembuatan batik cap, ukiran, dan pola yang berulang identik.</td>
+                    </tr>
+                    <tr>
+                        <td>🔬 <strong>Sains & Kedokteran</strong></td>
+                        <td>Pembuatan alat laboratorium, implan medis yang presisi.</td>
+                    </tr>
+                    <tr>
+                        <td>🎮 <strong>Game & Animasi</strong></td>
+                        <td>Instancing objek dalam game (menggunakan model yang sama berulang).</td>
+                    </tr>
+                    <tr>
+                        <td>📐 <strong>Geometri & Arsitektur</strong></td>
+                        <td>Desain simetris, pola tessellation, dan struktur yang seimbang.</td>
+                    </tr>
+                    <tr>
+                        <td>🔐 <strong>Kriptografi</strong></td>
+                        <td>Pola-pola kongruen digunakan dalam algoritma enkripsi tertentu.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>🏭 Contoh Aplikasi — Industri Otomotif</h4>
+                <p>Dalam industri otomotif, setiap komponen mesin (seperti piston, baut, ring) harus diproduksi dengan <strong>presisi tinggi</strong> agar saling menggantikan (interchangeable). Ini berarti semua komponen dengan spesifikasi yang sama harus <strong>kongruen</strong> — memiliki bentuk dan ukuran yang sama persis. Jika ada penyimpangan kecil saja, komponen tersebut tidak akan berfungsi dengan baik.</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 FAKTA MENARIK:</strong><br>
+                • Konsep kekongruenan telah dipelajari sejak zaman <strong>Euclides</strong> (±300 SM) dalam karya monumentalnya "Elements".<br>
+                • Dalam seni Islam, pola-pola geometris kongruen digunakan secara ekstensif dalam ornamen masjid dan istana.<br>
+                • Teknologi <strong>CNC (Computer Numerical Control)</strong> dalam manufaktur modern menggunakan prinsip kekongruenan untuk memproduksi jutaan komponen identik.<br>
+                • Simetri dan kekongruenan adalah dasar dari <strong>kristalografi</strong> — ilmu yang mempelajari struktur kristal.
+            </div>
+        </section>
+
+        <!-- KATA KUNCI -->
+        <section class="content-card" style="text-align: center;">
+            <h3>◆ Kata Kunci Bab Ini</h3>
+            <div class="keywords" style="justify-content: center;">
+                <span class="keyword-tag">Kekongruenan</span>
+                <span class="keyword-tag">Congruence</span>
+                <span class="keyword-tag">Simbol ≅</span>
+                <span class="keyword-tag">Sisi Bersesuaian</span>
+                <span class="keyword-tag">Sudut Bersesuaian</span>
+                <span class="keyword-tag">SSS</span>
+                <span class="keyword-tag">SAS</span>
+                <span class="keyword-tag">ASA</span>
+                <span class="keyword-tag">AAS</span>
+                <span class="keyword-tag">Identik</span>
+                <span class="keyword-tag">Sama Persis</span>
+                <span class="keyword-tag">Pembuktian</span>
+                <span class="keyword-tag">Sifat Transitif</span>
+            </div>
+        </section>
+
+        <div class="islamic-quote">
+            <div class="arabic-text">صُنْعَ اللَّهِ الَّذِي أَتْقَنَ كُلَّ شَيْءٍ</div>
+            <p class="quote-translation">"(Begitulah) buatan Allah yang telah membuat dengan sempurna segala sesuatu."</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--accent-gold);">— QS. An-Naml [27]: 88</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">
+                Ayat ini mengingatkan kita bahwa segala ciptaan Allah dibuat dengan sempurna dan presisi — termasuk konsep kekongruenan yang tampak dalam pola-pola alam, seperti struktur kristal salju, susunan atom dalam mineral, dan simetri tubuh makhluk hidup. Memahami kekongruenan adalah bagian dari mentadabburi kesempurnaan ciptaan Allah.
+            </p>
+        </div>
+
+        <!-- REFERENSI -->
+        <section class="content-card references">
+            <h3>📚 Referensi & Bacaan Pendukung</h3>
+            <ul>
+                <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <em>Matematika untuk SMP/MTs Kelas VII</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek. (Bab Geometri: Kekongruenan).</li>
+                <li>Tim Abdi Guru. (2022). <em>Matematika SMP/MTs Kelas VII Kurikulum Merdeka</em>. Jakarta: Erlangga. (Subbab Konsep dan Syarat Kekongruenan).</li>
+                <li>Posamentier, A. S., & Bannister, K. (2014). <em>Geometry: A Comprehensive Course</em>. Dover Publications. (Bab Congruent Triangles).</li>
+                <li>Johnson, R. A. (2012). <em>Advanced Euclidean Geometry</em>. Dover Publications. (Congruence and Proof Techniques).</li>
+                <li>Euclides. (±300 SM). <em>Elements</em>. Book I & IV — On Congruence.</li>
+                <li>Al-Qur'an dan Terjemahannya. (2019). <em>Kementerian Agama Republik Indonesia</em>. (QS. An-Naml: 88 tentang kesempurnaan ciptaan Allah).</li>
+            </ul>
+        </section>
+
+        <!-- UJI FORMATIF -->
+        <section id="uji-formatif" class="quiz-section">
+            <h2>📝 Uji Formatif Bab 12</h2>
+            <p class="quiz-desc">
+                Kekongruenan (Konsep & Syarat) | 📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)<br>
+                <span style="font-size: 0.9rem;">Materi: Pengertian kekongruenan, syarat bangun kongruen, kriteria SSS/SAS/ASA/AAS, sifat-sifat, dan aplikasi.</span>
+            </p>
+            
+            <form id="quizForm">
+                <div class="content-card" style="margin-bottom: 2rem; border-left-color: var(--text-secondary);">
+                    <h3>📋 Identitas Siswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>No. Absen / NIS *</label>
+                            <input type="text" id="nis" required placeholder="Contoh: 15 / 12345">
+                        </div>
+                        <div class="form-group">
+                            <label>📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label>Kelas *</label>
+                            <select id="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <input type="text" value="2 (Dua)" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Dua bangun datar dikatakan kongruen apabila...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A. Bentuknya sama tetapi ukurannya berbeda</label>
+                        <label><input type="radio" name="q1" value="B"> B. Bentuk dan ukurannya sama persis</label>
+                        <label><input type="radio" name="q1" value="C"> C. Luasnya sama</label>
+                        <label><input type="radio" name="q1" value="D"> D. Kelilingnya sama</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Simbol matematika untuk kekongruenan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A. ∼</label>
+                        <label><input type="radio" name="q2" value="B"> B. ∥</label>
+                        <label><input type="radio" name="q2" value="C"> C. ≅</label>
+                        <label><input type="radio" name="q2" value="D"> D. ⊥</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Dua bangun datar kongruen jika memenuhi syarat berikut, KECUALI...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> A. Sudut-sudut bersesuaian sama besar</label>
+                        <label><input type="radio" name="q3" value="B"> B. Sisi-sisi bersesuaian sama panjang</label>
+                        <label><input type="radio" name="q3" value="C"> C. Sisi-sisi bersesuaian sebanding</label>
+                        <label><input type="radio" name="q3" value="D"> D. Bentuk dan ukuran sama persis</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Kriteria SSS pada kekongruenan segitiga berarti...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A. Tiga sudut bersesuaian sama besar</label>
+                        <label><input type="radio" name="q4" value="B"> B. Tiga sisi bersesuaian sama panjang</label>
+                        <label><input type="radio" name="q4" value="C"> C. Dua sisi dan satu sudut sama</label>
+                        <label><input type="radio" name="q4" value="D"> D. Dua sudut dan satu sisi sama</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Pada △ABC dan △PQR, diketahui AB = PQ, BC = QR, dan AC = PR. Berdasarkan kriteria apa kedua segitiga tersebut kongruen?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> A. SAS</label>
+                        <label><input type="radio" name="q5" value="B"> B. ASA</label>
+                        <label><input type="radio" name="q5" value="C"> C. SSS</label>
+                        <label><input type="radio" name="q5" value="D"> D. AAS</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 6</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika △ABC ≅ △PQR, maka pernyataan yang BENAR adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A. AB > PQ</label>
+                        <label><input type="radio" name="q6" value="B"> B. ∠A > ∠P</label>
+                        <label><input type="radio" name="q6" value="C"> C. AB = PQ dan ∠A = ∠P</label>
+                        <label><input type="radio" name="q6" value="D"> D. Luas △ABC > Luas △PQR</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 7</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Kriteria yang BUKAN merupakan syarat kekongruenan segitiga adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A. SSS</label>
+                        <label><input type="radio" name="q7" value="B"> B. SAS</label>
+                        <label><input type="radio" name="q7" value="C"> C. AAA</label>
+                        <label><input type="radio" name="q7" value="D"> D. ASA</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 8</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Jika △ABC ≅ △PQR dan △PQR ≅ △XYZ, maka...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"> A. △ABC ∼ △XYZ</label>
+                        <label><input type="radio" name="q8" value="B"> B. △ABC ≅ △XYZ</label>
+                        <label><input type="radio" name="q8" value="C"> C. △ABC dan △XYZ tidak berhubungan</label>
+                        <label><input type="radio" name="q8" value="D"> D. △ABC lebih besar dari △XYZ</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 9</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Pada △ABC dan △PQR, diketahui ∠A = ∠P, ∠B = ∠Q, dan AB = PQ. Kriteria kekongruenan yang digunakan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A. SSS</label>
+                        <label><input type="radio" name="q9" value="B"> B. SAS</label>
+                        <label><input type="radio" name="q9" value="C"> C. ASA</label>
+                        <label><input type="radio" name="q9" value="D"> D. AAS</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Soal 10</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(10 POIN)</span><br>Contoh benda yang kongruen dalam kehidupan sehari-hari adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"> A. Foto yang diperbesar</label>
+                        <label><input type="radio" name="q10" value="B"> B. Peta dan wilayah asli</label>
+                        <label><input type="radio" name="q10" value="C"> C. Dua lembar kertas A4 dari satu pak</label>
+                        <label><input type="radio" name="q10" value="D"> D. Maket dan gedung asli</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem;">✍️ Bagian B: Essay</h3>
+                
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 1</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan pengertian kekongruenan! Sebutkan dua syarat utama agar dua bangun datar dikatakan kongruen! Berikan masing-masing dua contoh benda di sekitar kita yang merupakan contoh kekongruenan!</p>
+                    <div class="form-group"><textarea name="e1" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 2</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan empat kriteria kekongruenan segitiga (SSS, SAS, ASA, AAS)! Berikan masing-masing satu contoh soal sederhana beserta pembuktiannya!</p>
+                    <div class="form-group"><textarea name="e2" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 3</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>△ABC memiliki AB = 6 cm, BC = 8 cm, AC = 10 cm. △PQR memiliki PQ = 6 cm, QR = 8 cm, PR = 10 cm. Buktikan bahwa △ABC ≅ △PQR! Kriteria apa yang digunakan? Jika △PQR ≅ △XYZ, apakah △ABC ≅ △XYZ? Jelaskan!</p>
+                    <div class="form-group"><textarea name="e3" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 4</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Jelaskan perbedaan antara kekongruenan dan kesebangunan! Tuliskan minimal 4 perbedaan dalam bentuk tabel! Berikan contoh dua bangun yang sebangun tetapi tidak kongruen, dan dua bangun yang kongruen!</p>
+                    <div class="form-group"><textarea name="e4" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="question-box">
+                    <p class="q-text"><strong>Essay 5</strong> <span style="color: var(--accent-gold); font-size: 0.85rem;">(20 POIN)</span><br>Pada △ABC sama kaki dengan AB = AC, garis AD adalah garis tinggi dari A ke BC. Buktikan bahwa: (a) △ABD ≅ △ACD, (b) BD = DC, dan (c) ∠BAD = ∠CAD! Kriteria kekongruenan apa yang digunakan?</p>
+                    <div class="form-group"><textarea name="e5" placeholder="Ketik jawaban Anda di sini..."></textarea></div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn btn-primary" onclick="gradeQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.print()">📄 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">📧 Kirim ke Email Guru</button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span>📋 Pilihan Ganda</span>
+                        <strong id="scorePG">0 / 100</strong>
+                    </div>
+                    <div class="score-item">
+                        <span>✍️ Essay</span>
+                        <strong id="scoreEssay">Menunggu Penilaian</strong>
+                    </div>
+                    <div class="score-item highlight">
+                        <span>Skor Otomatis (PG)</span>
+                        <strong id="scoreTotal">0</strong>
+                    </div>
+                </div>
+                <p class="note">*Skor Essay memerlukan penilaian manual oleh guru berdasarkan ketepatan konsep dan langkah penyelesaian. Skor di atas merupakan nilai otomatis dari Bagian Pilihan Ganda. Silakan unduh PDF/TXT untuk diserahkan kepada guru.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">
+                <a href="11.html">← Bab 11: Penerapan Kesebangunan</a> &nbsp;|&nbsp;
+                <a href="index.html">📖 Daftar Isi</a> &nbsp;|&nbsp; 
+                <a href="mailto:zadiarmi@gmail.com">📧 Email Penulis</a> &nbsp;|&nbsp; 
+                <a href="13.html">Bab 13: Kekongruenan (Penerapan & Pembuktian) →</a>
+            </p>
+            <p>&copy; 2026 Zadiarmi, S.Si — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>Email: <a href="mailto:zadiarmi@gmail.com">zadiarmi@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const correctAnswers = {
+            q1: 'B', q2: 'C', q3: 'C', q4: 'B', q5: 'C',
+            q6: 'C', q7: 'C', q8: 'B', q9: 'C', q10: 'C'
+        };
+
+        function gradeQuiz() {
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !kelas) {
+                alert("Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu!");
+                return;
+            }
+
+            let pgScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) {
+                    pgScore += 10;
+                }
+            }
+
+            document.getElementById('scorePG').innerText = pgScore + " / 100";
+            document.getElementById('scoreTotal').innerText = pgScore;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const nis = document.getElementById('nis').value || "-";
+            const kelas = document.getElementById('kelas').value || "-";
+            const tanggal = document.getElementById('tanggal').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            let txtContent = `========================================\n`;
+            txtContent += `   HASIL UJI FORMATIF BAB 12: KEKONGRUENAN (KONSEP & SYARAT)\n`;
+            txtContent += `========================================\n`;
+            txtContent += `Nama    : ${nama}\n`;
+            txtContent += `NIS     : ${nis}\n`;
+            txtContent += `Kelas   : ${kelas}\n`;
+            txtContent += `Tanggal : ${tanggal}\n`;
+            txtContent += `----------------------------------------\n`;
+            txtContent += `Skor Pilihan Ganda : ${pgScore}\n`;
+            txtContent += `Skor Essay         : Menunggu Penilaian Guru\n`;
+            txtContent += `========================================\n\n`;
+            txtContent += `JAWABAN ESSAY:\n\n`;
+            
+            for(let i = 1; i <= 5; i++) {
+                const jawaban = document.querySelector(`textarea[name="e${i}"]`).value || "(Tidak dijawab)";
+                txtContent += `[Essay ${i}]\n${jawaban}\n\n`;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab12_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || "Siswa";
+            const kelas = document.getElementById('kelas').value || "-";
+            const pgScore = document.getElementById('scorePG').innerText;
+            
+            const subject = `Hasil Uji Formatif Bab 12 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Zadiarmi, S.Si,\n\nBerikut adalah hasil uji formatif saya untuk Bab 12 (Kekongruenan - Konsep & Syarat):\n\nNama : ${nama}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nCatatan: Bagian Essay telah saya kerjakan dan siap untuk dinilai (silakan lihat file TXT/PDF yang saya lampirkan atau saya kumpulkan secara langsung).\n\nTerima kasih atas bimbingannya.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:zadiarmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if(confirm("Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                document.getElementById('scorePG').innerText = "0 / 100";
+                document.getElementById('scoreTotal').innerText = "0";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>
